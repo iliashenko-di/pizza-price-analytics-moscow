@@ -1,10 +1,10 @@
 window.PIZZA_SNAPSHOT = {
   "meta": {
     "city": "Москва",
-    "collectedAt": "2026-06-30T11:49:59.729Z",
+    "collectedAt": "2026-06-30T12:13:27.273Z",
     "urls": {
       "papa": "https://papajohns.ru/moscow",
-      "dodo": "https://dodopizza.ru/moscow"
+      "dodo": "https://dodopizza.ru/moscow/veshnyaki"
     },
     "source": "all",
     "notes": [
@@ -7051,16 +7051,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Пицца Энчантикс",
         "normalizedName": "пицца энчантикс",
-        "url": "https://dodopizza.ru/moscow/product/picca-enchantiks",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/picca-enchantiks",
         "flags": [],
-        "minPriceCard": 799,
-        "minPrice": 799,
+        "minPriceCard": 829,
+        "minPrice": 829,
         "variations": [
           {
             "id": "Пицца Энчантикс:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 799,
+            "price": 829,
             "weightG": 240,
             "variantLine": "25 см, тонкое тесто, 240 г"
           },
@@ -7068,7 +7068,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Энчантикс:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 799,
+            "price": 829,
             "weightG": 340,
             "variantLine": "25 см, традиционное тесто 25, 340 г"
           }
@@ -7079,16 +7079,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Пицца Том ям",
         "normalizedName": "пицца том ям",
-        "url": "https://dodopizza.ru/moscow/product/picca-tom-yam",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/picca-tom-yam",
         "flags": [],
-        "minPriceCard": 379,
-        "minPrice": 379,
+        "minPriceCard": 395,
+        "minPrice": 395,
         "variations": [
           {
             "id": "Пицца Том ям:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 379,
+            "price": 395,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -7096,7 +7096,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 579,
+            "price": 599,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -7104,7 +7104,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 579,
+            "price": 599,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -7112,7 +7112,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 839,
+            "price": 869,
             "weightG": 460,
             "variantLine": "30 см, тонкое тесто 25, 460 г"
           },
@@ -7120,7 +7120,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 839,
+            "price": 869,
             "weightG": 570,
             "variantLine": "30 см, традиционное тесто 30, 570 г"
           },
@@ -7128,7 +7128,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1129,
+            "price": 1169,
             "weightG": 700,
             "variantLine": "35 см, тонкое тесто 30, 700 г"
           },
@@ -7136,7 +7136,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пицца Том ям:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1129,
+            "price": 1169,
             "weightG": 850,
             "variantLine": "35 см, традиционное тесто 35, 850 г"
           }
@@ -7147,18 +7147,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Флотская",
         "normalizedName": "флотская",
-        "url": "https://dodopizza.ru/moscow/product/tomlenaya-kurochka",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/tomlenaya-kurochka",
         "flags": [
           "новинка"
         ],
-        "minPriceCard": 289,
-        "minPrice": 289,
+        "minPriceCard": 299,
+        "minPrice": 299,
         "variations": [
           {
             "id": "Флотская:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 289,
+            "price": 299,
             "weightG": 210,
             "variantLine": "20 см, традиционное тесто, 210 г"
           },
@@ -7166,7 +7166,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 469,
+            "price": 485,
             "weightG": 230,
             "variantLine": "25 см, тонкое тесто, 230 г"
           },
@@ -7174,7 +7174,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 469,
+            "price": 485,
             "weightG": 320,
             "variantLine": "25 см, традиционное тесто 25, 320 г"
           },
@@ -7182,7 +7182,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 689,
+            "price": 715,
             "weightG": 370,
             "variantLine": "30 см, тонкое тесто 25, 370 г"
           },
@@ -7190,7 +7190,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 689,
+            "price": 715,
             "weightG": 480,
             "variantLine": "30 см, традиционное тесто 30, 480 г"
           },
@@ -7198,7 +7198,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 859,
+            "price": 889,
             "weightG": 540,
             "variantLine": "35 см, тонкое тесто 30, 540 г"
           },
@@ -7206,7 +7206,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Флотская:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 859,
+            "price": 889,
             "weightG": 660,
             "variantLine": "35 см, традиционное тесто 35, 660 г"
           }
@@ -7217,18 +7217,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Трюфельная",
         "normalizedName": "трюфельная",
-        "url": "https://dodopizza.ru/moscow/product/tryufelnaya-",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/tryufelnaya-",
         "flags": [
           "новинка"
         ],
-        "minPriceCard": 399,
-        "minPrice": 399,
+        "minPriceCard": 415,
+        "minPrice": 415,
         "variations": [
           {
             "id": "Трюфельная:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 399,
+            "price": 415,
             "weightG": 260,
             "variantLine": "20 см, традиционное тесто, 260 г"
           },
@@ -7236,7 +7236,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 599,
+            "price": 625,
             "weightG": 310,
             "variantLine": "25 см, тонкое тесто, 310 г"
           },
@@ -7244,7 +7244,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 599,
+            "price": 625,
             "weightG": 400,
             "variantLine": "25 см, традиционное тесто 25, 400 г"
           },
@@ -7252,7 +7252,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 999,
+            "price": 1035,
             "weightG": 520,
             "variantLine": "30 см, тонкое тесто 25, 520 г"
           },
@@ -7260,7 +7260,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 999,
+            "price": 1035,
             "weightG": 620,
             "variantLine": "30 см, традиционное тесто 30, 620 г"
           },
@@ -7268,7 +7268,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1199,
+            "price": 1245,
             "weightG": 720,
             "variantLine": "35 см, тонкое тесто 30, 720 г"
           },
@@ -7276,7 +7276,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Трюфельная:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1199,
+            "price": 1245,
             "weightG": 790,
             "variantLine": "35 см, традиционное тесто 35, 790 г"
           }
@@ -7287,16 +7287,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Шашлык и сацебели",
         "normalizedName": "шашлык и сацебели",
-        "url": "https://dodopizza.ru/moscow/product/shashlyk-i-sacebeli",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/shashlyk-i-sacebeli",
         "flags": [],
-        "minPriceCard": 465,
-        "minPrice": 465,
+        "minPriceCard": 479,
+        "minPrice": 479,
         "variations": [
           {
             "id": "Шашлык и сацебели:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 465,
+            "price": 479,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -7304,7 +7304,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 699,
+            "price": 725,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -7312,7 +7312,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 699,
+            "price": 725,
             "weightG": 400,
             "variantLine": "25 см, традиционное тесто 25, 400 г"
           },
@@ -7320,7 +7320,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 999,
+            "price": 1039,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -7328,7 +7328,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 999,
+            "price": 1039,
             "weightG": 640,
             "variantLine": "30 см, традиционное тесто 30, 640 г"
           },
@@ -7336,7 +7336,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1299,
+            "price": 1349,
             "weightG": 720,
             "variantLine": "35 см, тонкое тесто 30, 720 г"
           },
@@ -7344,7 +7344,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Шашлык и сацебели:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1299,
+            "price": 1349,
             "weightG": 870,
             "variantLine": "35 см, традиционное тесто 35, 870 г"
           }
@@ -7355,16 +7355,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Масала",
         "normalizedName": "масала",
-        "url": "https://dodopizza.ru/moscow/product/masala",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/masala",
         "flags": [],
-        "minPriceCard": 399,
-        "minPrice": 399,
+        "minPriceCard": 419,
+        "minPrice": 419,
         "variations": [
           {
             "id": "Масала:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 399,
+            "price": 419,
             "weightG": 240,
             "variantLine": "20 см, традиционное тесто, 240 г"
           },
@@ -7404,7 +7404,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Масала:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1089,
+            "price": 1109,
             "weightG": 690,
             "variantLine": "35 см, тонкое тесто 30, 690 г"
           },
@@ -7412,7 +7412,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Масала:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1089,
+            "price": 1109,
             "weightG": 820,
             "variantLine": "35 см, традиционное тесто 35, 820 г"
           }
@@ -7423,32 +7423,24 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Додо",
         "normalizedName": "додо",
-        "url": "https://dodopizza.ru/moscow/product/stewed-dodo",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/stewed-dodo",
         "flags": [],
-        "minPriceCard": 539,
-        "minPrice": 539,
+        "minPriceCard": 559,
+        "minPrice": 559,
         "variations": [
           {
             "id": "Додо:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 539,
+            "price": 559,
             "weightG": 290,
             "variantLine": "20 см, традиционное тесто, 290 г"
-          },
-          {
-            "id": "Додо:25 см:Тонкое",
-            "sizeCm": 25,
-            "dough": "Тонкое",
-            "price": 859,
-            "weightG": 360,
-            "variantLine": "25 см, тонкое тесто, 360 г"
           },
           {
             "id": "Додо:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 859,
+            "price": 889,
             "weightG": 420,
             "variantLine": "25 см, традиционное тесто 25, 420 г"
           },
@@ -7456,7 +7448,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Додо:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1199,
+            "price": 1249,
             "weightG": 520,
             "variantLine": "30 см, тонкое тесто 25, 520 г"
           },
@@ -7464,7 +7456,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Додо:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1199,
+            "price": 1249,
             "weightG": 640,
             "variantLine": "30 см, традиционное тесто 30, 640 г"
           },
@@ -7472,7 +7464,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Додо:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1399,
+            "price": 1449,
             "weightG": 760,
             "variantLine": "35 см, тонкое тесто 30, 760 г"
           },
@@ -7480,7 +7472,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Додо:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1399,
+            "price": 1449,
             "weightG": 880,
             "variantLine": "35 см, традиционное тесто 35, 880 г"
           }
@@ -7491,18 +7483,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Ветчина и огурчики",
         "normalizedName": "ветчина и огурчики",
-        "url": "https://dodopizza.ru/moscow/product/vetchina-i-ogurchiki",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/vetchina-i-ogurchiki",
         "flags": [
           "суперцена"
         ],
-        "minPriceCard": 289,
-        "minPrice": 289,
+        "minPriceCard": 299,
+        "minPrice": 299,
         "variations": [
           {
             "id": "Ветчина и огурчики:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 289,
+            "price": 299,
             "weightG": 200,
             "variantLine": "20 см, традиционное тесто, 200 г"
           },
@@ -7510,7 +7502,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 369,
+            "price": 385,
             "weightG": 230,
             "variantLine": "25 см, тонкое тесто, 230 г"
           },
@@ -7518,7 +7510,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 369,
+            "price": 385,
             "weightG": 350,
             "variantLine": "25 см, традиционное тесто 25, 350 г"
           },
@@ -7526,7 +7518,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 629,
+            "price": 655,
             "weightG": 430,
             "variantLine": "30 см, тонкое тесто 25, 430 г"
           },
@@ -7534,7 +7526,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 629,
+            "price": 655,
             "weightG": 530,
             "variantLine": "30 см, традиционное тесто 30, 530 г"
           },
@@ -7542,7 +7534,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 749,
+            "price": 779,
             "weightG": 610,
             "variantLine": "35 см, тонкое тесто 30, 610 г"
           },
@@ -7550,7 +7542,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и огурчики:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 749,
+            "price": 779,
             "weightG": 710,
             "variantLine": "35 см, традиционное тесто 35, 710 г"
           }
@@ -7561,18 +7553,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Пепперони фреш",
         "normalizedName": "пепперони фреш",
-        "url": "https://dodopizza.ru/moscow/product/pepperoni-tomat",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pepperoni-tomat",
         "flags": [
           "суперцена"
         ],
-        "minPriceCard": 289,
-        "minPrice": 289,
+        "minPriceCard": 299,
+        "minPrice": 299,
         "variations": [
           {
             "id": "Пепперони фреш:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 289,
+            "price": 299,
             "weightG": 230,
             "variantLine": "20 см, традиционное тесто, 230 г"
           },
@@ -7596,7 +7588,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони фреш:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 629,
+            "price": 639,
             "weightG": 480,
             "variantLine": "30 см, тонкое тесто 25, 480 г"
           },
@@ -7604,7 +7596,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони фреш:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 629,
+            "price": 639,
             "weightG": 580,
             "variantLine": "30 см, традиционное тесто 30, 580 г"
           },
@@ -7612,7 +7604,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони фреш:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 749,
+            "price": 759,
             "weightG": 670,
             "variantLine": "35 см, тонкое тесто 30, 670 г"
           },
@@ -7620,7 +7612,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони фреш:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 749,
+            "price": 759,
             "weightG": 780,
             "variantLine": "35 см, традиционное тесто 35, 780 г"
           }
@@ -7631,16 +7623,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Пепперони",
         "normalizedName": "пепперони",
-        "url": "https://dodopizza.ru/moscow/product/pizza-pepperoni",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-pepperoni",
         "flags": [],
-        "minPriceCard": 359,
-        "minPrice": 359,
+        "minPriceCard": 379,
+        "minPrice": 379,
         "variations": [
           {
             "id": "Пепперони:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 359,
+            "price": 379,
             "weightG": 230,
             "variantLine": "20 см, традиционное тесто, 230 г"
           },
@@ -7648,7 +7640,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 519,
+            "price": 549,
             "weightG": 270,
             "variantLine": "25 см, тонкое тесто, 270 г"
           },
@@ -7656,7 +7648,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 519,
+            "price": 549,
             "weightG": 340,
             "variantLine": "25 см, традиционное тесто 25, 340 г"
           },
@@ -7664,7 +7656,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 789,
+            "price": 819,
             "weightG": 450,
             "variantLine": "30 см, тонкое тесто 25, 450 г"
           },
@@ -7672,7 +7664,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 789,
+            "price": 819,
             "weightG": 550,
             "variantLine": "30 см, традиционное тесто 30, 550 г"
           },
@@ -7680,7 +7672,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 929,
+            "price": 1009,
             "weightG": 630,
             "variantLine": "35 см, тонкое тесто 30, 630 г"
           },
@@ -7688,7 +7680,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Пепперони:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 929,
+            "price": 1009,
             "weightG": 760,
             "variantLine": "35 см, традиционное тесто 35, 760 г"
           }
@@ -7699,18 +7691,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Чесночный цыпленок",
         "normalizedName": "чесночный цыпленок",
-        "url": "https://dodopizza.ru/moscow/product/chesnochnyi-cyplenok",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/chesnochnyi-cyplenok",
         "flags": [
           "суперцена"
         ],
-        "minPriceCard": 289,
-        "minPrice": 289,
+        "minPriceCard": 299,
+        "minPrice": 299,
         "variations": [
           {
             "id": "Чесночный цыпленок:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 289,
+            "price": 299,
             "weightG": 220,
             "variantLine": "20 см, традиционное тесто, 220 г"
           },
@@ -7718,7 +7710,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 369,
+            "price": 379,
             "weightG": 250,
             "variantLine": "25 см, тонкое тесто, 250 г"
           },
@@ -7726,7 +7718,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 369,
+            "price": 379,
             "weightG": 330,
             "variantLine": "25 см, традиционное тесто 25, 330 г"
           },
@@ -7734,7 +7726,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 629,
+            "price": 659,
             "weightG": 400,
             "variantLine": "30 см, тонкое тесто 25, 400 г"
           },
@@ -7742,7 +7734,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 629,
+            "price": 659,
             "weightG": 520,
             "variantLine": "30 см, традиционное тесто 30, 520 г"
           },
@@ -7750,7 +7742,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 849,
+            "price": 889,
             "weightG": 600,
             "variantLine": "35 см, тонкое тесто 30, 600 г"
           },
@@ -7758,7 +7750,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Чесночный цыпленок:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 849,
+            "price": 889,
             "weightG": 700,
             "variantLine": "35 см, традиционное тесто 35, 700 г"
           }
@@ -7769,34 +7761,26 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Терияки",
         "normalizedName": "терияки",
-        "url": "https://dodopizza.ru/moscow/product/teriyaki",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/teriyaki",
         "flags": [
           "хит"
         ],
-        "minPriceCard": 379,
-        "minPrice": 379,
+        "minPriceCard": 389,
+        "minPrice": 389,
         "variations": [
           {
             "id": "Терияки:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 379,
+            "price": 389,
             "weightG": 230,
             "variantLine": "20 см, традиционное тесто, 230 г"
-          },
-          {
-            "id": "Терияки:25 см:Тонкое",
-            "sizeCm": 25,
-            "dough": "Тонкое",
-            "price": 519,
-            "weightG": 270,
-            "variantLine": "25 см, тонкое тесто, 270 г"
           },
           {
             "id": "Терияки:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 519,
+            "price": 539,
             "weightG": 350,
             "variantLine": "25 см, традиционное тесто 25, 350 г"
           },
@@ -7804,7 +7788,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Терияки:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 799,
+            "price": 829,
             "weightG": 430,
             "variantLine": "30 см, тонкое тесто 25, 430 г"
           },
@@ -7812,7 +7796,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Терияки:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 799,
+            "price": 829,
             "weightG": 530,
             "variantLine": "30 см, традиционное тесто 30, 530 г"
           },
@@ -7820,7 +7804,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Терияки:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 979,
+            "price": 1019,
             "weightG": 630,
             "variantLine": "35 см, тонкое тесто 30, 630 г"
           },
@@ -7828,7 +7812,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Терияки:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 979,
+            "price": 1019,
             "weightG": 730,
             "variantLine": "35 см, традиционное тесто 35, 730 г"
           }
@@ -7839,18 +7823,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Сырная",
         "normalizedName": "сырная",
-        "url": "https://dodopizza.ru/moscow/product/syrnaya-pizza",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/syrnaya-pizza",
         "flags": [
           "суперцена"
         ],
-        "minPriceCard": 289,
-        "minPrice": 289,
+        "minPriceCard": 299,
+        "minPrice": 299,
         "variations": [
           {
             "id": "Сырная:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 289,
+            "price": 299,
             "weightG": 180,
             "variantLine": "20 см, традиционное тесто, 180 г"
           },
@@ -7858,7 +7842,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 339,
+            "price": 349,
             "weightG": 210,
             "variantLine": "25 см, тонкое тесто, 210 г"
           },
@@ -7866,7 +7850,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 339,
+            "price": 349,
             "weightG": 310,
             "variantLine": "25 см, традиционное тесто 25, 310 г"
           },
@@ -7874,7 +7858,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 619,
+            "price": 649,
             "weightG": 360,
             "variantLine": "30 см, тонкое тесто 25, 360 г"
           },
@@ -7882,7 +7866,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 619,
+            "price": 649,
             "weightG": 470,
             "variantLine": "30 см, традиционное тесто 30, 470 г"
           },
@@ -7890,7 +7874,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 779,
+            "price": 799,
             "weightG": 530,
             "variantLine": "35 см, тонкое тесто 30, 530 г"
           },
@@ -7898,7 +7882,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырная:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 779,
+            "price": 799,
             "weightG": 640,
             "variantLine": "35 см, традиционное тесто 35, 640 г"
           }
@@ -7909,16 +7893,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Мясной микс",
         "normalizedName": "мясной микс",
-        "url": "https://dodopizza.ru/moscow/product/myasnoi-miks-deef-pork",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/myasnoi-miks-deef-pork",
         "flags": [],
-        "minPriceCard": 639,
-        "minPrice": 639,
+        "minPriceCard": 675,
+        "minPrice": 675,
         "variations": [
           {
             "id": "Мясной микс:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 639,
+            "price": 675,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -7926,7 +7910,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясной микс:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 639,
+            "price": 675,
             "weightG": 400,
             "variantLine": "25 см, традиционное тесто 25, 400 г"
           },
@@ -7934,7 +7918,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясной микс:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 959,
+            "price": 1005,
             "weightG": 480,
             "variantLine": "30 см, тонкое тесто 25, 480 г"
           },
@@ -7942,7 +7926,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясной микс:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 959,
+            "price": 1005,
             "weightG": 590,
             "variantLine": "30 см, традиционное тесто 30, 590 г"
           },
@@ -7950,7 +7934,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясной микс:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1175,
+            "price": 1209,
             "weightG": 680,
             "variantLine": "35 см, тонкое тесто 30, 680 г"
           },
@@ -7958,7 +7942,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясной микс:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1175,
+            "price": 1209,
             "weightG": 840,
             "variantLine": "35 см, традиционное тесто 35, 840 г"
           }
@@ -7969,16 +7953,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Ветчина и сыр",
         "normalizedName": "ветчина и сыр",
-        "url": "https://dodopizza.ru/moscow/product/ham-and-cheese",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/ham-and-cheese",
         "flags": [],
-        "minPriceCard": 339,
-        "minPrice": 339,
+        "minPriceCard": 349,
+        "minPrice": 349,
         "variations": [
           {
             "id": "Ветчина и сыр:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 339,
+            "price": 349,
             "weightG": 190,
             "variantLine": "20 см, традиционное тесто, 190 г"
           },
@@ -7986,7 +7970,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 479,
+            "price": 529,
             "weightG": 240,
             "variantLine": "25 см, тонкое тесто, 240 г"
           },
@@ -7994,7 +7978,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 479,
+            "price": 529,
             "weightG": 320,
             "variantLine": "25 см, традиционное тесто 25, 320 г"
           },
@@ -8002,7 +7986,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 709,
+            "price": 749,
             "weightG": 370,
             "variantLine": "30 см, тонкое тесто 25, 370 г"
           },
@@ -8010,7 +7994,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 709,
+            "price": 749,
             "weightG": 480,
             "variantLine": "30 см, традиционное тесто 30, 480 г"
           },
@@ -8018,7 +8002,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 839,
+            "price": 859,
             "weightG": 550,
             "variantLine": "35 см, тонкое тесто 30, 550 г"
           },
@@ -8026,7 +8010,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и сыр:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 839,
+            "price": 859,
             "weightG": 630,
             "variantLine": "35 см, традиционное тесто 35, 630 г"
           }
@@ -8037,16 +8021,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Двойной цыпленок",
         "normalizedName": "двойной цыпленок",
-        "url": "https://dodopizza.ru/moscow/product/double-chicken",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/double-chicken",
         "flags": [],
-        "minPriceCard": 349,
-        "minPrice": 349,
+        "minPriceCard": 369,
+        "minPrice": 369,
         "variations": [
           {
             "id": "Двойной цыпленок:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 349,
+            "price": 369,
             "weightG": 190,
             "variantLine": "20 см, традиционное тесто, 190 г"
           },
@@ -8054,7 +8038,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 489,
+            "price": 539,
             "weightG": 240,
             "variantLine": "25 см, тонкое тесто, 240 г"
           },
@@ -8062,7 +8046,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 489,
+            "price": 539,
             "weightG": 360,
             "variantLine": "25 см, традиционное тесто 25, 360 г"
           },
@@ -8070,7 +8054,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 749,
+            "price": 779,
             "weightG": 430,
             "variantLine": "30 см, тонкое тесто 25, 430 г"
           },
@@ -8078,7 +8062,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 749,
+            "price": 779,
             "weightG": 520,
             "variantLine": "30 см, традиционное тесто 30, 520 г"
           },
@@ -8086,7 +8070,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 869,
+            "price": 889,
             "weightG": 610,
             "variantLine": "35 см, тонкое тесто 30, 610 г"
           },
@@ -8094,7 +8078,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойной цыпленок:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 869,
+            "price": 889,
             "weightG": 710,
             "variantLine": "35 см, традиционное тесто 35, 710 г"
           }
@@ -8105,16 +8089,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Креветка и песто",
         "normalizedName": "креветка и песто",
-        "url": "https://dodopizza.ru/moscow/product/shrimps-w-pesto",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/shrimps-w-pesto",
         "flags": [],
-        "minPriceCard": 519,
-        "minPrice": 519,
+        "minPriceCard": 539,
+        "minPrice": 539,
         "variations": [
           {
             "id": "Креветка и песто:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 519,
+            "price": 539,
             "weightG": 270,
             "variantLine": "20 см, традиционное тесто, 270 г"
           },
@@ -8122,7 +8106,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 749,
+            "price": 769,
             "weightG": 320,
             "variantLine": "25 см, тонкое тесто, 320 г"
           },
@@ -8130,7 +8114,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 749,
+            "price": 769,
             "weightG": 430,
             "variantLine": "25 см, традиционное тесто 25, 430 г"
           },
@@ -8138,7 +8122,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1129,
+            "price": 1189,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -8146,7 +8130,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1129,
+            "price": 1189,
             "weightG": 610,
             "variantLine": "30 см, традиционное тесто 30, 610 г"
           },
@@ -8154,7 +8138,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1319,
+            "price": 1339,
             "weightG": 710,
             "variantLine": "35 см, тонкое тесто 30, 710 г"
           },
@@ -8162,7 +8146,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветка и песто:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1319,
+            "price": 1339,
             "weightG": 860,
             "variantLine": "35 см, традиционное тесто 35, 860 г"
           }
@@ -8173,16 +8157,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Ветчина и грибы",
         "normalizedName": "ветчина и грибы",
-        "url": "https://dodopizza.ru/moscow/product/gribvetchina",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/gribvetchina",
         "flags": [],
-        "minPriceCard": 369,
-        "minPrice": 369,
+        "minPriceCard": 379,
+        "minPrice": 379,
         "variations": [
           {
             "id": "Ветчина и грибы:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 369,
+            "price": 379,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -8190,7 +8174,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 519,
+            "price": 559,
             "weightG": 280,
             "variantLine": "25 см, тонкое тесто, 280 г"
           },
@@ -8198,7 +8182,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 519,
+            "price": 559,
             "weightG": 370,
             "variantLine": "25 см, традиционное тесто 25, 370 г"
           },
@@ -8206,7 +8190,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 799,
+            "price": 819,
             "weightG": 450,
             "variantLine": "30 см, тонкое тесто 25, 450 г"
           },
@@ -8214,7 +8198,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 799,
+            "price": 819,
             "weightG": 580,
             "variantLine": "30 см, традиционное тесто 30, 580 г"
           },
@@ -8222,7 +8206,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 989,
+            "price": 1019,
             "weightG": 660,
             "variantLine": "35 см, тонкое тесто 30, 660 г"
           },
@@ -8230,7 +8214,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Ветчина и грибы:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 989,
+            "price": 1019,
             "weightG": 740,
             "variantLine": "35 см, традиционное тесто 35, 740 г"
           }
@@ -8241,16 +8225,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Аррива!",
         "normalizedName": "аррива",
-        "url": "https://dodopizza.ru/moscow/product/arriva",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/arriva",
         "flags": [],
-        "minPriceCard": 469,
-        "minPrice": 469,
+        "minPriceCard": 489,
+        "minPrice": 489,
         "variations": [
           {
             "id": "Аррива!:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 469,
+            "price": 489,
             "weightG": 240,
             "variantLine": "20 см, традиционное тесто, 240 г"
           },
@@ -8258,7 +8242,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 669,
+            "price": 699,
             "weightG": 270,
             "variantLine": "25 см, тонкое тесто, 270 г"
           },
@@ -8266,7 +8250,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 669,
+            "price": 699,
             "weightG": 370,
             "variantLine": "25 см, традиционное тесто 25, 370 г"
           },
@@ -8274,7 +8258,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 969,
+            "price": 999,
             "weightG": 460,
             "variantLine": "30 см, тонкое тесто 25, 460 г"
           },
@@ -8282,7 +8266,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 969,
+            "price": 999,
             "weightG": 570,
             "variantLine": "30 см, традиционное тесто 30, 570 г"
           },
@@ -8290,7 +8274,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1159,
+            "price": 1179,
             "weightG": 650,
             "variantLine": "35 см, тонкое тесто 30, 650 г"
           },
@@ -8298,7 +8282,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Аррива!:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1159,
+            "price": 1179,
             "weightG": 760,
             "variantLine": "35 см, традиционное тесто 35, 760 г"
           }
@@ -8309,16 +8293,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Креветки со сладким чили",
         "normalizedName": "креветки со сладким чили",
-        "url": "https://dodopizza.ru/moscow/product/sweet-chilli-shrimp",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/sweet-chilli-shrimp",
         "flags": [],
-        "minPriceCard": 509,
-        "minPrice": 509,
+        "minPriceCard": 529,
+        "minPrice": 529,
         "variations": [
           {
             "id": "Креветки со сладким чили:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 509,
+            "price": 529,
             "weightG": 260,
             "variantLine": "20 см, традиционное тесто, 260 г"
           },
@@ -8326,7 +8310,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 719,
+            "price": 759,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -8334,7 +8318,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 719,
+            "price": 759,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -8342,7 +8326,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1049,
+            "price": 1139,
             "weightG": 480,
             "variantLine": "30 см, тонкое тесто 25, 480 г"
           },
@@ -8350,7 +8334,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1049,
+            "price": 1139,
             "weightG": 630,
             "variantLine": "30 см, традиционное тесто 30, 630 г"
           },
@@ -8358,7 +8342,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1209,
+            "price": 1299,
             "weightG": 710,
             "variantLine": "35 см, тонкое тесто 30, 710 г"
           },
@@ -8366,7 +8350,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Креветки со сладким чили:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1209,
+            "price": 1299,
             "weightG": 800,
             "variantLine": "35 см, традиционное тесто 35, 800 г"
           }
@@ -8377,16 +8361,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Карбонара",
         "normalizedName": "карбонара",
-        "url": "https://dodopizza.ru/moscow/product/carbonara",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/carbonara",
         "flags": [],
-        "minPriceCard": 479,
-        "minPrice": 479,
+        "minPriceCard": 499,
+        "minPrice": 499,
         "variations": [
           {
             "id": "Карбонара:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 479,
+            "price": 499,
             "weightG": 220,
             "variantLine": "20 см, традиционное тесто, 220 г"
           },
@@ -8410,7 +8394,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Карбонара:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1009,
+            "price": 1059,
             "weightG": 520,
             "variantLine": "30 см, тонкое тесто 25, 520 г"
           },
@@ -8418,7 +8402,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Карбонара:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1009,
+            "price": 1059,
             "weightG": 590,
             "variantLine": "30 см, традиционное тесто 30, 590 г"
           },
@@ -8426,7 +8410,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Карбонара:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1119,
+            "price": 1169,
             "weightG": 710,
             "variantLine": "35 см, тонкое тесто 30, 710 г"
           },
@@ -8434,7 +8418,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Карбонара:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1119,
+            "price": 1169,
             "weightG": 800,
             "variantLine": "35 см, традиционное тесто 35, 800 г"
           }
@@ -8445,16 +8429,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Жюльен",
         "normalizedName": "жюльен",
-        "url": "https://dodopizza.ru/moscow/product/pizza_julien",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza_julien",
         "flags": [],
-        "minPriceCard": 429,
-        "minPrice": 429,
+        "minPriceCard": 439,
+        "minPrice": 439,
         "variations": [
           {
             "id": "Жюльен:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 429,
+            "price": 439,
             "weightG": 260,
             "variantLine": "20 см, традиционное тесто, 260 г"
           },
@@ -8462,7 +8446,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 619,
+            "price": 639,
             "weightG": 310,
             "variantLine": "25 см, тонкое тесто, 310 г"
           },
@@ -8470,7 +8454,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 619,
+            "price": 639,
             "weightG": 430,
             "variantLine": "25 см, традиционное тесто 25, 430 г"
           },
@@ -8478,7 +8462,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 929,
+            "price": 989,
             "weightG": 510,
             "variantLine": "30 см, тонкое тесто 25, 510 г"
           },
@@ -8486,7 +8470,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 929,
+            "price": 989,
             "weightG": 630,
             "variantLine": "30 см, традиционное тесто 30, 630 г"
           },
@@ -8494,7 +8478,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1069,
+            "price": 1119,
             "weightG": 730,
             "variantLine": "35 см, тонкое тесто 30, 730 г"
           },
@@ -8502,7 +8486,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Жюльен:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1069,
+            "price": 1119,
             "weightG": 820,
             "variantLine": "35 см, традиционное тесто 35, 820 г"
           }
@@ -8513,18 +8497,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Песто",
         "normalizedName": "песто",
-        "url": "https://dodopizza.ru/moscow/product/pizza-pesto",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-pesto",
         "flags": [
           "хит"
         ],
-        "minPriceCard": 459,
-        "minPrice": 459,
+        "minPriceCard": 479,
+        "minPrice": 479,
         "variations": [
           {
             "id": "Песто:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 459,
+            "price": 479,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -8548,7 +8532,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Песто:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 919,
+            "price": 979,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -8556,7 +8540,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Песто:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 919,
+            "price": 979,
             "weightG": 610,
             "variantLine": "30 см, традиционное тесто 30, 610 г"
           },
@@ -8564,7 +8548,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Песто:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1089,
+            "price": 1109,
             "weightG": 740,
             "variantLine": "35 см, тонкое тесто 30, 740 г"
           },
@@ -8572,7 +8556,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Песто:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1089,
+            "price": 1109,
             "weightG": 810,
             "variantLine": "35 см, традиционное тесто 35, 810 г"
           }
@@ -8583,16 +8567,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Мясная",
         "normalizedName": "мясная",
-        "url": "https://dodopizza.ru/moscow/product/myasnaya-pizza",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/myasnaya-pizza",
         "flags": [],
-        "minPriceCard": 479,
-        "minPrice": 479,
+        "minPriceCard": 499,
+        "minPrice": 499,
         "variations": [
           {
             "id": "Мясная:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 479,
+            "price": 499,
             "weightG": 240,
             "variantLine": "20 см, традиционное тесто, 240 г"
           },
@@ -8600,7 +8584,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 609,
+            "price": 619,
             "weightG": 290,
             "variantLine": "25 см, тонкое тесто, 290 г"
           },
@@ -8608,7 +8592,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 609,
+            "price": 619,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -8616,7 +8600,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 909,
+            "price": 939,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -8624,7 +8608,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 909,
+            "price": 939,
             "weightG": 590,
             "variantLine": "30 см, традиционное тесто 30, 590 г"
           },
@@ -8632,7 +8616,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1069,
+            "price": 1119,
             "weightG": 700,
             "variantLine": "35 см, тонкое тесто 30, 700 г"
           },
@@ -8640,7 +8624,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Мясная:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1069,
+            "price": 1119,
             "weightG": 820,
             "variantLine": "35 см, традиционное тесто 35, 820 г"
           }
@@ -8651,18 +8635,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Бургер-пицца",
         "normalizedName": "бургер пицца",
-        "url": "https://dodopizza.ru/moscow/product/burger-pizza",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/burger-pizza",
         "flags": [
           "хит"
         ],
-        "minPriceCard": 399,
-        "minPrice": 399,
+        "minPriceCard": 409,
+        "minPrice": 409,
         "variations": [
           {
             "id": "Бургер-пицца:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 399,
+            "price": 409,
             "weightG": 260,
             "variantLine": "20 см, традиционное тесто, 260 г"
           },
@@ -8670,7 +8654,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 559,
+            "price": 579,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -8678,7 +8662,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 559,
+            "price": 579,
             "weightG": 420,
             "variantLine": "25 см, традиционное тесто 25, 420 г"
           },
@@ -8686,7 +8670,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 829,
+            "price": 879,
             "weightG": 540,
             "variantLine": "30 см, тонкое тесто 25, 540 г"
           },
@@ -8694,7 +8678,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 829,
+            "price": 879,
             "weightG": 630,
             "variantLine": "30 см, традиционное тесто 30, 630 г"
           },
@@ -8702,7 +8686,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1029,
+            "price": 1059,
             "weightG": 780,
             "variantLine": "35 см, тонкое тесто 30, 780 г"
           },
@@ -8710,7 +8694,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Бургер-пицца:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1029,
+            "price": 1059,
             "weightG": 890,
             "variantLine": "35 см, традиционное тесто 35, 890 г"
           }
@@ -8721,16 +8705,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Сырный цыпленок",
         "normalizedName": "сырный цыпленок",
-        "url": "https://dodopizza.ru/moscow/product/pizza-syrnyi-cyplenok",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-syrnyi-cyplenok",
         "flags": [],
-        "minPriceCard": 479,
-        "minPrice": 479,
+        "minPriceCard": 499,
+        "minPrice": 499,
         "variations": [
           {
             "id": "Сырный цыпленок:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 479,
+            "price": 499,
             "weightG": 230,
             "variantLine": "20 см, традиционное тесто, 230 г"
           },
@@ -8738,7 +8722,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 669,
+            "price": 679,
             "weightG": 310,
             "variantLine": "25 см, тонкое тесто, 310 г"
           },
@@ -8746,7 +8730,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 669,
+            "price": 679,
             "weightG": 410,
             "variantLine": "25 см, традиционное тесто 25, 410 г"
           },
@@ -8754,7 +8738,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 959,
+            "price": 1029,
             "weightG": 510,
             "variantLine": "30 см, тонкое тесто 25, 510 г"
           },
@@ -8762,7 +8746,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 959,
+            "price": 1029,
             "weightG": 620,
             "variantLine": "30 см, традиционное тесто 30, 620 г"
           },
@@ -8770,7 +8754,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1119,
+            "price": 1149,
             "weightG": 760,
             "variantLine": "35 см, тонкое тесто 30, 760 г"
           },
@@ -8778,7 +8762,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Сырный цыпленок:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1119,
+            "price": 1149,
             "weightG": 860,
             "variantLine": "35 см, традиционное тесто 35, 860 г"
           }
@@ -8789,18 +8773,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Гавайская",
         "normalizedName": "гавайская",
-        "url": "https://dodopizza.ru/moscow/product/hawaiian-w-alfredo",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/hawaiian-w-alfredo",
         "flags": [
           "хит"
         ],
-        "minPriceCard": 369,
-        "minPrice": 369,
+        "minPriceCard": 389,
+        "minPrice": 389,
         "variations": [
           {
             "id": "Гавайская:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 369,
+            "price": 389,
             "weightG": 220,
             "variantLine": "20 см, традиционное тесто, 220 г"
           },
@@ -8808,7 +8792,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 539,
+            "price": 559,
             "weightG": 290,
             "variantLine": "25 см, тонкое тесто, 290 г"
           },
@@ -8816,7 +8800,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 539,
+            "price": 559,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -8824,7 +8808,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 829,
+            "price": 849,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -8832,7 +8816,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 829,
+            "price": 849,
             "weightG": 590,
             "variantLine": "30 см, традиционное тесто 30, 590 г"
           },
@@ -8840,7 +8824,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 969,
+            "price": 1029,
             "weightG": 680,
             "variantLine": "35 см, тонкое тесто 30, 680 г"
           },
@@ -8848,7 +8832,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Гавайская:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 969,
+            "price": 1029,
             "weightG": 810,
             "variantLine": "35 см, традиционное тесто 35, 810 г"
           }
@@ -8859,16 +8843,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Цыпленок барбекю",
         "normalizedName": "цыпленок барбекю",
-        "url": "https://dodopizza.ru/moscow/product/pizza-cyplenok-barbekyu",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-cyplenok-barbekyu",
         "flags": [],
-        "minPriceCard": 499,
-        "minPrice": 499,
+        "minPriceCard": 519,
+        "minPrice": 519,
         "variations": [
           {
             "id": "Цыпленок барбекю:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 499,
+            "price": 519,
             "weightG": 260,
             "variantLine": "20 см, традиционное тесто, 260 г"
           },
@@ -8876,7 +8860,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 679,
+            "price": 689,
             "weightG": 320,
             "variantLine": "25 см, тонкое тесто, 320 г"
           },
@@ -8884,7 +8868,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 679,
+            "price": 689,
             "weightG": 420,
             "variantLine": "25 см, традиционное тесто 25, 420 г"
           },
@@ -8892,7 +8876,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1009,
+            "price": 1049,
             "weightG": 540,
             "variantLine": "30 см, тонкое тесто 25, 540 г"
           },
@@ -8900,7 +8884,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1009,
+            "price": 1049,
             "weightG": 640,
             "variantLine": "30 см, традиционное тесто 30, 640 г"
           },
@@ -8908,7 +8892,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1129,
+            "price": 1149,
             "weightG": 780,
             "variantLine": "35 см, тонкое тесто 30, 780 г"
           },
@@ -8916,7 +8900,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок барбекю:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1129,
+            "price": 1149,
             "weightG": 900,
             "variantLine": "35 см, традиционное тесто 35, 900 г"
           }
@@ -8927,18 +8911,18 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Цыпленок ранч",
         "normalizedName": "цыпленок ранч",
-        "url": "https://dodopizza.ru/moscow/product/chicken-ranch",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/chicken-ranch",
         "flags": [
           "обновили"
         ],
-        "minPriceCard": 499,
-        "minPrice": 499,
+        "minPriceCard": 509,
+        "minPrice": 509,
         "variations": [
           {
             "id": "Цыпленок ранч:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 499,
+            "price": 509,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -8946,7 +8930,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 629,
+            "price": 649,
             "weightG": 290,
             "variantLine": "25 см, тонкое тесто, 290 г"
           },
@@ -8954,7 +8938,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 629,
+            "price": 649,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -8962,7 +8946,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 909,
+            "price": 945,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -8970,7 +8954,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 909,
+            "price": 945,
             "weightG": 600,
             "variantLine": "30 см, традиционное тесто 30, 600 г"
           },
@@ -8978,7 +8962,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1059,
+            "price": 1079,
             "weightG": 690,
             "variantLine": "35 см, тонкое тесто 30, 690 г"
           },
@@ -8986,7 +8970,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Цыпленок ранч:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1059,
+            "price": 1079,
             "weightG": 830,
             "variantLine": "35 см, традиционное тесто 35, 830 г"
           }
@@ -8997,16 +8981,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Маргарита",
         "normalizedName": "маргарита",
-        "url": "https://dodopizza.ru/moscow/product/pizza-margarita",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-margarita",
         "flags": [],
-        "minPriceCard": 399,
-        "minPrice": 399,
+        "minPriceCard": 409,
+        "minPrice": 409,
         "variations": [
           {
             "id": "Маргарита:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 399,
+            "price": 409,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -9014,7 +8998,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 529,
+            "price": 559,
             "weightG": 290,
             "variantLine": "25 см, тонкое тесто, 290 г"
           },
@@ -9022,7 +9006,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 529,
+            "price": 559,
             "weightG": 400,
             "variantLine": "25 см, традиционное тесто 25, 400 г"
           },
@@ -9030,7 +9014,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 799,
+            "price": 819,
             "weightG": 500,
             "variantLine": "30 см, тонкое тесто 25, 500 г"
           },
@@ -9038,7 +9022,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 799,
+            "price": 819,
             "weightG": 590,
             "variantLine": "30 см, традиционное тесто 30, 590 г"
           },
@@ -9046,7 +9030,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 969,
+            "price": 1039,
             "weightG": 710,
             "variantLine": "35 см, тонкое тесто 30, 710 г"
           },
@@ -9054,7 +9038,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Маргарита:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 969,
+            "price": 1039,
             "weightG": 830,
             "variantLine": "35 см, традиционное тесто 35, 830 г"
           }
@@ -9065,32 +9049,24 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Диабло",
         "normalizedName": "диабло",
-        "url": "https://dodopizza.ru/moscow/product/diablo-",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/diablo-",
         "flags": [],
-        "minPriceCard": 479,
-        "minPrice": 479,
+        "minPriceCard": 499,
+        "minPrice": 499,
         "variations": [
           {
             "id": "Диабло:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 479,
+            "price": 499,
             "weightG": 280,
             "variantLine": "20 см, традиционное тесто, 280 г"
-          },
-          {
-            "id": "Диабло:25 см:Тонкое",
-            "sizeCm": 25,
-            "dough": "Тонкое",
-            "price": 679,
-            "weightG": 320,
-            "variantLine": "25 см, тонкое тесто, 320 г"
           },
           {
             "id": "Диабло:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 679,
+            "price": 699,
             "weightG": 420,
             "variantLine": "25 см, традиционное тесто 25, 420 г"
           },
@@ -9098,7 +9074,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Диабло:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 1029,
+            "price": 1069,
             "weightG": 510,
             "variantLine": "30 см, тонкое тесто 25, 510 г"
           },
@@ -9106,7 +9082,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Диабло:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 1029,
+            "price": 1069,
             "weightG": 610,
             "variantLine": "30 см, традиционное тесто 30, 610 г"
           },
@@ -9114,7 +9090,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Диабло:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1199,
+            "price": 1239,
             "weightG": 750,
             "variantLine": "35 см, тонкое тесто 30, 750 г"
           },
@@ -9122,7 +9098,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Диабло:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1199,
+            "price": 1239,
             "weightG": 910,
             "variantLine": "35 см, традиционное тесто 35, 910 г"
           }
@@ -9133,16 +9109,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Двойная пепперони",
         "normalizedName": "двойная пепперони",
-        "url": "https://dodopizza.ru/moscow/product/double-pepperoni",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/double-pepperoni",
         "flags": [],
-        "minPriceCard": 469,
-        "minPrice": 469,
+        "minPriceCard": 489,
+        "minPrice": 489,
         "variations": [
           {
             "id": "Двойная пепперони:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 469,
+            "price": 489,
             "weightG": 250,
             "variantLine": "20 см, традиционное тесто, 250 г"
           },
@@ -9150,7 +9126,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 639,
+            "price": 649,
             "weightG": 300,
             "variantLine": "25 см, тонкое тесто, 300 г"
           },
@@ -9158,7 +9134,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 639,
+            "price": 649,
             "weightG": 390,
             "variantLine": "25 см, традиционное тесто 25, 390 г"
           },
@@ -9166,7 +9142,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 959,
+            "price": 979,
             "weightG": 490,
             "variantLine": "30 см, тонкое тесто 25, 490 г"
           },
@@ -9174,7 +9150,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 959,
+            "price": 979,
             "weightG": 620,
             "variantLine": "30 см, традиционное тесто 30, 620 г"
           },
@@ -9182,7 +9158,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1119,
+            "price": 1179,
             "weightG": 660,
             "variantLine": "35 см, тонкое тесто 30, 660 г"
           },
@@ -9190,7 +9166,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Двойная пепперони:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1119,
+            "price": 1179,
             "weightG": 770,
             "variantLine": "35 см, традиционное тесто 35, 770 г"
           }
@@ -9201,24 +9177,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Четыре сезона",
         "normalizedName": "четыре сезона",
-        "url": "https://dodopizza.ru/moscow/product/pizza-chetyre-sezona",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-chetyre-sezona",
         "flags": [],
-        "minPriceCard": 529,
-        "minPrice": 529,
+        "minPriceCard": 589,
+        "minPrice": 589,
         "variations": [
-          {
-            "id": "Четыре сезона:25 см:Тонкое",
-            "sizeCm": 25,
-            "dough": "Тонкое",
-            "price": 529,
-            "weightG": 270,
-            "variantLine": "25 см, тонкое тесто, 270 г"
-          },
           {
             "id": "Четыре сезона:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 529,
+            "price": 589,
             "weightG": 380,
             "variantLine": "25 см, традиционное тесто 25, 380 г"
           },
@@ -9226,7 +9194,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Четыре сезона:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 829,
+            "price": 859,
             "weightG": 510,
             "variantLine": "30 см, тонкое тесто 25, 510 г"
           },
@@ -9234,7 +9202,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Четыре сезона:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 829,
+            "price": 859,
             "weightG": 610,
             "variantLine": "30 см, традиционное тесто 30, 610 г"
           },
@@ -9242,7 +9210,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Четыре сезона:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1009,
+            "price": 1059,
             "weightG": 730,
             "variantLine": "35 см, тонкое тесто 30, 730 г"
           },
@@ -9250,7 +9218,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Четыре сезона:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1009,
+            "price": 1059,
             "weightG": 840,
             "variantLine": "35 см, традиционное тесто 35, 840 г"
           }
@@ -9261,32 +9229,24 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Овощи и грибы",
         "normalizedName": "овощи и грибы",
-        "url": "https://dodopizza.ru/moscow/product/ovoshi-i-griby",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/ovoshi-i-griby",
         "flags": [],
-        "minPriceCard": 399,
-        "minPrice": 399,
+        "minPriceCard": 409,
+        "minPrice": 409,
         "variations": [
           {
             "id": "Овощи и грибы:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 399,
+            "price": 409,
             "weightG": 220,
             "variantLine": "20 см, традиционное тесто, 220 г"
-          },
-          {
-            "id": "Овощи и грибы:25 см:Тонкое",
-            "sizeCm": 25,
-            "dough": "Тонкое",
-            "price": 609,
-            "weightG": 290,
-            "variantLine": "25 см, тонкое тесто, 290 г"
           },
           {
             "id": "Овощи и грибы:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 609,
+            "price": 619,
             "weightG": 420,
             "variantLine": "25 см, традиционное тесто 25, 420 г"
           },
@@ -9294,7 +9254,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Овощи и грибы:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 919,
+            "price": 939,
             "weightG": 530,
             "variantLine": "30 см, тонкое тесто 25, 530 г"
           },
@@ -9302,7 +9262,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Овощи и грибы:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 919,
+            "price": 939,
             "weightG": 610,
             "variantLine": "30 см, традиционное тесто 30, 610 г"
           },
@@ -9310,7 +9270,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Овощи и грибы:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1059,
+            "price": 1109,
             "weightG": 740,
             "variantLine": "35 см, тонкое тесто 30, 740 г"
           },
@@ -9318,7 +9278,7 @@ window.PIZZA_SNAPSHOT = {
             "id": "Овощи и грибы:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1059,
+            "price": 1109,
             "weightG": 870,
             "variantLine": "35 см, традиционное тесто 35, 870 г"
           }
@@ -9327,62 +9287,128 @@ window.PIZZA_SNAPSHOT = {
       {
         "source": "dodo",
         "chain": "Dodo Pizza",
+        "name": "Четыре сыра",
+        "normalizedName": "четыре сыра",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza-chetyre-syra",
+        "flags": [],
+        "minPriceCard": 409,
+        "minPrice": 409,
+        "variations": [
+          {
+            "id": "Четыре сыра:20 см:Традиционное",
+            "sizeCm": 20,
+            "dough": "Традиционное",
+            "price": 409,
+            "weightG": 210,
+            "variantLine": "20 см, традиционное тесто, 210 г"
+          },
+          {
+            "id": "Четыре сыра:25 см:Тонкое",
+            "sizeCm": 25,
+            "dough": "Тонкое",
+            "price": 569,
+            "weightG": 230,
+            "variantLine": "25 см, тонкое тесто, 230 г"
+          },
+          {
+            "id": "Четыре сыра:25 см:Традиционное",
+            "sizeCm": 25,
+            "dough": "Традиционное",
+            "price": 569,
+            "weightG": 340,
+            "variantLine": "25 см, традиционное тесто 25, 340 г"
+          },
+          {
+            "id": "Четыре сыра:30 см:Тонкое",
+            "sizeCm": 30,
+            "dough": "Тонкое",
+            "price": 859,
+            "weightG": 410,
+            "variantLine": "30 см, тонкое тесто 25, 410 г"
+          },
+          {
+            "id": "Четыре сыра:30 см:Традиционное",
+            "sizeCm": 30,
+            "dough": "Традиционное",
+            "price": 859,
+            "weightG": 510,
+            "variantLine": "30 см, традиционное тесто 30, 510 г"
+          },
+          {
+            "id": "Четыре сыра:35 см:Тонкое",
+            "sizeCm": 35,
+            "dough": "Тонкое",
+            "price": 1039,
+            "weightG": 590,
+            "variantLine": "35 см, тонкое тесто 30, 590 г"
+          },
+          {
+            "id": "Четыре сыра:35 см:Традиционное",
+            "sizeCm": 35,
+            "dough": "Традиционное",
+            "price": 1039,
+            "weightG": 700,
+            "variantLine": "35 см, традиционное тесто 35, 700 г"
+          }
+        ]
+      },
+      {
+        "source": "dodo",
+        "chain": "Dodo Pizza",
         "name": "Додо микс",
         "normalizedName": "додо микс",
-        "url": "https://dodopizza.ru/moscow/product/dodo-mix",
-        "flags": [
-          "хит"
-        ],
-        "minPriceCard": 589,
-        "minPrice": 589,
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/dodo-mix-blue-cheese",
+        "flags": [],
+        "minPriceCard": 659,
+        "minPrice": 659,
         "variations": [
           {
             "id": "Додо микс:25 см:Тонкое",
             "sizeCm": 25,
             "dough": "Тонкое",
-            "price": 589,
-            "weightG": 300,
-            "variantLine": "25 см, тонкое тесто, 300 г"
+            "price": 659,
+            "weightG": 310,
+            "variantLine": "25 см, тонкое тесто, 310 г"
           },
           {
             "id": "Додо микс:25 см:Традиционное",
             "sizeCm": 25,
             "dough": "Традиционное",
-            "price": 589,
-            "weightG": 400,
-            "variantLine": "25 см, традиционное тесто 25, 400 г"
+            "price": 659,
+            "weightG": 440,
+            "variantLine": "25 см, традиционное тесто 25, 440 г"
           },
           {
             "id": "Додо микс:30 см:Тонкое",
             "sizeCm": 30,
             "dough": "Тонкое",
-            "price": 909,
-            "weightG": 480,
-            "variantLine": "30 см, тонкое тесто 25, 480 г"
+            "price": 1059,
+            "weightG": 540,
+            "variantLine": "30 см, тонкое тесто 25, 540 г"
           },
           {
             "id": "Додо микс:30 см:Традиционное",
             "sizeCm": 30,
             "dough": "Традиционное",
-            "price": 909,
-            "weightG": 600,
-            "variantLine": "30 см, традиционное тесто 30, 600 г"
+            "price": 1059,
+            "weightG": 640,
+            "variantLine": "30 см, традиционное тесто 30, 640 г"
           },
           {
             "id": "Додо микс:35 см:Тонкое",
             "sizeCm": 35,
             "dough": "Тонкое",
-            "price": 1289,
-            "weightG": 690,
-            "variantLine": "35 см, тонкое тесто 30, 690 г"
+            "price": 1359,
+            "weightG": 800,
+            "variantLine": "35 см, тонкое тесто 30, 800 г"
           },
           {
             "id": "Додо микс:35 см:Традиционное",
             "sizeCm": 35,
             "dough": "Традиционное",
-            "price": 1289,
-            "weightG": 820,
-            "variantLine": "35 см, традиционное тесто 35, 820 г"
+            "price": 1359,
+            "weightG": 900,
+            "variantLine": "35 см, традиционное тесто 35, 900 г"
           }
         ]
       },
@@ -9391,16 +9417,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Соберите свою пиццу",
         "normalizedName": "соберите свою пиццу",
-        "url": "https://dodopizza.ru/moscow/product/pizza_konstruktor",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/pizza_konstruktor",
         "flags": [],
-        "minPriceCard": 269,
-        "minPrice": 269,
+        "minPriceCard": 289,
+        "minPrice": 289,
         "variations": [
           {
             "id": "Соберите свою пиццу:20 см:Традиционное",
             "sizeCm": 20,
             "dough": "Традиционное",
-            "price": 269,
+            "price": 289,
             "weightG": 210,
             "variantLine": "20 см, традиционное тесто, 210 г"
           },
@@ -9459,16 +9485,16 @@ window.PIZZA_SNAPSHOT = {
         "chain": "Dodo Pizza",
         "name": "Пицца из половинок",
         "normalizedName": "пицца из половинок",
-        "url": "https://dodopizza.ru/moscow/product/halfs",
+        "url": "https://dodopizza.ru/moscow/veshnyaki/product/halfs",
         "flags": [],
-        "minPriceCard": 790,
-        "minPrice": 790,
+        "minPriceCard": 800,
+        "minPrice": 800,
         "variations": [
           {
             "id": "Пицца из половинок:default",
             "sizeCm": null,
             "dough": null,
-            "price": 790,
+            "price": 800,
             "weightG": null,
             "variantLine": null
           }

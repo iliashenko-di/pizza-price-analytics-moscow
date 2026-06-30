@@ -9,7 +9,7 @@ const OUT_FILE = path.join(OUT_DIR, "pizza-snapshot.json");
 const OUT_JS_FILE = path.join(OUT_DIR, "pizza-snapshot.js");
 
 const PAPA_URL = "https://papajohns.ru/moscow";
-const DODO_URL = "https://dodopizza.ru/moscow";
+const DODO_DEFAULT_URL = "https://dodopizza.ru/moscow/veshnyaki";
 
 const args = new Map(
   process.argv.slice(2).map((arg) => {
@@ -21,6 +21,19 @@ const args = new Map(
 const source = args.get("source") || "all";
 const dodoLimit = Number(args.get("dodo-limit") || 0);
 const dodoHeaded = args.get("headed") === "true";
+
+function normalizeDodoMenuUrl(value) {
+  const url = new URL(value || DODO_DEFAULT_URL);
+  const productIndex = url.pathname.indexOf("/product/");
+  if (productIndex >= 0) {
+    url.pathname = url.pathname.slice(0, productIndex).replace(/\/$/, "");
+    url.search = "";
+    url.hash = "";
+  }
+  return url.toString().replace(/\/$/, "");
+}
+
+const DODO_URL = normalizeDodoMenuUrl(args.get("dodo-url") || process.env.DODO_URL || DODO_DEFAULT_URL);
 
 function parseRub(text) {
   const match = String(text || "")

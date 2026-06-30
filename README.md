@@ -15,7 +15,7 @@
 Источники меню:
 
 - https://papajohns.ru/moscow
-- https://dodopizza.ru/moscow
+- https://dodopizza.ru/moscow/veshnyaki
 
 ## Фокус текущей версии
 
@@ -60,6 +60,18 @@ npm run collect:papa
 npm run collect:dodo
 ```
 
+Только Dodo Pizza, явно для пиццерии Вешняки:
+
+```bash
+npm run collect:dodo:veshnyaki
+```
+
+Для другой Dodo-точки можно передать URL меню или товара. Product URL будет автоматически приведен к URL меню:
+
+```bash
+npm run collect -- --dodo-url=https://dodopizza.ru/moscow/veshnyaki/product/myasnaya-pizza
+```
+
 Для быстрой отладки Dodo можно ограничить число карточек:
 
 ```bash
@@ -97,7 +109,7 @@ http://127.0.0.1:8765/index.html
 ## Текущий результат сбора
 
 - Papa Johns: 46 пицц, 689 вариаций.
-- Dodo Pizza: 37 пицц, 245 вариаций.
+- Dodo Pizza Вешняки: 38 пицц, 247 вариаций.
 - Сопоставлено вручную: 9 пар пицц.
 - Совпавших вариаций по размеру и тесту: 36.
 - Dodo-позиции без снятых вариаций: нет.
@@ -120,7 +132,7 @@ http://127.0.0.1:8765/index.html
 Почему:
 
 - Papa Johns можно собирать обычным HTTP-запросом из `window.__PRELOADED_STATE__`.
-- Dodo Pizza требует браузерного рендера: прямой HTTP-запрос получает ServicePipe challenge.
+- Dodo Pizza требует браузерного рендера и конкретного ресторанного URL: цены меняются между `/moscow` и, например, `/moscow/veshnyaki`.
 - Playwright дает минимально достаточный браузерный контроль для Dodo: открыть страницу, считать карточки, открыть конфигуратор пиццы, выбрать размер и тесто, считать цену.
 
 Когда добавить Crawlee:

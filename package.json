@@ -7,6 +7,7 @@
     "collect": "node scripts/collect-pizzas.js",
     "collect:papa": "node scripts/collect-pizzas.js --source=papa",
     "collect:dodo": "node scripts/collect-pizzas.js --source=dodo",
+    "collect:dodo:veshnyaki": "node scripts/collect-pizzas.js --source=dodo --dodo-url=https://dodopizza.ru/moscow/veshnyaki",
     "serve": "python -m http.server 8765 --bind 127.0.0.1"
   },
   "dependencies": {

@@ -555,8 +555,8 @@
         <h1>Полная карта вариаций пицц: размеры, тесто и ценовой разрыв</h1>
       </div>
       <nav class="actions" aria-label="Действия">
-        <a class="link-button" href="https://papajohns.ru/moscow" target="_blank" rel="noreferrer">Papa Johns</a>
-        <a class="link-button" href="https://dodopizza.ru/moscow" target="_blank" rel="noreferrer">Dodo Pizza</a>
+        <a class="link-button" id="papaSourceLink" href="https://papajohns.ru/moscow" target="_blank" rel="noreferrer">Papa Johns</a>
+        <a class="link-button" id="dodoSourceLink" href="https://dodopizza.ru/moscow/veshnyaki" target="_blank" rel="noreferrer">Dodo Pizza</a>
         <button type="button" id="csvButton">CSV совпадений</button>
       </nav>
     </header>
@@ -732,7 +732,11 @@
           <div class="metric-note">${card[2]}</div>
         </article>
       `).join("");
-      document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Playwright snapshot`;
+      const dodoSource = snapshot.meta.urls?.dodo || "";
+      const dodoContext = dodoSource.replace("https://dodopizza.ru/", "");
+      document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Dodo ${dodoContext}`;
+      document.getElementById("papaSourceLink").href = snapshot.meta.urls?.papa || "https://papajohns.ru/moscow";
+      document.getElementById("dodoSourceLink").href = dodoSource || "https://dodopizza.ru/moscow/veshnyaki";
     }
 
     function renderVariantRow(row) {

@@ -364,15 +364,21 @@
     .tabs {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      width: min(100%, 348px);
+      flex: 1 1 240px;
+      width: 100%;
+      max-width: 348px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--surface);
+      box-sizing: border-box;
     }
 
     .tabs button {
       min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 8px;
       border: 0;
       border-right: 1px solid var(--line);
       border-radius: 0;

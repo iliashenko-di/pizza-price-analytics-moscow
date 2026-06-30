@@ -362,8 +362,9 @@
     }
 
     .tabs {
-      display: inline-grid;
-      grid-auto-flow: column;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: min(100%, 348px);
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -371,7 +372,7 @@
     }
 
     .tabs button {
-      min-width: 116px;
+      min-width: 0;
       border: 0;
       border-right: 1px solid var(--line);
       border-radius: 0;

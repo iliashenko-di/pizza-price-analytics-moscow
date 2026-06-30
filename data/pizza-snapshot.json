@@ -1,12 +1,12 @@
 {
   "meta": {
     "city": "Москва",
-    "collectedAt": "2026-06-30T09:52:53.272Z",
+    "collectedAt": "2026-06-30T11:49:59.729Z",
     "urls": {
       "papa": "https://papajohns.ru/moscow",
       "dodo": "https://dodopizza.ru/moscow"
     },
-    "source": "papa",
+    "source": "all",
     "notes": [
       "Papa Johns is collected from window.__PRELOADED_STATE__.",
       "Dodo Pizza is collected with Playwright browser rendering and product configurator clicks."
@@ -7055,7 +7055,24 @@
         "flags": [],
         "minPriceCard": 799,
         "minPrice": 799,
-        "variations": []
+        "variations": [
+          {
+            "id": "Пицца Энчантикс:25 см:Тонкое",
+            "sizeCm": 25,
+            "dough": "Тонкое",
+            "price": 799,
+            "weightG": 240,
+            "variantLine": "25 см, тонкое тесто, 240 г"
+          },
+          {
+            "id": "Пицца Энчантикс:25 см:Традиционное",
+            "sizeCm": 25,
+            "dough": "Традиционное",
+            "price": 799,
+            "weightG": 340,
+            "variantLine": "25 см, традиционное тесто 25, 340 г"
+          }
+        ]
       },
       {
         "source": "dodo",
@@ -7410,7 +7427,64 @@
         "flags": [],
         "minPriceCard": 539,
         "minPrice": 539,
-        "variations": []
+        "variations": [
+          {
+            "id": "Додо:20 см:Традиционное",
+            "sizeCm": 20,
+            "dough": "Традиционное",
+            "price": 539,
+            "weightG": 290,
+            "variantLine": "20 см, традиционное тесто, 290 г"
+          },
+          {
+            "id": "Додо:25 см:Тонкое",
+            "sizeCm": 25,
+            "dough": "Тонкое",
+            "price": 859,
+            "weightG": 360,
+            "variantLine": "25 см, тонкое тесто, 360 г"
+          },
+          {
+            "id": "Додо:25 см:Традиционное",
+            "sizeCm": 25,
+            "dough": "Традиционное",
+            "price": 859,
+            "weightG": 420,
+            "variantLine": "25 см, традиционное тесто 25, 420 г"
+          },
+          {
+            "id": "Додо:30 см:Тонкое",
+            "sizeCm": 30,
+            "dough": "Тонкое",
+            "price": 1199,
+            "weightG": 520,
+            "variantLine": "30 см, тонкое тесто 25, 520 г"
+          },
+          {
+            "id": "Додо:30 см:Традиционное",
+            "sizeCm": 30,
+            "dough": "Традиционное",
+            "price": 1199,
+            "weightG": 640,
+            "variantLine": "30 см, традиционное тесто 30, 640 г"
+          },
+          {
+            "id": "Додо:35 см:Тонкое",
+            "sizeCm": 35,
+            "dough": "Тонкое",
+            "price": 1399,
+            "weightG": 760,
+            "variantLine": "35 см, тонкое тесто 30, 760 г"
+          },
+          {
+            "id": "Додо:35 см:Традиционное",
+            "sizeCm": 35,
+            "dough": "Традиционное",
+            "price": 1399,
+            "weightG": 880,
+            "variantLine": "35 см, традиционное тесто 35, 880 г"
+          }
+        ]
       },
       {
         "source": "dodo",
@@ -8995,7 +9069,64 @@
         "flags": [],
         "minPriceCard": 479,
         "minPrice": 479,
-        "variations": []
+        "variations": [
+          {
+            "id": "Диабло:20 см:Традиционное",
+            "sizeCm": 20,
+            "dough": "Традиционное",
+            "price": 479,
+            "weightG": 280,
+            "variantLine": "20 см, традиционное тесто, 280 г"
+          },
+          {
+            "id": "Диабло:25 см:Тонкое",
+            "sizeCm": 25,
+            "dough": "Тонкое",
+            "price": 679,
+            "weightG": 320,
+            "variantLine": "25 см, тонкое тесто, 320 г"
+          },
+          {
+            "id": "Диабло:25 см:Традиционное",
+            "sizeCm": 25,
+            "dough": "Традиционное",
+            "price": 679,
+            "weightG": 420,
+            "variantLine": "25 см, традиционное тесто 25, 420 г"
+          },
+          {
+            "id": "Диабло:30 см:Тонкое",
+            "sizeCm": 30,
+            "dough": "Тонкое",
+            "price": 1029,
+            "weightG": 510,
+            "variantLine": "30 см, тонкое тесто 25, 510 г"
+          },
+          {
+            "id": "Диабло:30 см:Традиционное",
+            "sizeCm": 30,
+            "dough": "Традиционное",
+            "price": 1029,
+            "weightG": 610,
+            "variantLine": "30 см, традиционное тесто 30, 610 г"
+          },
+          {
+            "id": "Диабло:35 см:Тонкое",
+            "sizeCm": 35,
+            "dough": "Тонкое",
+            "price": 1199,
+            "weightG": 750,
+            "variantLine": "35 см, тонкое тесто 30, 750 г"
+          },
+          {
+            "id": "Диабло:35 см:Традиционное",
+            "sizeCm": 35,
+            "dough": "Традиционное",
+            "price": 1199,
+            "weightG": 910,
+            "variantLine": "35 см, традиционное тесто 35, 910 г"
+          }
+        ]
       },
       {
         "source": "dodo",

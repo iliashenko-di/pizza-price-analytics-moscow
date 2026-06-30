@@ -146,6 +146,7 @@ async function getDodoPizzaCards(page) {
       const flags = lines.filter((line) => /новинка|хит|выгодно|суперцена|обновили/i.test(line));
       return {
         name: (card.getAttribute("aria-label") || "").trim(),
+        menuProductId: card.getAttribute("data-menu-product-id") || null,
         href: href ? new URL(href, location.origin).href : null,
         minPriceCard: prices.length ? Math.min(...prices) : null,
         flags,
@@ -154,12 +155,81 @@ async function getDodoPizzaCards(page) {
   });
 }
 
-async function clickDodoPizzaCard(page, productName) {
-  const pizzaSection = page.locator("section").filter({ has: page.locator("h2", { hasText: "Пиццы" }) });
-  const article = pizzaSection.locator(`article[aria-label="${productName.replaceAll('"', '\\"')}"]`);
-  await article.scrollIntoViewIfNeeded();
-  await article.click({ timeout: 15000 });
-  await page.locator('[data-testid="button_add_to_cart"]').waitFor({ state: "visible", timeout: 15000 });
+async function waitForDodoPizzaSection(page, timeout = 45000) {
+  await page.waitForFunction(
+    () =>
+      [...document.querySelectorAll("section")].some(
+        (section) => (section.querySelector("h2")?.innerText || "").trim() === "Пиццы",
+      ),
+    null,
+    { timeout },
+  );
+}
+
+async function waitForDodoMenuInteractive(page) {
+  await waitForDodoPizzaSection(page);
+  await page.waitForFunction(
+    () => {
+      const pizzaSection = [...document.querySelectorAll("section")].find(
+        (section) => (section.querySelector("h2")?.innerText || "").trim() === "Пиццы",
+      );
+      if (!pizzaSection) return false;
+      return [...pizzaSection.querySelectorAll('[data-testid="product__button"]')].some((button) =>
+        /\d[\d\s\u202f\u00a0]*\s*₽/.test(button.innerText || ""),
+      );
+    },
+    null,
+    { timeout: 45000 },
+  );
+  await page.waitForTimeout(2500);
+}
+
+async function waitForDodoProductModal(page, productName, timeout = 25000) {
+  await page.locator('[data-testid="button_add_to_cart"]').waitFor({ state: "visible", timeout });
+  await page
+    .waitForFunction(
+      (expectedName) => {
+        const modal = document.querySelector('[data-testid^="product__card-"]');
+        if (!modal) return false;
+        const title = (modal.innerText || "").split("\n").map((line) => line.trim()).filter(Boolean)[0] || "";
+        return !expectedName || title.replace(/\s+/g, " ").trim() === expectedName;
+      },
+      productName,
+      { timeout: 8000 },
+    )
+    .catch(() => {});
+}
+
+async function openDodoProduct(page, card) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      await page.goto(DODO_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
+      await waitForDodoMenuInteractive(page);
+
+      const article = card.menuProductId
+        ? page.locator(`article[data-menu-product-id="${card.menuProductId}"]`).first()
+        : page.locator("section").filter({ has: page.locator("h2", { hasText: "Пиццы" }) })
+          .locator(`article[aria-label="${card.name.replaceAll('"', '\\"')}"]`)
+          .first();
+
+      await article.waitFor({ state: "attached", timeout: 20000 });
+      await article.scrollIntoViewIfNeeded({ timeout: 20000 });
+      const button = article.locator('[data-testid="product__button"]').first();
+      if ((await button.count()) > 0) {
+        await button.click({ timeout: 20000 });
+      } else {
+        await article.click({ timeout: 20000 });
+      }
+      await waitForDodoProductModal(page, card.name);
+      return;
+    } catch (error) {
+      lastError = error;
+      console.warn(`[dodo] open attempt ${attempt} failed for ${card.name}: ${error.message}`);
+    }
+  }
+
+  throw lastError || new Error(`Dodo product did not open: ${card.name}`);
 }
 
 async function readDodoModalOptions(page) {
@@ -205,7 +275,25 @@ async function clickDodoOption(page, group, text) {
     },
     { group, text },
   );
-  await page.waitForTimeout(220);
+  await page
+    .waitForFunction(
+      ({ group, text }) => {
+        const modal = document.querySelector('[data-testid^="product__card-"]');
+        if (!modal) return false;
+        const variantLine = (modal.innerText || "")
+          .split("\n")
+          .map((line) => line.trim())
+          .filter(Boolean)[1]
+          ?.toLowerCase();
+        if (!variantLine) return false;
+        if (group === "size") return variantLine.includes(`${Number(text.match(/\d+/)?.[0])} см`);
+        return variantLine.includes(text.toLowerCase());
+      },
+      { group, text },
+      { timeout: 5000 },
+    )
+    .catch(() => {});
+  await page.waitForTimeout(250);
 }
 
 async function readDodoSelectedVariation(page) {
@@ -234,6 +322,38 @@ async function closeDodoModal(page) {
   }
 }
 
+async function readDodoPageState(page) {
+  return page.evaluate(() => ({
+    title: document.title,
+    url: location.href,
+    textStart: document.body?.innerText?.slice(0, 600) || "",
+    sections: [...document.querySelectorAll("section")]
+      .map((section) => (section.querySelector("h2")?.innerText || "").trim())
+      .filter(Boolean),
+  }));
+}
+
+async function loadDodoPizzaCards(page) {
+  let lastState = null;
+
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      await page.goto(DODO_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
+      await waitForDodoMenuInteractive(page);
+      const cards = await getDodoPizzaCards(page);
+      if (cards.length) return cards;
+      lastState = await readDodoPageState(page);
+      console.warn(`[dodo] no pizza cards on attempt ${attempt}: ${JSON.stringify(lastState, null, 2)}`);
+    } catch (error) {
+      lastState = await readDodoPageState(page).catch(() => ({ error: error.message }));
+      console.warn(`[dodo] menu load attempt ${attempt} failed: ${error.message}`);
+    }
+    await page.waitForTimeout(3000 * attempt);
+  }
+
+  throw new Error(`Dodo pizza cards not found after retries: ${JSON.stringify(lastState, null, 2)}`);
+}
+
 async function collectDodo() {
   const browser = await chromium.launch({ headless: !dodoHeaded });
   const context = await browser.newContext({
@@ -244,30 +364,7 @@ async function collectDodo() {
   });
   const page = await context.newPage();
 
-  await page.goto(DODO_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
-  await page
-    .waitForFunction(
-      () =>
-        [...document.querySelectorAll("section")].some(
-          (section) => (section.querySelector("h2")?.innerText || "").trim() === "Пиццы",
-        ),
-      null,
-      { timeout: 30000 },
-    )
-    .catch(() => {});
-
-  const cards = await getDodoPizzaCards(page);
-  if (!cards.length) {
-    const state = await page.evaluate(() => ({
-      title: document.title,
-      url: location.href,
-      textStart: document.body?.innerText?.slice(0, 600) || "",
-      sections: [...document.querySelectorAll("section")]
-        .map((section) => (section.querySelector("h2")?.innerText || "").trim())
-        .filter(Boolean),
-    }));
-    console.warn(`[dodo] no pizza cards found: ${JSON.stringify(state, null, 2)}`);
-  }
+  const cards = await loadDodoPizzaCards(page);
   const selectedCards = dodoLimit > 0 ? cards.slice(0, dodoLimit) : cards;
   const products = [];
 
@@ -277,7 +374,7 @@ async function collectDodo() {
 
     try {
       await closeDodoModal(page);
-      await clickDodoPizzaCard(page, card.name);
+      await openDodoProduct(page, card);
 
       const firstOptions = await readDodoModalOptions(page);
       const sizes = firstOptions.sizes.filter((item) => !item.disabled && item.text);

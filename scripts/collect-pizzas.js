@@ -68,10 +68,22 @@ function parseVariantLine(line) {
   };
 }
 
+function isStandardPapaCrust(variation) {
+  return (variation.stuffed_crust || variation.crust || "none") === "none";
+}
+
+function isHalfPizzaProduct(name) {
+  return /половин/i.test(normalizeName(name));
+}
+
 function pickPapaVariant(variations, sizeCm, dough, crust = "none") {
+  const normalizedCrust = crust || "none";
+  const itemSize = (item) => item.size?.value ?? item.sizeCm ?? item.diameter ?? null;
+  const itemCrust = (item) => item.stuffed_crust ?? item.crust ?? "none";
+  const itemDough = (item) => item.dough ?? item.kind?.dough ?? null;
   return (
-    variations.find((item) => item.size?.value === sizeCm && item.stuffed_crust === crust && item.dough === dough) ||
-    variations.find((item) => item.size?.value === sizeCm && item.stuffed_crust === crust) ||
+    variations.find((item) => itemSize(item) === sizeCm && itemCrust(item) === normalizedCrust && itemDough(item) === dough) ||
+    variations.find((item) => itemSize(item) === sizeCm && itemCrust(item) === normalizedCrust) ||
     null
   );
 }
@@ -99,11 +111,13 @@ async function collectPapa() {
   const sandbox = { window: {} };
   vm.runInNewContext(script, sandbox, { timeout: 5000 });
   const state = sandbox.window.__PRELOADED_STATE__;
-  const products = state.catalog.products.list.filter((item) => item.category === "pizza");
+  const products = state.catalog.products.list.filter(
+    (item) => item.category === "pizza" && !isHalfPizzaProduct(item.name),
+  );
 
   return products.map((product) => {
     const variations = (product.variations || [])
-      .filter((variation) => Number.isFinite(variation.price) && variation.price > 50)
+      .filter((variation) => Number.isFinite(variation.price) && variation.price > 50 && isStandardPapaCrust(variation))
       .map((variation) => ({
         id: String(variation.id),
         sizeCm: variation.size?.value ?? variation.diameter ?? null,
@@ -377,7 +391,7 @@ async function collectDodo() {
   });
   const page = await context.newPage();
 
-  const cards = await loadDodoPizzaCards(page);
+  const cards = (await loadDodoPizzaCards(page)).filter((card) => !isHalfPizzaProduct(card.name));
   const selectedCards = dodoLimit > 0 ? cards.slice(0, dodoLimit) : cards;
   const products = [];
 
@@ -525,6 +539,8 @@ async function main() {
       notes: [
         "Papa Johns is collected from window.__PRELOADED_STATE__.",
         "Dodo Pizza is collected with Playwright browser rendering and product configurator clicks.",
+        "Only standard-crust/base pizza variations are included.",
+        "Half-and-half pizzas are excluded from the current analytics scope.",
       ],
     },
     papa: {

@@ -1,7 +1,7 @@
 window.PIZZA_SNAPSHOT = {
   "meta": {
     "city": "Москва",
-    "collectedAt": "2026-06-30T12:13:27.273Z",
+    "collectedAt": "2026-06-30T13:12:11.868Z",
     "urls": {
       "papa": "https://papajohns.ru/moscow",
       "dodo": "https://dodopizza.ru/moscow/veshnyaki"
@@ -9,7 +9,9 @@ window.PIZZA_SNAPSHOT = {
     "source": "all",
     "notes": [
       "Papa Johns is collected from window.__PRELOADED_STATE__.",
-      "Dodo Pizza is collected with Playwright browser rendering and product configurator clicks."
+      "Dodo Pizza is collected with Playwright browser rendering and product configurator clicks.",
+      "Only standard-crust/base pizza variations are included.",
+      "Half-and-half pizzas are excluded from the current analytics scope."
     ]
   },
   "papa": {
@@ -43,66 +45,12 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "162631",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1030,
-            "weightG": 670,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162628",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1070,
-            "weightG": 655,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162633",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1070,
-            "weightG": 760,
-            "rawSize": "30 см"
-          },
-          {
             "id": "162634",
             "sizeCm": 35,
             "dough": "Традиционное",
             "crust": "none",
             "price": 830,
             "weightG": 770,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162635",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1180,
-            "weightG": 925,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162636",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1210,
-            "weightG": 910,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162637",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1210,
-            "weightG": 915,
             "rawSize": "35 см"
           },
           {
@@ -113,40 +61,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 930,
             "weightG": 1020,
             "rawSize": "40 см"
-          },
-          {
-            "id": "162627",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1320,
-            "weightG": 1200,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162624",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1340,
-            "weightG": 1190,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162630",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1340,
-            "weightG": 1195,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 390,
+          "p30": 720,
+          "p35": 830,
+          "p40": 930
         }
       },
       {
@@ -178,66 +99,12 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "162644",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1030,
-            "weightG": 645,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162643",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1070,
-            "weightG": 630,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162645",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1070,
-            "weightG": 635,
-            "rawSize": "30 см"
-          },
-          {
             "id": "162638",
             "sizeCm": 35,
             "dough": "Традиционное",
             "crust": "none",
             "price": 830,
             "weightG": 750,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162639",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1180,
-            "weightG": 905,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162640",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1210,
-            "weightG": 890,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162641",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1210,
-            "weightG": 895,
             "rawSize": "35 см"
           },
           {
@@ -248,40 +115,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 930,
             "weightG": 990,
             "rawSize": "40 см"
-          },
-          {
-            "id": "162648",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1320,
-            "weightG": 1170,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162647",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1340,
-            "weightG": 1160,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162649",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1340,
-            "weightG": 1165,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 390,
+          "p30": 720,
+          "p35": 830,
+          "p40": 930
         }
       },
       {
@@ -313,66 +153,12 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "162652",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1030,
-            "weightG": 690,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162651",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1070,
-            "weightG": 675,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "162653",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1070,
-            "weightG": 680,
-            "rawSize": "30 см"
-          },
-          {
             "id": "162654",
             "sizeCm": 35,
             "dough": "Традиционное",
             "crust": "none",
             "price": 830,
             "weightG": 800,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162655",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1180,
-            "weightG": 955,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162656",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1210,
-            "weightG": 940,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "162657",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1210,
-            "weightG": 945,
             "rawSize": "35 см"
           },
           {
@@ -383,40 +169,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 930,
             "weightG": 1060,
             "rawSize": "40 см"
-          },
-          {
-            "id": "162629",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1320,
-            "weightG": 1240,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162625",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1340,
-            "weightG": 1230,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "162632",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1340,
-            "weightG": 1235,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 390,
+          "p30": 720,
+          "p35": 830,
+          "p40": 930
         }
       },
       {
@@ -457,33 +216,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "120",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1030,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "121",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1070,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153598",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1070,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
             "id": "116",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -499,33 +231,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 830,
             "weightG": 655,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "117",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1180,
-            "weightG": 985,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "118",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1210,
-            "weightG": 970,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153784",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1210,
-            "weightG": 975,
             "rawSize": "35 см"
           },
           {
@@ -545,40 +250,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 930,
             "weightG": 865,
             "rawSize": "40 см"
-          },
-          {
-            "id": "125",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1320,
-            "weightG": 1275,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "124",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1340,
-            "weightG": 1265,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153600",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1340,
-            "weightG": 1270,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 390,
+          "p30": 720,
+          "p35": 830,
+          "p40": 930
         }
       },
       {
@@ -619,33 +297,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "404",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1030,
-            "weightG": 680,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "405",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1070,
-            "weightG": 665,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153626",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1070,
-            "weightG": 670,
-            "rawSize": "30 см"
-          },
-          {
             "id": "408",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -661,33 +312,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 830,
             "weightG": 545,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "409",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1180,
-            "weightG": 900,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "410",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1210,
-            "weightG": 885,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153544",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1210,
-            "weightG": 890,
             "rawSize": "35 см"
           },
           {
@@ -707,40 +331,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 930,
             "weightG": 740,
             "rawSize": "40 см"
-          },
-          {
-            "id": "413",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1320,
-            "weightG": 1175,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "412",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1340,
-            "weightG": 1165,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153546",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1340,
-            "weightG": 1170,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 390,
+          "p30": 720,
+          "p35": 830,
+          "p40": 930
         }
       },
       {
@@ -781,33 +378,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "178",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 715,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "179",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 700,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153786",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 705,
-            "rawSize": "30 см"
-          },
-          {
             "id": "172",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -823,33 +393,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 615,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "173",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 975,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "174",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 960,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153604",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 965,
             "rawSize": "35 см"
           },
           {
@@ -869,40 +412,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 820,
             "rawSize": "40 см"
-          },
-          {
-            "id": "170",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1245,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "169",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1235,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153730",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1240,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -943,33 +459,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "473",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1100,
-            "weightG": 760,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "474",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1140,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153559",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1140,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
             "id": "468",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -985,33 +474,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 910,
             "weightG": 660,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "469",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1260,
-            "weightG": 1020,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "470",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1290,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153749",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1290,
-            "weightG": 1010,
             "rawSize": "35 см"
           },
           {
@@ -1031,40 +493,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1040,
             "weightG": 880,
             "rawSize": "40 см"
-          },
-          {
-            "id": "488",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1430,
-            "weightG": 1330,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "487",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1450,
-            "weightG": 1320,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153557",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1450,
-            "weightG": 1325,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 490,
+          "p30": 790,
+          "p35": 910,
+          "p40": 1040
         }
       },
       {
@@ -1105,33 +540,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "185",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "186",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153605",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
             "id": "202",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1147,33 +555,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 640,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "204",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1000,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "203",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 985,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153607",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 990,
             "rawSize": "35 см"
           },
           {
@@ -1193,40 +574,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 855,
             "rawSize": "40 см"
-          },
-          {
-            "id": "182",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1300,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "183",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1290,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153609",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1295,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -1267,33 +621,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "444",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "445",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153707",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
             "id": "439",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1309,33 +636,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 655,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "441",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1015,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "440",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 1000,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153554",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 1005,
             "rawSize": "35 см"
           },
           {
@@ -1355,40 +655,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 875,
             "rawSize": "40 см"
-          },
-          {
-            "id": "437",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1325,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "438",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1315,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153555",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1320,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -1429,33 +702,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "280",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 695,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "281",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 680,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153627",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 685,
-            "rawSize": "30 см"
-          },
-          {
             "id": "273",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1471,33 +717,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 565,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "275",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 920,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "274",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 905,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153794",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 910,
             "rawSize": "35 см"
           },
           {
@@ -1517,40 +736,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 765,
             "rawSize": "40 см"
-          },
-          {
-            "id": "270",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1205,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "271",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1195,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153629",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1200,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -1591,33 +783,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "9499",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "9498",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153790",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
             "id": "9487",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1633,33 +798,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 650,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "9489",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1015,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "9488",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1000,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153620",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1005,
             "rawSize": "35 см"
           },
           {
@@ -1679,40 +817,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 875,
             "rawSize": "40 см"
-          },
-          {
-            "id": "9493",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1320,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "9492",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1310,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153622",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1315,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -1753,33 +864,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "142",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "143",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 765,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153785",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 770,
-            "rawSize": "30 см"
-          },
-          {
             "id": "131",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1795,33 +879,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 685,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "132",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "133",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1035,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153701",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1040,
             "rawSize": "35 см"
           },
           {
@@ -1841,40 +898,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 915,
             "rawSize": "40 см"
-          },
-          {
-            "id": "137",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1365,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "136",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1355,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153714",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1360,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -1915,33 +945,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "232",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 800,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "233",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153788",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
             "id": "224",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -1957,33 +960,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 705,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "226",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "225",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1035,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153614",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1040,
             "rawSize": "35 см"
           },
           {
@@ -2003,40 +979,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 955,
             "rawSize": "40 см"
-          },
-          {
-            "id": "221",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1365,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "222",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1355,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153616",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1360,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -2077,33 +1026,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "528",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "529",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153563",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
             "id": "509",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2119,33 +1041,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 655,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "511",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1020,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "510",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153567",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1010,
             "rawSize": "35 см"
           },
           {
@@ -2165,40 +1060,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 880,
             "rawSize": "40 см"
-          },
-          {
-            "id": "506",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1325,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "507",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1315,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153774",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1320,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -2239,33 +1107,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "319",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 795,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "320",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153549",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
             "id": "315",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2281,33 +1122,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 700,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "317",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1070,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "316",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 1055,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153550",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 1060,
             "rawSize": "35 см"
           },
           {
@@ -2327,40 +1141,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 935,
             "rawSize": "40 см"
-          },
-          {
-            "id": "310",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1385,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "311",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1375,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153553",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1380,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -2401,33 +1188,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "196",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 695,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "197",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 680,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153610",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 685,
-            "rawSize": "30 см"
-          },
-          {
             "id": "192",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2443,33 +1203,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 565,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "193",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 920,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "194",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 905,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153611",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 910,
             "rawSize": "35 см"
           },
           {
@@ -2489,40 +1222,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 765,
             "rawSize": "40 см"
-          },
-          {
-            "id": "200",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1205,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "199",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1195,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153612",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1200,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -2563,33 +1269,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "525",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "526",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 725,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153776",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
             "id": "521",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2605,33 +1284,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 645,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "523",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "522",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 990,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153581",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 995,
             "rawSize": "35 см"
           },
           {
@@ -2651,40 +1303,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 870,
             "rawSize": "40 см"
-          },
-          {
-            "id": "519",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1315,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "520",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1305,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153569",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1310,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -2725,33 +1350,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "303",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 760,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "304",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153572",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
             "id": "312",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2767,33 +1365,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 675,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "313",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1040,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "314",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1025,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153575",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1030,
             "rawSize": "35 см"
           },
           {
@@ -2813,40 +1384,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 905,
             "rawSize": "40 см"
-          },
-          {
-            "id": "301",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1355,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "300",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1345,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153779",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1350,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -2887,33 +1431,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "360",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "361",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 770,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153545",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 775,
-            "rawSize": "30 см"
-          },
-          {
             "id": "325",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -2929,33 +1446,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 690,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "327",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1055,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "326",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 1040,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153542",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 1045,
             "rawSize": "35 см"
           },
           {
@@ -2975,40 +1465,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 915,
             "rawSize": "40 см"
-          },
-          {
-            "id": "340",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1370,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "341",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1360,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153552",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1365,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -3049,33 +1512,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "337",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "338",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 775,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153562",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
             "id": "343",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3091,33 +1527,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 720,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "345",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1085,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "344",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 1070,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153543",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 1075,
             "rawSize": "35 см"
           },
           {
@@ -3137,40 +1546,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 955,
             "rawSize": "40 см"
-          },
-          {
-            "id": "333",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1385,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "334",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1375,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153541",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1380,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -3211,33 +1593,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "396",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "397",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153547",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
             "id": "378",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3253,33 +1608,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 645,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "379",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "380",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 990,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153615",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 995,
             "rawSize": "35 см"
           },
           {
@@ -3299,40 +1627,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 860,
             "rawSize": "40 см"
-          },
-          {
-            "id": "377",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1310,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "376",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1300,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153619",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1305,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -3373,33 +1674,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "69",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 680,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "70",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 665,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153590",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 670,
-            "rawSize": "30 см"
-          },
-          {
             "id": "73",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3415,33 +1689,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 575,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "74",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 935,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "75",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 920,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153588",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 925,
             "rawSize": "35 см"
           },
           {
@@ -3461,40 +1708,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 800,
             "rawSize": "40 см"
-          },
-          {
-            "id": "66",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1065,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "65",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1235,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153780",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1240,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -3535,33 +1755,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "490",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 715,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "491",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 700,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153760",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 705,
-            "rawSize": "30 см"
-          },
-          {
             "id": "483",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3577,33 +1770,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 610,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "485",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 970,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "484",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 955,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153561",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 960,
             "rawSize": "35 см"
           },
           {
@@ -3623,40 +1789,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 825,
             "rawSize": "40 см"
-          },
-          {
-            "id": "478",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1245,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "479",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1235,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153558",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1240,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -3697,33 +1836,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "499",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "500",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 715,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153564",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 720,
-            "rawSize": "30 см"
-          },
-          {
             "id": "495",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3739,33 +1851,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 640,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "497",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1000,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "496",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 985,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153560",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 990,
             "rawSize": "35 см"
           },
           {
@@ -3785,40 +1870,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 855,
             "rawSize": "40 см"
-          },
-          {
-            "id": "493",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1305,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "494",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1295,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153565",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1300,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -3859,33 +1917,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "114",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "115",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 775,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153613",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
             "id": "108",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -3901,33 +1932,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 715,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "110",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1080,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "109",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153595",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1070,
             "rawSize": "35 см"
           },
           {
@@ -3947,40 +1951,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 955,
             "rawSize": "40 см"
-          },
-          {
-            "id": "104",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1410,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "105",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1400,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153621",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1405,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -4021,33 +1998,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "552",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "553",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 765,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153573",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 770,
-            "rawSize": "30 см"
-          },
-          {
             "id": "561",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4063,33 +2013,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 695,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "563",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1060,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "562",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 1045,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153568",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 1050,
             "rawSize": "35 см"
           },
           {
@@ -4109,40 +2032,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 930,
             "rawSize": "40 см"
-          },
-          {
-            "id": "543",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1290,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "544",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1280,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153778",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1285,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -4183,33 +2079,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "432",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "433",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1390,
-            "weightG": 765,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153570",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1390,
-            "weightG": 770,
-            "rawSize": "30 см"
-          },
-          {
             "id": "460",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4225,33 +2094,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1350,
             "weightG": 700,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "462",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1700,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "461",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1730,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153576",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1730,
-            "weightG": 1055,
             "rawSize": "35 см"
           },
           {
@@ -4271,40 +2113,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1560,
             "weightG": 940,
             "rawSize": "40 см"
-          },
-          {
-            "id": "449",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1950,
-            "weightG": 1390,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "450",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1970,
-            "weightG": 1380,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153571",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1970,
-            "weightG": 1385,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 720,
+          "p30": 1040,
+          "p35": 1350,
+          "p40": 1560
         }
       },
       {
@@ -4345,33 +2160,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "145",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 800,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "146",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153577",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
             "id": "163",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4387,33 +2175,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 695,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "164",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "165",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153781",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1055,
             "rawSize": "35 см"
           },
           {
@@ -4433,40 +2194,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 915,
             "rawSize": "40 см"
-          },
-          {
-            "id": "149",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1375,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "148",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1365,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153579",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1370,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -4507,33 +2241,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "9993",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1560,
-            "weightG": 795,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "9992",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1600,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153628",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1600,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
             "id": "9985",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4549,33 +2256,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1770,
             "weightG": 720,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "9986",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2120,
-            "weightG": 1090,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "9987",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2150,
-            "weightG": 1075,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153597",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2150,
-            "weightG": 1080,
             "rawSize": "35 см"
           },
           {
@@ -4595,40 +2275,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 2190,
             "weightG": 970,
             "rawSize": "40 см"
-          },
-          {
-            "id": "9982",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2580,
-            "weightG": 1425,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "9983",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2600,
-            "weightG": 1415,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153783",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2600,
-            "weightG": 1420,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 830,
+          "p30": 1250,
+          "p35": 1770,
+          "p40": 2190
         }
       },
       {
@@ -4669,33 +2322,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "265",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 720,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "266",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 705,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153795",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 710,
-            "rawSize": "30 см"
-          },
-          {
             "id": "255",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4711,33 +2337,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 640,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "256",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "257",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 990,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153773",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 995,
             "rawSize": "35 см"
           },
           {
@@ -4757,40 +2356,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 865,
             "rawSize": "40 см"
-          },
-          {
-            "id": "278",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1315,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "277",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1305,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153634",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1310,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -4831,33 +2403,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "4",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1560,
-            "weightG": 820,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "5",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1600,
-            "weightG": 805,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153601",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1600,
-            "weightG": 810,
-            "rawSize": "30 см"
-          },
-          {
             "id": "6",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -4873,33 +2418,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1770,
             "weightG": 735,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "7",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2120,
-            "weightG": 1100,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "8",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2150,
-            "weightG": 1085,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153603",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2150,
-            "weightG": 1090,
             "rawSize": "35 см"
           },
           {
@@ -4919,40 +2437,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 2190,
             "weightG": 975,
             "rawSize": "40 см"
-          },
-          {
-            "id": "23",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2580,
-            "weightG": 1405,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "22",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2600,
-            "weightG": 1395,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153677",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2600,
-            "weightG": 1400,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 830,
+          "p30": 1250,
+          "p35": 1770,
+          "p40": 2190
         }
       },
       {
@@ -4993,33 +2484,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "86226",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1240,
-            "weightG": 810,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "86222",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1280,
-            "weightG": 795,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153623",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1280,
-            "weightG": 800,
-            "rawSize": "30 см"
-          },
-          {
             "id": "86219",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5035,33 +2499,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1250,
             "weightG": 715,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "86225",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1080,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "86223",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1630,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153624",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1630,
-            "weightG": 1070,
             "rawSize": "35 см"
           },
           {
@@ -5081,40 +2518,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1460,
             "weightG": 955,
             "rawSize": "40 см"
-          },
-          {
-            "id": "86227",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1850,
-            "weightG": 1405,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "86224",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1870,
-            "weightG": 1395,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153625",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1870,
-            "weightG": 1400,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 680,
+          "p30": 930,
+          "p35": 1250,
+          "p40": 1460
         }
       },
       {
@@ -5144,39 +2554,12 @@ window.PIZZA_SNAPSHOT = {
             "price": 1520,
             "weightG": 710,
             "rawSize": "35 см"
-          },
-          {
-            "id": "619",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1100,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "618",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1085,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153775",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1090,
-            "rawSize": "35 см"
           }
         ],
         "reference": {
           "p23": null,
           "p30": null,
-          "p35": null,
+          "p35": 1520,
           "p40": null
         }
       },
@@ -5207,39 +2590,12 @@ window.PIZZA_SNAPSHOT = {
             "price": 1520,
             "weightG": 685,
             "rawSize": "35 см"
-          },
-          {
-            "id": "109765",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1060,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "109766",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1045,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153766",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1050,
-            "rawSize": "35 см"
           }
         ],
         "reference": {
           "p23": null,
           "p30": null,
-          "p35": null,
+          "p35": 1520,
           "p40": null
         }
       },
@@ -5281,33 +2637,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "44",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 755,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "45",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153584",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
             "id": "48",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5323,33 +2652,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 660,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "50",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1020,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "49",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153585",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1010,
             "rawSize": "35 см"
           },
           {
@@ -5369,40 +2671,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 900,
             "rawSize": "40 см"
-          },
-          {
-            "id": "40",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1325,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "41",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1315,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153587",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1320,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -5443,33 +2718,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "97",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "98",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 720,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153782",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 725,
-            "rawSize": "30 см"
-          },
-          {
             "id": "93",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5485,33 +2733,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 625,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "95",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 985,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "94",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 970,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153608",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 975,
             "rawSize": "35 см"
           },
           {
@@ -5531,40 +2752,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 845,
             "rawSize": "40 см"
-          },
-          {
-            "id": "91",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1270,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "92",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1260,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153594",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1265,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -5605,33 +2799,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "81",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": null,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "82",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": null,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153593",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": null,
-            "rawSize": "30 см"
-          },
-          {
             "id": "77",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5646,33 +2813,6 @@ window.PIZZA_SNAPSHOT = {
             "dough": "Тонкое",
             "crust": "none",
             "price": 1000,
-            "weightG": null,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "78",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": null,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "79",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": null,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153596",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
             "weightG": null,
             "rawSize": "35 см"
           },
@@ -5693,57 +2833,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": null,
             "rawSize": "40 см"
-          },
-          {
-            "id": "85",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": null,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "84",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": null,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153602",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": null,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
-        }
-      },
-      {
-        "source": "papa",
-        "chain": "Papa Johns",
-        "name": "Пицца половинки",
-        "normalizedName": "пицца половинки",
-        "url": "https://papajohns.ru/balashiha/products/pizza/polovinki-dla-novogo-sajta-pustyska",
-        "description": "",
-        "minPrice": null,
-        "minSizeCm": null,
-        "variations": [],
-        "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       },
       {
@@ -5784,33 +2880,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "62",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 745,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "63",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1390,
-            "weightG": 730,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153586",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1390,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
             "id": "52",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5826,33 +2895,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1350,
             "weightG": 645,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "53",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1700,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "54",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1730,
-            "weightG": 990,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153589",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1730,
-            "weightG": 995,
             "rawSize": "35 см"
           },
           {
@@ -5872,40 +2914,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1560,
             "weightG": 880,
             "rawSize": "40 см"
-          },
-          {
-            "id": "60",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1950,
-            "weightG": 1305,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "59",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1970,
-            "weightG": 1295,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153592",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1970,
-            "weightG": 1300,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 720,
+          "p30": 1040,
+          "p35": 1350,
+          "p40": 1560
         }
       },
       {
@@ -5946,33 +2961,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "25",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1560,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "26",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1600,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153578",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1600,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
             "id": "31",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -5988,33 +2976,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1770,
             "weightG": 775,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "33",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2120,
-            "weightG": 1080,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "32",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2150,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153580",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2150,
-            "weightG": 1070,
             "rawSize": "35 см"
           },
           {
@@ -6034,40 +2995,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 2190,
             "weightG": 1105,
             "rawSize": "40 см"
-          },
-          {
-            "id": "36",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2580,
-            "weightG": 1465,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "37",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2600,
-            "weightG": 1455,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153582",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2600,
-            "weightG": 1460,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 830,
+          "p30": 1250,
+          "p35": 1770,
+          "p40": 2190
         }
       },
       {
@@ -6108,33 +3042,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "465",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1220,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "466",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1260,
-            "weightG": 775,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153725",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1260,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
             "id": "454",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6150,33 +3057,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1040,
             "weightG": 690,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "456",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1390,
-            "weightG": 1055,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "455",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1420,
-            "weightG": 1040,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153739",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1420,
-            "weightG": 1045,
             "rawSize": "35 см"
           },
           {
@@ -6196,40 +3076,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1350,
             "weightG": 925,
             "rawSize": "40 см"
-          },
-          {
-            "id": "452",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1740,
-            "weightG": 1375,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "453",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1760,
-            "weightG": 1365,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153556",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1760,
-            "weightG": 1370,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 620,
+          "p30": 910,
+          "p35": 1040,
+          "p40": 1350
         }
       },
       {
@@ -6270,33 +3123,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "355",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 820,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "356",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 805,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153574",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 810,
-            "rawSize": "30 см"
-          },
-          {
             "id": "350",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6312,33 +3138,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 755,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "352",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1125,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "351",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1110,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153583",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1115,
             "rawSize": "35 см"
           },
           {
@@ -6358,40 +3157,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 1010,
             "rawSize": "40 см"
-          },
-          {
-            "id": "348",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1465,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "349",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1455,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153591",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1460,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -6432,33 +3204,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "242",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1520,
-            "weightG": 800,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "243",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1560,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153617",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1560,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
             "id": "238",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6474,33 +3219,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1520,
             "weightG": 765,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "240",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1870,
-            "weightG": 1095,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "239",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1900,
-            "weightG": 1080,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153618",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1900,
-            "weightG": 1085,
             "rawSize": "35 см"
           },
           {
@@ -6520,40 +3238,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1840,
             "weightG": 1030,
             "rawSize": "40 см"
-          },
-          {
-            "id": "235",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 2230,
-            "weightG": 1435,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "236",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 2250,
-            "weightG": 1425,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153759",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 2250,
-            "weightG": 1430,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 790,
+          "p30": 1210,
+          "p35": 1520,
+          "p40": 1840
         }
       },
       {
@@ -6594,33 +3285,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "546",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1100,
-            "weightG": 800,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "547",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1140,
-            "weightG": 785,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153777",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1140,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
             "id": "535",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6636,33 +3300,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 910,
             "weightG": 735,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "536",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1260,
-            "weightG": 1065,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "537",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1290,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153566",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1290,
-            "weightG": 1055,
             "rawSize": "35 см"
           },
           {
@@ -6682,40 +3319,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1040,
             "weightG": 975,
             "rawSize": "40 см"
-          },
-          {
-            "id": "533",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1430,
-            "weightG": 1380,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "532",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1450,
-            "weightG": 1370,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153638",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1450,
-            "weightG": 1375,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 490,
+          "p30": 790,
+          "p35": 910,
+          "p40": 1040
         }
       },
       {
@@ -6756,33 +3366,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "399",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1100,
-            "weightG": 750,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "400",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1140,
-            "weightG": 735,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153599",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1140,
-            "weightG": 740,
-            "rawSize": "30 см"
-          },
-          {
             "id": "372",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6798,33 +3381,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 910,
             "weightG": 660,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "374",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1260,
-            "weightG": 1020,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "373",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1290,
-            "weightG": 1005,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153548",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1290,
-            "weightG": 1010,
             "rawSize": "35 см"
           },
           {
@@ -6844,40 +3400,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1040,
             "weightG": 880,
             "rawSize": "40 см"
-          },
-          {
-            "id": "367",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1430,
-            "weightG": 1330,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "368",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1450,
-            "weightG": 1320,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153606",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1450,
-            "weightG": 1325,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 490,
+          "p30": 790,
+          "p35": 910,
+          "p40": 1040
         }
       },
       {
@@ -6918,33 +3447,6 @@ window.PIZZA_SNAPSHOT = {
             "rawSize": "30 см"
           },
           {
-            "id": "422",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1200,
-            "weightG": 790,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "423",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1240,
-            "weightG": 775,
-            "rawSize": "30 см"
-          },
-          {
-            "id": "153551",
-            "sizeCm": 30,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1240,
-            "weightG": 780,
-            "rawSize": "30 см"
-          },
-          {
             "id": "425",
             "sizeCm": 35,
             "dough": "Традиционное",
@@ -6960,33 +3462,6 @@ window.PIZZA_SNAPSHOT = {
             "crust": "none",
             "price": 1000,
             "weightG": 685,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "426",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1350,
-            "weightG": 1050,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "427",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1380,
-            "weightG": 1035,
-            "rawSize": "35 см"
-          },
-          {
-            "id": "153645",
-            "sizeCm": 35,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1380,
-            "weightG": 1040,
             "rawSize": "35 см"
           },
           {
@@ -7006,40 +3481,13 @@ window.PIZZA_SNAPSHOT = {
             "price": 1210,
             "weightG": 900,
             "rawSize": "40 см"
-          },
-          {
-            "id": "417",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "cheese",
-            "price": 1600,
-            "weightG": 1350,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "416",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage",
-            "price": 1620,
-            "weightG": 1340,
-            "rawSize": "40 см"
-          },
-          {
-            "id": "153681",
-            "sizeCm": 40,
-            "dough": "Традиционное",
-            "crust": "sausage_cheese",
-            "price": 1620,
-            "weightG": 1345,
-            "rawSize": "40 см"
           }
         ],
         "reference": {
-          "p23": null,
-          "p30": null,
-          "p35": null,
-          "p40": null
+          "p23": 580,
+          "p30": 890,
+          "p35": 1000,
+          "p40": 1210
         }
       }
     ]
@@ -9477,26 +5925,6 @@ window.PIZZA_SNAPSHOT = {
             "price": 679,
             "weightG": 660,
             "variantLine": "35 см, традиционное тесто 35, 660 г"
-          }
-        ]
-      },
-      {
-        "source": "dodo",
-        "chain": "Dodo Pizza",
-        "name": "Пицца из половинок",
-        "normalizedName": "пицца из половинок",
-        "url": "https://dodopizza.ru/moscow/veshnyaki/product/halfs",
-        "flags": [],
-        "minPriceCard": 800,
-        "minPrice": 800,
-        "variations": [
-          {
-            "id": "Пицца из половинок:default",
-            "sizeCm": null,
-            "dough": null,
-            "price": 800,
-            "weightG": null,
-            "variantLine": null
           }
         ]
       }

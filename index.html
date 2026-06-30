@@ -133,7 +133,7 @@
     }
 
     .kpis {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       margin-top: 18px;
     }
 
@@ -145,8 +145,16 @@
     }
 
     .metric {
-      min-height: 124px;
+      display: grid;
+      grid-column: span 4;
+      gap: 12px;
+      min-height: 260px;
       padding: 16px;
+      align-content: start;
+    }
+
+    .metric.compact {
+      min-height: 190px;
     }
 
     .metric-label {
@@ -156,15 +164,68 @@
     }
 
     .metric-value {
-      margin-top: 12px;
       font: 700 34px/1 Georgia, "Times New Roman", serif;
     }
 
     .metric-note {
-      margin-top: 9px;
       color: var(--muted);
       font-size: 12px;
       line-height: 1.35;
+    }
+
+    .metric-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .metric-title {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 6px;
+      max-height: 178px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .mini-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: baseline;
+      padding: 6px 0;
+      border-top: 1px solid rgba(217, 225, 220, 0.75);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .mini-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .mini-row strong,
+    .mini-row span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .mini-row em {
+      color: var(--muted);
+      font: normal 12px/1.2 Consolas, "Courier New", monospace;
+      white-space: nowrap;
+    }
+
+    .metric-detail {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .panel {
@@ -197,7 +258,7 @@
 
     .manual-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(190px, 0.45fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 10px;
       align-items: end;
       margin-bottom: 14px;
@@ -279,7 +340,7 @@
 
     .pair-title {
       display: grid;
-      gap: 8px;
+      gap: 12px;
     }
 
     .pair-title small,
@@ -289,41 +350,28 @@
       line-height: 1.35;
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    .pair-summary {
+      display: grid;
+      gap: 8px;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.4;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 0 8px;
-      border-radius: 999px;
+    .pair-summary strong {
+      font-size: 14px;
+    }
+
+    .pair-summary-list {
+      display: grid;
+      gap: 4px;
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .badge.papa {
-      background: var(--papa-soft);
-      color: var(--papa);
-    }
-
-    .badge.dodo {
-      background: var(--dodo-soft);
-      color: var(--dodo);
-    }
-
-    .badge.blue {
-      background: var(--blue-soft);
-      color: var(--blue);
-    }
-
-    .badge.amber {
-      background: var(--amber-soft);
-      color: var(--amber);
+      line-height: 1.35;
     }
 
     .delta-box {
@@ -518,7 +566,11 @@
       }
 
       .kpis {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .metric {
+        grid-column: span 3;
       }
 
       .actions {
@@ -534,6 +586,10 @@
       .kpis,
       .match-body {
         grid-template-columns: 1fr;
+      }
+
+      .metric {
+        grid-column: span 1;
       }
 
       .panel-head {
@@ -566,8 +622,8 @@
     <section class="card panel">
       <div class="panel-head">
         <div>
-          <h2>Ручное сравнение пицц</h2>
-          <p class="panel-copy">Выберите пиццу Papa Johns и пиццу Dodo Pizza, чтобы построить такую же карту совпавших и несовпавших вариаций, как в автоматических матчах.</p>
+          <h2>Сравнение пицц</h2>
+          <p class="panel-copy">Выберите пиццу Papa Johns и пиццу Dodo Pizza, чтобы увидеть совпавшие варианты по размеру и тесту, а также варианты без пары.</p>
         </div>
       </div>
       <div class="manual-grid" aria-label="Настройки ручного сравнения">
@@ -579,16 +635,9 @@
           <span>Dodo Pizza</span>
           <select id="manualDodoSelect" aria-label="Пицца Dodo Pizza"></select>
         </label>
-        <label class="field">
-          <span>Метод</span>
-          <select id="manualModeSelect" aria-label="Метод сравнения">
-            <option value="strict">Размер + тесто</option>
-            <option value="size">Только размер</option>
-          </select>
-        </label>
       </div>
       <div id="manualCompare" class="manual-result"></div>
-      <p class="footnote">В строгом режиме совпадением считается одинаковый размер и одинаковый вид теста. В режиме “только размер” сравнивается минимальная базовая цена внутри каждого размера.</p>
+      <p class="footnote">Совпадением считается одинаковый размер и одинаковый вид теста. Варианты без точной пары выводятся отдельно.</p>
     </section>
 
     <section class="card panel">
@@ -637,6 +686,7 @@
     const rub = value => value == null ? "—" : new Intl.NumberFormat("ru-RU").format(value) + "\u00a0₽";
     const pct = (delta, base) => base ? (delta / base) * 100 : null;
     const norm = value => String(value || "").toLowerCase().replaceAll("ё", "е").replace(/[^a-zа-я0-9]+/g, " ").trim();
+    const html = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 
     function variantKey(item, mode = "strict") {
       if (mode === "size") return `${item.sizeCm || "?"}`;
@@ -707,6 +757,52 @@
 
     const enriched = snapshot ? snapshot.matches.map(match => enrichMatch(match)) : [];
 
+    function avg(values) {
+      return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+    }
+
+    function renderMiniList(rows) {
+      return `<div class="mini-list">${rows.join("")}</div>`;
+    }
+
+    function renderProductRows(products) {
+      return [...products]
+        .sort((a, b) => a.name.localeCompare(b.name, "ru"))
+        .map(product => `
+          <div class="mini-row">
+            <strong>${html(product.name)}</strong>
+            <em>${(product.variations || []).length} вар.</em>
+          </div>
+        `);
+    }
+
+    function renderMatchRows() {
+      return enriched.map(item => `
+        <div class="mini-row">
+          <span>
+            <strong>${html(item.label)}</strong>
+            <span class="metric-detail">Papa: ${html(item.papa.name)} · Dodo: ${html(item.dodo.name)}</span>
+          </span>
+          <em>${item.common.length} вар.</em>
+        </div>
+      `);
+    }
+
+    function renderVariantMatchRows() {
+      return enriched.map(item => {
+        const variants = item.common.map(row => displayKey(row.papa)).join("; ") || "точных вариаций нет";
+        return `
+          <div class="mini-row">
+            <span>
+              <strong>${html(item.label)}</strong>
+              <span class="metric-detail">${html(variants)}</span>
+            </span>
+            <em>${item.common.length} совп.</em>
+          </div>
+        `;
+      });
+    }
+
     function renderKpis() {
       const dodoNoVariants = snapshot.dodo.products.filter(item => !item.variations.length);
       const dodoNoVariantNames = dodoNoVariants.map(item => item.name);
@@ -714,24 +810,85 @@
       const papaVarCount = snapshot.papa.products.reduce((sum, item) => sum + item.variations.length, 0);
       const dodoVarCount = snapshot.dodo.products.reduce((sum, item) => sum + item.variations.length, 0);
       const exact = snapshot.matches.filter(item => item.status === "exact").length;
-      const avg = enriched
-        .flatMap(item => item.common)
-        .reduce((sum, item, _, arr) => sum + item.deltaPct / arr.length, 0);
+      const pizzaIndexes = enriched
+        .map(item => avg(item.common.map(row => 100 + row.deltaPct)))
+        .filter(value => value != null);
+      const pizzaIndex = avg(pizzaIndexes);
+      const comparedPizzaCount = enriched.filter(item => item.common.length).length;
+      const indexNote = pizzaIndex == null
+        ? "Нет вариаций для расчета"
+        : `Среднее по ${comparedPizzaCount} сопоставленным пиццам, каждая пицца имеет одинаковый вес в индексе.`;
+
       const cards = [
-        ["Papa пицц", snapshot.papa.products.length, `${papaVarCount} вариаций, включая бортики`],
-        ["Dodo пицц", snapshot.dodo.products.length, `${dodoVarCount} вариаций собрано`],
-        ["Матчей", snapshot.matches.length, `${exact} точных, ${snapshot.matches.length - exact} требуют проверки`],
-        ["Совпавших вариантов", commonCount, "Одинаковый размер + тесто"],
-        ["Dodo индекс", `${Math.round(100 + avg)}%`, "По совпавшим вариантам"],
-        ["Доснять Dodo", dodoNoVariants.length, dodoNoVariantNames.join(", ") || "нет пропусков"]
+        `
+          <article class="card metric">
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Papa пицц</div>
+                <div class="metric-note">${papaVarCount} вариаций собрано, включая бортики</div>
+              </div>
+              <div class="metric-value">${snapshot.papa.products.length}</div>
+            </div>
+            ${renderMiniList(renderProductRows(snapshot.papa.products))}
+          </article>
+        `,
+        `
+          <article class="card metric">
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Dodo пицц</div>
+                <div class="metric-note">${dodoVarCount} вариаций собрано по выбранной пиццерии</div>
+              </div>
+              <div class="metric-value">${snapshot.dodo.products.length}</div>
+            </div>
+            ${renderMiniList(renderProductRows(snapshot.dodo.products))}
+          </article>
+        `,
+        `
+          <article class="card metric">
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Матчей</div>
+                <div class="metric-note">Сопоставленные пары пицц: ${exact} точных, ${snapshot.matches.length - exact} требуют проверки названия или состава.</div>
+              </div>
+              <div class="metric-value">${snapshot.matches.length}</div>
+            </div>
+            ${renderMiniList(renderMatchRows())}
+          </article>
+        `,
+        `
+          <article class="card metric">
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Совпадения по вариациям</div>
+                <div class="metric-note">Только варианты, где совпали и размер, и вид теста. Эти строки участвуют в ценовом сравнении.</div>
+              </div>
+              <div class="metric-value">${commonCount}</div>
+            </div>
+            ${renderMiniList(renderVariantMatchRows())}
+          </article>
+        `,
+        `
+          <article class="card metric compact">
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Индекс найденных совпадений</div>
+                <div class="metric-note">${indexNote}</div>
+              </div>
+              <div class="metric-value">${pizzaIndex == null ? "—" : Math.round(pizzaIndex) + "%"}</div>
+            </div>
+            <div class="metric-detail">100% означает равенство цен Papa и Dodo внутри найденных пар. Ниже 100% — Dodo дешевле, выше 100% — Dodo дороже.</div>
+          </article>
+        `,
+        `
+          <article class="card metric compact">
+            <div class="metric-label">Доснять Dodo</div>
+            <div class="metric-value">${dodoNoVariants.length}</div>
+            <div class="metric-note">${html(dodoNoVariantNames.join(", ") || "нет пропусков")}</div>
+          </article>
+        `
       ];
-      document.getElementById("kpis").innerHTML = cards.map(card => `
-        <article class="card metric">
-          <div class="metric-label">${card[0]}</div>
-          <div class="metric-value">${card[1]}</div>
-          <div class="metric-note">${card[2]}</div>
-        </article>
-      `).join("");
+      document.getElementById("kpis").innerHTML = cards.join("");
       const dodoSource = snapshot.meta.urls?.dodo || "";
       const dodoContext = dodoSource.replace("https://dodopizza.ru/", "");
       document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Dodo ${dodoContext}`;
@@ -773,22 +930,25 @@
 
     function renderMatchCard(item) {
       const largest = item.largest;
-      const statusLabels = { exact: "точное", review: "проверить", manual: "ручной выбор" };
-      const status = statusLabels[item.status] || item.status;
-      const statusClass = item.status === "exact" ? "papa" : item.status === "manual" ? "blue" : "amber";
+      const statusText = item.status === "exact"
+        ? "Названия совпали, пара считается точной."
+        : item.status === "manual"
+          ? "Пара выбрана вручную для проверки гипотезы."
+          : "Пара подобрана вручную, лучше проверить состав перед управленческим выводом.";
       const papaEmpty = item.papaVars.length ? "Все базовые варианты Papa имеют пару у Dodo." : "У выбранной Papa-пиццы вариации не собраны.";
       const dodoEmpty = item.dodoVars.length ? "Все варианты Dodo имеют пару у Papa." : "У выбранной Dodo-пиццы вариации не собраны.";
       return `
         <article class="match-card" data-status="${item.status}">
           <div class="match-top">
             <div class="pair-title">
-              <h3>${item.label}</h3>
-              <small>Papa: ${item.papa.name}<br>Dodo: ${item.dodo.name}</small>
-              <div class="badge-row">
-                <span class="badge ${statusClass}">${status}</span>
-                <span class="badge blue">${item.common.length} совпавших вариантов</span>
-                <span class="badge papa">Papa ${item.papaVars.length}</span>
-                <span class="badge dodo">Dodo ${item.dodoVars.length}</span>
+              <h3>${html(item.label)}</h3>
+              <div class="pair-summary">
+                <strong>${statusText}</strong>
+                <div class="pair-summary-list">
+                  <span>Papa: ${html(item.papa.name)} · Dodo: ${html(item.dodo.name)}</span>
+                  <span>Совпало ${item.common.length} вариантов по размеру и тесту.</span>
+                  <span>Всего базовых вариантов: Papa ${item.papaVars.length}, Dodo ${item.dodoVars.length}. Без точной пары: Papa ${item.papaOnly.length}, Dodo ${item.dodoOnly.length}.</span>
+                </div>
               </div>
             </div>
             <div class="variant-compare">
@@ -838,7 +998,6 @@
     function renderManualCompare() {
       const papaId = document.getElementById("manualPapaSelect").value;
       const dodoId = document.getElementById("manualDodoSelect").value;
-      const mode = document.getElementById("manualModeSelect").value;
       const papa = productById("papa", papaId);
       const dodo = productById("dodo", dodoId);
       const target = document.getElementById("manualCompare");
@@ -853,7 +1012,7 @@
         status: "manual",
         papaProductId: papa.normalizedName,
         dodoProductId: dodo.normalizedName
-      }, mode);
+      });
       target.innerHTML = renderMatchCard(item);
     }
 
@@ -936,7 +1095,6 @@
       document.getElementById("sortSelect").addEventListener("change", renderMatches);
       document.getElementById("manualPapaSelect").addEventListener("change", renderManualCompare);
       document.getElementById("manualDodoSelect").addEventListener("change", renderManualCompare);
-      document.getElementById("manualModeSelect").addEventListener("change", renderManualCompare);
       document.getElementById("papaSearch").addEventListener("input", renderUnmatched);
       document.getElementById("dodoSearch").addEventListener("input", renderUnmatched);
       document.getElementById("csvButton").addEventListener("click", downloadCsv);

@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пиццы: вариации и цены</title>
+  <style>
+    :root {
+      --ink: #13211f;
+      --muted: #66736f;
+      --paper: #f4f6f2;
+      --surface: #fff;
+      --panel: #fbfcfb;
+      --line: #d9e1dc;
+      --line-strong: #aebbb6;
+      --papa: #1e6d55;
+      --papa-soft: #dff0e8;
+      --dodo: #bd4639;
+      --dodo-soft: #f7e0dc;
+      --blue: #286a91;
+      --blue-soft: #deecf4;
+      --amber: #ad741f;
+      --amber-soft: #f3e6d0;
+      --shadow: 0 16px 38px rgba(19, 33, 31, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(19, 33, 31, 0.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(19, 33, 31, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 34px 34px;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    .shell {
+      width: min(1540px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 22px 0 52px;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font: 700 12px/1.3 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 1120px;
+      margin: 0;
+      font: 700 clamp(32px, 4.8vw, 68px)/0.94 Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0;
+      font: 700 24px/1.12 Georgia, "Times New Roman", serif;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    button,
+    select,
+    input,
+    .link-button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      font: 700 13px/1 Arial, Helvetica, sans-serif;
+    }
+
+    button,
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    select,
+    input {
+      padding: 0 11px;
+    }
+
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible,
+    .link-button:focus-visible {
+      outline: 3px solid rgba(40, 106, 145, 0.24);
+      outline-offset: 2px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .kpis {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      min-height: 124px;
+      padding: 16px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font: 700 11px/1.25 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin-top: 12px;
+      font: 700 34px/1 Georgia, "Times New Roman", serif;
+    }
+
+    .metric-note {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .panel {
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .panel-head {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .panel-copy {
+      max-width: 760px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .manual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(190px, 0.45fr);
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      display: grid;
+      min-width: 0;
+      gap: 6px;
+    }
+
+    .field span {
+      color: var(--muted);
+      font: 700 11px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .field select {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .manual-result {
+      display: grid;
+      gap: 10px;
+    }
+
+    .manual-result .match-card {
+      box-shadow: none;
+    }
+
+    .tabs {
+      display: inline-grid;
+      grid-auto-flow: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .tabs button {
+      min-width: 116px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .tabs button:last-child {
+      border-right: 0;
+    }
+
+    .tabs button.active {
+      background: var(--ink);
+      color: white;
+    }
+
+    .match-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .match-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+
+    .match-top {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.6fr) minmax(190px, 0.45fr);
+      gap: 12px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .pair-title {
+      display: grid;
+      gap: 8px;
+    }
+
+    .pair-title small,
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge.papa {
+      background: var(--papa-soft);
+      color: var(--papa);
+    }
+
+    .badge.dodo {
+      background: var(--dodo-soft);
+      color: var(--dodo);
+    }
+
+    .badge.blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .badge.amber {
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .delta-box {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .delta-main {
+      font: 700 30px/1 Georgia, "Times New Roman", serif;
+    }
+
+    .variant-compare {
+      display: grid;
+      gap: 8px;
+    }
+
+    .variant-row {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr) minmax(0, 1fr) 110px;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .variant-key,
+    .variant-cell,
+    .variant-delta {
+      min-width: 0;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .variant-key {
+      display: grid;
+      align-content: center;
+      color: var(--muted);
+      font: 700 12px/1.25 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .variant-cell {
+      display: grid;
+      gap: 5px;
+      border-left-width: 4px;
+    }
+
+    .variant-cell.papa {
+      border-left-color: var(--papa);
+    }
+
+    .variant-cell.dodo {
+      border-left-color: var(--dodo);
+    }
+
+    .price {
+      font: 700 16px/1.1 Consolas, "Courier New", monospace;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .variant-delta {
+      display: grid;
+      gap: 4px;
+      align-content: center;
+    }
+
+    .delta-negative {
+      color: var(--papa);
+    }
+
+    .delta-positive {
+      color: var(--dodo);
+    }
+
+    .match-body {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .side-board {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .side-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font: 700 12px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+      gap: 8px;
+    }
+
+    .chip {
+      min-width: 0;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .chip.only {
+      background: #f8faf8;
+    }
+
+    .chip-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      color: var(--muted);
+      font: 700 11px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .chip .price {
+      display: block;
+      margin-top: 6px;
+    }
+
+    .catalogs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .catalog-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .catalog-card {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .catalog-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .catalog-head strong {
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .empty {
+      padding: 18px;
+      border: 1px dashed var(--line-strong);
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.62);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .footnote {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 1180px) {
+      .top,
+      .match-top,
+      .catalogs,
+      .manual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpis {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .shell {
+        width: min(1540px, calc(100% - 20px));
+      }
+
+      .kpis,
+      .match-body {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .variant-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div>
+        <p class="eyebrow" id="eyebrow">Москва · сбор данных</p>
+        <h1>Полная карта вариаций пицц: размеры, тесто и ценовой разрыв</h1>
+      </div>
+      <nav class="actions" aria-label="Действия">
+        <a class="link-button" href="https://papajohns.ru/moscow" target="_blank" rel="noreferrer">Papa Johns</a>
+        <a class="link-button" href="https://dodopizza.ru/moscow" target="_blank" rel="noreferrer">Dodo Pizza</a>
+        <button type="button" id="csvButton">CSV совпадений</button>
+      </nav>
+    </header>
+
+    <section class="grid kpis" id="kpis" aria-label="Ключевые показатели"></section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <div>
+          <h2>Ручное сравнение пицц</h2>
+          <p class="panel-copy">Выберите пиццу Papa Johns и пиццу Dodo Pizza, чтобы построить такую же карту совпавших и несовпавших вариаций, как в автоматических матчах.</p>
+        </div>
+      </div>
+      <div class="manual-grid" aria-label="Настройки ручного сравнения">
+        <label class="field">
+          <span>Papa Johns</span>
+          <select id="manualPapaSelect" aria-label="Пицца Papa Johns"></select>
+        </label>
+        <label class="field">
+          <span>Dodo Pizza</span>
+          <select id="manualDodoSelect" aria-label="Пицца Dodo Pizza"></select>
+        </label>
+        <label class="field">
+          <span>Метод</span>
+          <select id="manualModeSelect" aria-label="Метод сравнения">
+            <option value="strict">Размер + тесто</option>
+            <option value="size">Только размер</option>
+          </select>
+        </label>
+      </div>
+      <div id="manualCompare" class="manual-result"></div>
+      <p class="footnote">В строгом режиме совпадением считается одинаковый размер и одинаковый вид теста. В режиме “только размер” сравнивается минимальная базовая цена внутри каждого размера.</p>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <h2>Совпавшие пиццы: вариант к варианту</h2>
+        <div class="controls">
+          <div class="tabs" aria-label="Фильтр">
+            <button type="button" class="active" data-filter="all">Все</button>
+            <button type="button" data-filter="exact">Точные</button>
+            <button type="button" data-filter="review">Проверить</button>
+          </div>
+          <select id="sortSelect" aria-label="Сортировка">
+            <option value="gap">Макс. разрыв</option>
+            <option value="name">Название</option>
+            <option value="coverage">Больше совпавших вариантов</option>
+          </select>
+        </div>
+      </div>
+      <div id="matches" class="match-list"></div>
+      <p class="footnote">Совпадением варианта считается одинаковый размер и одинаковый вид теста. Бортики Papa Johns вынесены в “только Papa”, потому что у Dodo сырный бортик в текущем UI отображается как добавка, а не как базовая вариация.</p>
+    </section>
+
+    <section class="catalogs">
+      <article class="card panel">
+        <div class="panel-head">
+          <h2>Без совпадения: Papa Johns</h2>
+          <input id="papaSearch" type="search" placeholder="Поиск" aria-label="Поиск Papa Johns">
+        </div>
+        <div id="papaUnmatched" class="catalog-list"></div>
+      </article>
+
+      <article class="card panel">
+        <div class="panel-head">
+          <h2>Без совпадения: Dodo Pizza</h2>
+          <input id="dodoSearch" type="search" placeholder="Поиск" aria-label="Поиск Dodo Pizza">
+        </div>
+        <div id="dodoUnmatched" class="catalog-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="data/pizza-snapshot.js"></script>
+  <script>
+    const snapshot = window.PIZZA_SNAPSHOT;
+
+    const rub = value => value == null ? "—" : new Intl.NumberFormat("ru-RU").format(value) + "\u00a0₽";
+    const pct = (delta, base) => base ? (delta / base) * 100 : null;
+    const norm = value => String(value || "").toLowerCase().replaceAll("ё", "е").replace(/[^a-zа-я0-9]+/g, " ").trim();
+
+    function variantKey(item, mode = "strict") {
+      if (mode === "size") return `${item.sizeCm || "?"}`;
+      return `${item.sizeCm || "?"}|${item.dough || "?"}`;
+    }
+
+    function displayKey(item) {
+      return `${item.sizeCm || "?"} см · ${item.dough || "тесто ?"}`;
+    }
+
+    function baseVariations(product) {
+      return (product.variations || []).filter(item => {
+        if (product.source !== "papa") return true;
+        return (item.crust || "none") === "none";
+      });
+    }
+
+    function groupProduct(product) {
+      const vars = baseVariations(product);
+      const byKey = new Map();
+      for (const item of vars) {
+        const key = variantKey(item);
+        if (!byKey.has(key) || item.price < byKey.get(key).price) byKey.set(key, item);
+      }
+      return [...byKey.values()].sort((a, b) => (a.sizeCm || 0) - (b.sizeCm || 0) || String(a.dough || "").localeCompare(String(b.dough || ""), "ru"));
+    }
+
+    function productById(source, id) {
+      return snapshot[source].products.find(item => item.normalizedName === id);
+    }
+
+    function mapByComparisonKey(items, mode) {
+      const byKey = new Map();
+      for (const item of items) {
+        const key = variantKey(item, mode);
+        if (!byKey.has(key) || item.price < byKey.get(key).price) byKey.set(key, item);
+      }
+      return byKey;
+    }
+
+    function enrichMatch(match, mode = "strict") {
+      const papa = productById("papa", match.papaProductId);
+      const dodo = productById("dodo", match.dodoProductId);
+      const papaVars = groupProduct(papa);
+      const dodoVars = groupProduct(dodo);
+      const papaMap = mapByComparisonKey(papaVars, mode);
+      const dodoMap = mapByComparisonKey(dodoVars, mode);
+      const commonKeys = [...papaMap.keys()].filter(key => dodoMap.has(key));
+      const common = commonKeys.map(key => {
+        const p = papaMap.get(key);
+        const d = dodoMap.get(key);
+        const delta = d.price - p.price;
+        return {
+          key,
+          papa: p,
+          dodo: d,
+          delta,
+          deltaPct: pct(delta, p.price),
+          comparisonLabel: mode === "size" ? `${p.sizeCm || "?"} см` : displayKey(p)
+        };
+      }).sort((a, b) => (a.papa.sizeCm || 0) - (b.papa.sizeCm || 0) || String(a.papa.dough || "").localeCompare(String(b.papa.dough || ""), "ru"));
+
+      const papaOnly = papaVars.filter(item => !dodoMap.has(variantKey(item, mode)));
+      const dodoOnly = dodoVars.filter(item => !papaMap.has(variantKey(item, mode)));
+      const largest = common.reduce((best, item) => !best || Math.abs(item.deltaPct) > Math.abs(best.deltaPct) ? item : best, null);
+      return { ...match, comparisonMode: mode, papa, dodo, papaVars, dodoVars, common, papaOnly, dodoOnly, largest };
+    }
+
+    const enriched = snapshot ? snapshot.matches.map(match => enrichMatch(match)) : [];
+
+    function renderKpis() {
+      const dodoNoVariants = snapshot.dodo.products.filter(item => !item.variations.length);
+      const dodoNoVariantNames = dodoNoVariants.map(item => item.name);
+      const commonCount = enriched.reduce((sum, item) => sum + item.common.length, 0);
+      const papaVarCount = snapshot.papa.products.reduce((sum, item) => sum + item.variations.length, 0);
+      const dodoVarCount = snapshot.dodo.products.reduce((sum, item) => sum + item.variations.length, 0);
+      const exact = snapshot.matches.filter(item => item.status === "exact").length;
+      const avg = enriched
+        .flatMap(item => item.common)
+        .reduce((sum, item, _, arr) => sum + item.deltaPct / arr.length, 0);
+      const cards = [
+        ["Papa пицц", snapshot.papa.products.length, `${papaVarCount} вариаций, включая бортики`],
+        ["Dodo пицц", snapshot.dodo.products.length, `${dodoVarCount} вариаций собрано`],
+        ["Матчей", snapshot.matches.length, `${exact} точных, ${snapshot.matches.length - exact} требуют проверки`],
+        ["Совпавших вариантов", commonCount, "Одинаковый размер + тесто"],
+        ["Dodo индекс", `${Math.round(100 + avg)}%`, "По совпавшим вариантам"],
+        ["Доснять Dodo", dodoNoVariants.length, dodoNoVariantNames.join(", ") || "нет пропусков"]
+      ];
+      document.getElementById("kpis").innerHTML = cards.map(card => `
+        <article class="card metric">
+          <div class="metric-label">${card[0]}</div>
+          <div class="metric-value">${card[1]}</div>
+          <div class="metric-note">${card[2]}</div>
+        </article>
+      `).join("");
+      document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Playwright snapshot`;
+    }
+
+    function renderVariantRow(row) {
+      const signClass = row.delta <= 0 ? "delta-negative" : "delta-positive";
+      const signText = row.delta <= 0 ? "Dodo ниже" : "Dodo выше";
+      return `
+        <div class="variant-row">
+          <div class="variant-key">${row.comparisonLabel || displayKey(row.papa)}</div>
+          <div class="variant-cell papa">
+            <span class="small">Papa Johns${row.papa.weightG ? ` · ${row.papa.weightG} г` : ""}</span>
+            <span class="price">${rub(row.papa.price)}</span>
+          </div>
+          <div class="variant-cell dodo">
+            <span class="small">Dodo Pizza${row.dodo.weightG ? ` · ${row.dodo.weightG} г` : ""}</span>
+            <span class="price">${rub(row.dodo.price)}</span>
+          </div>
+          <div class="variant-delta">
+            <span class="price ${signClass}">${row.deltaPct.toFixed(1)}%</span>
+            <span class="small">${signText} на ${rub(Math.abs(row.delta))}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderChip(item, extraClass = "") {
+      return `
+        <div class="chip ${extraClass}">
+          <div class="chip-top"><span>${item.sizeCm || "?"} см</span><span>${item.dough || "?"}</span></div>
+          <span class="price">${rub(item.price)}</span>
+          <span class="small">${item.weightG ? `${item.weightG} г` : item.variantLine || item.rawSize || ""}</span>
+        </div>
+      `;
+    }
+
+    function renderMatchCard(item) {
+      const largest = item.largest;
+      const statusLabels = { exact: "точное", review: "проверить", manual: "ручной выбор" };
+      const status = statusLabels[item.status] || item.status;
+      const statusClass = item.status === "exact" ? "papa" : item.status === "manual" ? "blue" : "amber";
+      const papaEmpty = item.papaVars.length ? "Все базовые варианты Papa имеют пару у Dodo." : "У выбранной Papa-пиццы вариации не собраны.";
+      const dodoEmpty = item.dodoVars.length ? "Все варианты Dodo имеют пару у Papa." : "У выбранной Dodo-пиццы вариации не собраны.";
+      return `
+        <article class="match-card" data-status="${item.status}">
+          <div class="match-top">
+            <div class="pair-title">
+              <h3>${item.label}</h3>
+              <small>Papa: ${item.papa.name}<br>Dodo: ${item.dodo.name}</small>
+              <div class="badge-row">
+                <span class="badge ${statusClass}">${status}</span>
+                <span class="badge blue">${item.common.length} совпавших вариантов</span>
+                <span class="badge papa">Papa ${item.papaVars.length}</span>
+                <span class="badge dodo">Dodo ${item.dodoVars.length}</span>
+              </div>
+            </div>
+            <div class="variant-compare">
+              ${item.common.length ? item.common.map(renderVariantRow).join("") : `<div class="empty">Нет точных совпадений по размеру и тесту. Смотрите отдельные варианты ниже.</div>`}
+            </div>
+            <div class="delta-box">
+              <span class="small">Самый заметный разрыв</span>
+              <span class="delta-main ${largest && largest.delta <= 0 ? "delta-negative" : "delta-positive"}">${largest ? Math.abs(largest.deltaPct).toFixed(1) + "%" : "—"}</span>
+              <span class="small">${largest ? `${displayKey(largest.papa)} · ${rub(Math.abs(largest.delta))}` : "Нет совпавших вариантов"}</span>
+            </div>
+          </div>
+          <div class="match-body">
+            <div class="side-board">
+              <div class="side-title"><span>Papa размеры и тесто без пары</span><span>${item.papaOnly.length}</span></div>
+              <div class="variant-grid">${item.papaOnly.length ? item.papaOnly.map(v => renderChip(v, "only")).join("") : `<div class="empty">${papaEmpty}</div>`}</div>
+            </div>
+            <div class="side-board">
+              <div class="side-title"><span>Dodo размеры и тесто без пары</span><span>${item.dodoOnly.length}</span></div>
+              <div class="variant-grid">${item.dodoOnly.length ? item.dodoOnly.map(v => renderChip(v, "only")).join("") : `<div class="empty">${dodoEmpty}</div>`}</div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function fillManualSelect(select, products) {
+      const options = [...products]
+        .sort((a, b) => a.name.localeCompare(b.name, "ru"))
+        .map(product => new Option(`${product.name} · ${groupProduct(product).length} вар.`, product.normalizedName));
+      select.replaceChildren(...options);
+    }
+
+    function initManualCompare() {
+      const papaSelect = document.getElementById("manualPapaSelect");
+      const dodoSelect = document.getElementById("manualDodoSelect");
+      fillManualSelect(papaSelect, snapshot.papa.products);
+      fillManualSelect(dodoSelect, snapshot.dodo.products);
+
+      const defaultMatch = snapshot.matches.find(item => item.label === "Пепперони") || snapshot.matches[0];
+      if (defaultMatch) {
+        papaSelect.value = defaultMatch.papaProductId;
+        dodoSelect.value = defaultMatch.dodoProductId;
+      }
+      renderManualCompare();
+    }
+
+    function renderManualCompare() {
+      const papaId = document.getElementById("manualPapaSelect").value;
+      const dodoId = document.getElementById("manualDodoSelect").value;
+      const mode = document.getElementById("manualModeSelect").value;
+      const papa = productById("papa", papaId);
+      const dodo = productById("dodo", dodoId);
+      const target = document.getElementById("manualCompare");
+
+      if (!papa || !dodo) {
+        target.innerHTML = `<div class="empty">Выберите по одной пицце из каждого списка.</div>`;
+        return;
+      }
+
+      const item = enrichMatch({
+        label: `${papa.name} / ${dodo.name}`,
+        status: "manual",
+        papaProductId: papa.normalizedName,
+        dodoProductId: dodo.normalizedName
+      }, mode);
+      target.innerHTML = renderMatchCard(item);
+    }
+
+    function renderMatches() {
+      const filter = document.querySelector("[data-filter].active").dataset.filter;
+      const sort = document.getElementById("sortSelect").value;
+      let rows = [...enriched];
+      if (filter !== "all") rows = rows.filter(item => item.status === filter);
+      rows.sort((a, b) => {
+        if (sort === "name") return a.label.localeCompare(b.label, "ru");
+        if (sort === "coverage") return b.common.length - a.common.length;
+        const ag = a.largest ? Math.abs(a.largest.deltaPct) : -1;
+        const bg = b.largest ? Math.abs(b.largest.deltaPct) : -1;
+        return bg - ag;
+      });
+      document.getElementById("matches").innerHTML = rows.map(renderMatchCard).join("");
+    }
+
+    function renderCatalogCard(product) {
+      const variants = groupProduct(product);
+      return `
+        <article class="catalog-card">
+          <div class="catalog-head">
+            <div>
+              <strong>${product.name}</strong>
+              <div class="small">${variants.length ? `${variants.length} вариантов` : "вариации не собраны"}${product.flags?.length ? ` · ${product.flags.join(", ")}` : ""}</div>
+            </div>
+            <span class="price">${rub(product.minPrice || product.minPriceCard)}</span>
+          </div>
+          ${variants.length ? `<div class="variant-grid">${variants.map(v => renderChip(v)).join("")}</div>` : `<div class="empty">Есть цена карточки, но конфигуратор не отдал варианты. Эту позицию нужно доснять отдельным ретраем.</div>`}
+        </article>
+      `;
+    }
+
+    function renderUnmatched() {
+      const papaMatched = new Set(snapshot.matches.map(item => item.papaProductId));
+      const dodoMatched = new Set(snapshot.matches.map(item => item.dodoProductId));
+      const papaQuery = norm(document.getElementById("papaSearch").value);
+      const dodoQuery = norm(document.getElementById("dodoSearch").value);
+      const papa = snapshot.papa.products.filter(item => !papaMatched.has(item.normalizedName) && (!papaQuery || item.normalizedName.includes(papaQuery)));
+      const dodo = snapshot.dodo.products.filter(item => !dodoMatched.has(item.normalizedName) && (!dodoQuery || item.normalizedName.includes(dodoQuery)));
+      document.getElementById("papaUnmatched").innerHTML = papa.length ? papa.map(renderCatalogCard).join("") : `<div class="empty">Нет позиций по текущему поиску.</div>`;
+      document.getElementById("dodoUnmatched").innerHTML = dodo.length ? dodo.map(renderCatalogCard).join("") : `<div class="empty">Нет позиций по текущему поиску.</div>`;
+    }
+
+    function downloadCsv() {
+      const header = ["pizza", "size_cm", "dough", "papa_price", "papa_weight_g", "dodo_price", "dodo_weight_g", "delta_rub", "delta_pct", "status"];
+      const lines = enriched.flatMap(match => match.common.map(row => [
+        match.label,
+        row.papa.sizeCm,
+        row.papa.dough,
+        row.papa.price,
+        row.papa.weightG || "",
+        row.dodo.price,
+        row.dodo.weightG || "",
+        row.delta,
+        row.deltaPct.toFixed(2),
+        match.status,
+      ]));
+      const csv = [header, ...lines].map(row => row.map(cell => `"${String(cell).replaceAll('"', '""')}"`).join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "pizza-variant-matches-moscow.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    if (!snapshot) {
+      document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/pizza-snapshot.js. Запустите npm run collect.</div></main>';
+    } else {
+      document.querySelectorAll("[data-filter]").forEach(button => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-filter]").forEach(item => item.classList.remove("active"));
+          button.classList.add("active");
+          renderMatches();
+        });
+      });
+      document.getElementById("sortSelect").addEventListener("change", renderMatches);
+      document.getElementById("manualPapaSelect").addEventListener("change", renderManualCompare);
+      document.getElementById("manualDodoSelect").addEventListener("change", renderManualCompare);
+      document.getElementById("manualModeSelect").addEventListener("change", renderManualCompare);
+      document.getElementById("papaSearch").addEventListener("input", renderUnmatched);
+      document.getElementById("dodoSearch").addEventListener("input", renderUnmatched);
+      document.getElementById("csvButton").addEventListener("click", downloadCsv);
+
+      renderKpis();
+      initManualCompare();
+      renderMatches();
+      renderUnmatched();
+    }
+  </script>
+</body>
+</html>

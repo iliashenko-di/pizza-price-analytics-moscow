@@ -810,7 +810,7 @@
 
   <script src="data/pizza-snapshot.js"></script>
   <script>
-    const snapshot = window.PIZZA_SNAPSHOT;
+    let snapshot = window.PIZZA_SNAPSHOT;
     const repoName = "iliashenko-di/pizza-price-analytics-moscow";
     const workflowPath = "collect.yml";
     const papaCityOptions = [
@@ -897,7 +897,15 @@
       return { ...match, comparisonMode: mode, papa, dodo, papaVars, dodoVars, common, papaOnly, dodoOnly, largest };
     }
 
-    const enriched = snapshot ? snapshot.matches.map(match => enrichMatch(match)) : [];
+    let enriched = [];
+
+    async function loadLatestSnapshot() {
+      if (window.location.protocol === "file:") return;
+      const response = await fetch(`data/pizza-snapshot.json?v=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Snapshot request failed: ${response.status}`);
+      snapshot = await response.json();
+      window.PIZZA_SNAPSHOT = snapshot;
+    }
 
     function shellQuote(value) {
       return `"${String(value).replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`;
@@ -1304,9 +1312,20 @@
       URL.revokeObjectURL(url);
     }
 
-    if (!snapshot) {
-      document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/pizza-snapshot.js. Запустите npm run collect.</div></main>';
-    } else {
+    async function bootstrap() {
+      try {
+        await loadLatestSnapshot();
+      } catch (error) {
+        console.warn("Не удалось загрузить свежий data/pizza-snapshot.json, используется локальный fallback.", error);
+      }
+
+      if (!snapshot) {
+        document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/pizza-snapshot.js. Запустите npm run collect.</div></main>';
+        return;
+      }
+
+      enriched = snapshot.matches.map(match => enrichMatch(match));
+
       document.querySelectorAll("[data-filter]").forEach(button => {
         button.addEventListener("click", () => {
           document.querySelectorAll("[data-filter]").forEach(item => item.classList.remove("active"));
@@ -1327,6 +1346,8 @@
       renderMatches();
       renderUnmatched();
     }
+
+    bootstrap();
   </script>
 </body>
 </html>

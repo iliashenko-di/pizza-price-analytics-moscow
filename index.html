@@ -290,6 +290,77 @@
       box-shadow: none;
     }
 
+    .collector-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+
+    .field.wide-field {
+      grid-column: 1 / -1;
+    }
+
+    .rule-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .rule-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font: 700 12px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .run-surface {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 10px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .run-text {
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .command-line {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      overflow-x: auto;
+      font: 700 12px/1.45 Consolas, "Courier New", monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .copy-state {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
     .tabs {
       display: inline-grid;
       grid-auto-flow: column;
@@ -561,8 +632,16 @@
       .top,
       .match-top,
       .catalogs,
-      .manual-grid {
+      .manual-grid,
+      .collector-grid,
+      .run-surface {
         grid-template-columns: 1fr;
+      }
+
+      .field.wide-field,
+      .command-line,
+      .copy-state {
+        grid-column: auto;
       }
 
       .kpis {
@@ -618,6 +697,49 @@
     </header>
 
     <section class="grid kpis" id="kpis" aria-label="Ключевые показатели"></section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <div>
+          <h2>Новый сбор данных</h2>
+          <p class="panel-copy">Выберите город Papa Johns и ресторан Dodo. Сбор запускается через GitHub Action: Playwright обновит snapshot, а эта страница подтянет новые данные после публикации Pages.</p>
+        </div>
+      </div>
+      <div class="collector-grid" aria-label="Параметры нового сбора">
+        <label class="field">
+          <span>Papa Johns город</span>
+          <select id="collectorPapaCity" aria-label="Город Papa Johns"></select>
+        </label>
+        <label class="field">
+          <span>Dodo город</span>
+          <select id="collectorDodoCity" aria-label="Город Dodo Pizza"></select>
+        </label>
+        <label class="field">
+          <span>Dodo ресторан</span>
+          <select id="collectorDodoRestaurant" aria-label="Ресторан Dodo Pizza"></select>
+        </label>
+        <label class="field wide-field">
+          <span>Dodo URL, если ресторана нет в списке</span>
+          <input id="collectorDodoCustomUrl" type="url" placeholder="https://dodopizza.ru/moscow/veshnyaki">
+        </label>
+      </div>
+      <div class="rule-strip" aria-label="Правила сбора">
+        <span class="rule-pill">Только пиццы</span>
+        <span class="rule-pill">Стандартный борт</span>
+        <span class="rule-pill">Без половинок</span>
+        <span class="rule-pill">Базовые цены</span>
+      </div>
+      <div class="run-surface">
+        <div class="run-text">
+          <strong>После запуска</strong>
+          <span>GitHub Action установит Chromium, запустит Playwright-сборщик, проверит качество данных, закоммитит `data/pizza-snapshot.*` и обновит GitHub Pages.</span>
+        </div>
+        <a class="link-button" id="workflowRunLink" href="https://github.com/iliashenko-di/pizza-price-analytics-moscow/actions/workflows/collect.yml" target="_blank" rel="noreferrer">Открыть GitHub Action</a>
+        <button type="button" id="copyWorkflowCommand">Скопировать команду</button>
+        <pre class="command-line"><code id="workflowCommand"></code></pre>
+        <span class="copy-state" id="copyWorkflowState">Команду можно выполнить в терминале, где авторизован GitHub CLI.</span>
+      </div>
+    </section>
 
     <section class="card panel">
       <div class="panel-head">
@@ -682,6 +804,19 @@
   <script src="data/pizza-snapshot.js"></script>
   <script>
     const snapshot = window.PIZZA_SNAPSHOT;
+    const repoName = "iliashenko-di/pizza-price-analytics-moscow";
+    const workflowPath = "collect.yml";
+    const papaCityOptions = [
+      { label: "Москва", url: "https://papajohns.ru/moscow" }
+    ];
+    const dodoCityOptions = [
+      {
+        label: "Москва",
+        restaurants: [
+          { label: "Вешняки · ул. Вешняковская, 13А", url: "https://dodopizza.ru/moscow/veshnyaki" }
+        ]
+      }
+    ];
 
     const rub = value => value == null ? "—" : new Intl.NumberFormat("ru-RU").format(value) + "\u00a0₽";
     const pct = (delta, base) => base ? (delta / base) * 100 : null;
@@ -756,6 +891,86 @@
     }
 
     const enriched = snapshot ? snapshot.matches.map(match => enrichMatch(match)) : [];
+
+    function shellQuote(value) {
+      return `"${String(value).replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`;
+    }
+
+    function fillSelect(select, options, getLabel = item => item.label, getValue = item => item.url) {
+      select.replaceChildren(...options.map(item => new Option(getLabel(item), getValue(item))));
+    }
+
+    function initCollectionControls() {
+      const papaSelect = document.getElementById("collectorPapaCity");
+      const dodoCitySelect = document.getElementById("collectorDodoCity");
+      const dodoRestaurantSelect = document.getElementById("collectorDodoRestaurant");
+      const dodoCustomUrl = document.getElementById("collectorDodoCustomUrl");
+
+      fillSelect(papaSelect, papaCityOptions);
+      fillSelect(dodoCitySelect, dodoCityOptions, item => item.label, item => item.label);
+
+      const currentPapaUrl = snapshot.meta.urls?.papa;
+      const currentDodoUrl = snapshot.meta.urls?.dodo;
+      const papaMatch = papaCityOptions.find(item => item.url === currentPapaUrl);
+      if (papaMatch) papaSelect.value = papaMatch.url;
+
+      function refreshRestaurants() {
+        const city = dodoCityOptions.find(item => item.label === dodoCitySelect.value) || dodoCityOptions[0];
+        fillSelect(dodoRestaurantSelect, city.restaurants);
+        const restaurantMatch = city.restaurants.find(item => item.url === currentDodoUrl);
+        if (restaurantMatch) dodoRestaurantSelect.value = restaurantMatch.url;
+        updateWorkflowCommand();
+      }
+
+      refreshRestaurants();
+
+      papaSelect.addEventListener("change", updateWorkflowCommand);
+      dodoCitySelect.addEventListener("change", () => {
+        dodoCustomUrl.value = "";
+        refreshRestaurants();
+      });
+      dodoRestaurantSelect.addEventListener("change", () => {
+        dodoCustomUrl.value = "";
+        updateWorkflowCommand();
+      });
+      dodoCustomUrl.addEventListener("input", updateWorkflowCommand);
+      document.getElementById("copyWorkflowCommand").addEventListener("click", copyWorkflowCommand);
+    }
+
+    function currentWorkflowInputs() {
+      const papaUrl = document.getElementById("collectorPapaCity").value;
+      const dodoCustomUrl = document.getElementById("collectorDodoCustomUrl").value.trim();
+      const dodoUrl = dodoCustomUrl || document.getElementById("collectorDodoRestaurant").value;
+      return { papaUrl, dodoUrl };
+    }
+
+    function updateWorkflowCommand() {
+      const { papaUrl, dodoUrl } = currentWorkflowInputs();
+      const command = [
+        "gh workflow run",
+        workflowPath,
+        "-R",
+        repoName,
+        "-f",
+        `papa_url=${shellQuote(papaUrl)}`,
+        "-f",
+        `dodo_url=${shellQuote(dodoUrl)}`
+      ].join(" ");
+      document.getElementById("workflowCommand").textContent = command;
+      document.getElementById("workflowRunLink").href = `https://github.com/${repoName}/actions/workflows/${workflowPath}`;
+      document.getElementById("copyWorkflowState").textContent = "Команду можно выполнить в терминале, где авторизован GitHub CLI.";
+    }
+
+    async function copyWorkflowCommand() {
+      const command = document.getElementById("workflowCommand").textContent;
+      const state = document.getElementById("copyWorkflowState");
+      try {
+        await navigator.clipboard.writeText(command);
+        state.textContent = "Команда скопирована.";
+      } catch {
+        state.textContent = "Не удалось скопировать автоматически. Выделите команду вручную.";
+      }
+    }
 
     function avg(values) {
       return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
@@ -1100,6 +1315,7 @@
       document.getElementById("csvButton").addEventListener("click", downloadCsv);
 
       renderKpis();
+      initCollectionControls();
       initManualCompare();
       renderMatches();
       renderUnmatched();

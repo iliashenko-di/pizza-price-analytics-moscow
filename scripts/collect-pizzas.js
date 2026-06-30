@@ -8,19 +8,21 @@ const OUT_DIR = path.join(ROOT, "data");
 const OUT_FILE = path.join(OUT_DIR, "pizza-snapshot.json");
 const OUT_JS_FILE = path.join(OUT_DIR, "pizza-snapshot.js");
 
-const PAPA_URL = "https://papajohns.ru/moscow";
+const PAPA_DEFAULT_URL = "https://papajohns.ru/moscow";
 const DODO_DEFAULT_URL = "https://dodopizza.ru/moscow/veshnyaki";
 
 const args = new Map(
   process.argv.slice(2).map((arg) => {
-    const [key, value = "true"] = arg.replace(/^--/, "").split("=");
-    return [key, value];
+    const clean = arg.replace(/^--/, "");
+    const eqIndex = clean.indexOf("=");
+    return eqIndex >= 0 ? [clean.slice(0, eqIndex), clean.slice(eqIndex + 1)] : [clean, "true"];
   }),
 );
 
 const source = args.get("source") || "all";
 const dodoLimit = Number(args.get("dodo-limit") || 0);
 const dodoHeaded = args.get("headed") === "true";
+const PAPA_URL = args.get("papa-url") || process.env.PAPA_URL || PAPA_DEFAULT_URL;
 
 function normalizeDodoMenuUrl(value) {
   const url = new URL(value || DODO_DEFAULT_URL);

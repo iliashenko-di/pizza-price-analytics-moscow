@@ -50,6 +50,12 @@ Playwright уже добавлен в `package.json`. Chromium нужен для
 npm run collect
 ```
 
+С конкретными источниками:
+
+```bash
+npm run collect -- --papa-url=https://papajohns.ru/moscow --dodo-url=https://dodopizza.ru/moscow/veshnyaki
+```
+
 Только Papa Johns:
 
 ```bash
@@ -85,6 +91,25 @@ npm run collect -- --source=dodo --dodo-limit=5
 - `data/pizza-snapshot.json`
 - `data/pizza-snapshot.js`
 
+## Запуск через страницу
+
+На дашборде есть блок "Новый сбор данных". Он позволяет выбрать город Papa Johns и город + ресторан Dodo Pizza. Правила сбора пока не настраиваются и всегда одинаковые:
+
+- только пиццы;
+- только стандартный борт;
+- без половинок;
+- базовые цены.
+
+Страница формирует команду GitHub CLI и ссылку на GitHub Action. Сам Playwright-сбор выполняется не в браузере, а в GitHub Actions workflow `Collect pizza prices`, потому что статическая GitHub Pages страница не может безопасно запускать Chromium и коммитить обновленный snapshot.
+
+После запуска workflow:
+
+1. устанавливает зависимости и Chromium;
+2. запускает `scripts/collect-pizzas.js` с выбранными URL;
+3. проверяет качество snapshot;
+4. коммитит `data/pizza-snapshot.json` и `data/pizza-snapshot.js`;
+5. GitHub Pages публикует обновленный дашборд.
+
 ## Как открыть дашборд
 
 Можно открыть `index.html` напрямую в браузере. Для локальной проверки через HTTP:
@@ -106,7 +131,7 @@ http://127.0.0.1:8765/index.html
 3. Включить `Settings -> Pages -> Deploy from a branch`.
 4. Выбрать ветку `main` и папку `/root`.
 
-Дашборд не требует домена, сервера или backend API. Для регулярного обновления цен следующим шагом можно добавить GitHub Action, который запускает `npm run collect` и коммитит обновленный `data/pizza-snapshot.json`.
+Дашборд не требует домена, сервера или backend API. Для регулярного обновления цен можно добавить расписание к уже созданному GitHub Action, который запускает `npm run collect` и коммитит обновленный `data/pizza-snapshot.json`.
 
 ## Текущий результат сбора
 

@@ -1,0 +1,86 @@
+name: Collect pizza prices
+
+on:
+  workflow_dispatch:
+    inputs:
+      papa_url:
+        description: "Papa Johns city URL"
+        required: true
+        default: "https://papajohns.ru/moscow"
+      dodo_url:
+        description: "Dodo Pizza restaurant/menu URL"
+        required: true
+        default: "https://dodopizza.ru/moscow/veshnyaki"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pizza-price-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Collect prices
+        env:
+          PAPA_URL: ${{ inputs.papa_url }}
+          DODO_URL: ${{ inputs.dodo_url }}
+        run: npm run collect -- --papa-url="$PAPA_URL" --dodo-url="$DODO_URL"
+
+      - name: Validate snapshot
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('data/pizza-snapshot.json', 'utf8'));
+          const papaVariations = data.papa.products.reduce((sum, item) => sum + item.variations.length, 0);
+          const dodoVariations = data.dodo.products.reduce((sum, item) => sum + item.variations.length, 0);
+          const halves = [...data.papa.products, ...data.dodo.products].filter((item) => /половин/i.test(item.name));
+          const papaCrusts = new Set(data.papa.products.flatMap((item) => item.variations.map((variation) => variation.crust || 'none')));
+          const dodoEmpty = data.dodo.products.filter((item) => !item.variations.length);
+          const dodoMinMismatch = data.dodo.products.filter((item) => item.variations.length && item.minPrice !== item.minPriceCard);
+
+          console.log(JSON.stringify({
+            papaProducts: data.papa.products.length,
+            papaVariations,
+            dodoProducts: data.dodo.products.length,
+            dodoVariations,
+            dodoUrl: data.meta.urls.dodo,
+          }, null, 2));
+
+          if (!data.papa.products.length || !papaVariations) throw new Error('Papa Johns snapshot is empty.');
+          if (!data.dodo.products.length || !dodoVariations) throw new Error('Dodo Pizza snapshot is empty.');
+          if (halves.length) throw new Error(`Half pizzas found: ${halves.map((item) => item.name).join(', ')}`);
+          if (papaCrusts.size !== 1 || !papaCrusts.has('none')) throw new Error(`Non-standard Papa crusts found: ${[...papaCrusts].join(', ')}`);
+          if (dodoEmpty.length) throw new Error(`Dodo products without variations: ${dodoEmpty.map((item) => item.name).join(', ')}`);
+          if (dodoMinMismatch.length) throw new Error(`Dodo min price mismatch: ${dodoMinMismatch.map((item) => item.name).join(', ')}`);
+          NODE
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/pizza-snapshot.json data/pizza-snapshot.js
+          if git diff --cached --quiet; then
+            echo "No snapshot changes."
+          else
+            git commit -m "Update pizza price snapshot"
+            git push
+          fi

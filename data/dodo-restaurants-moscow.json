@@ -1,0 +1,3059 @@
+[
+  {
+    "id": "0000076b-0000-0000-0000-000000000000",
+    "uuid": "11F0744485309F21242BD1FCE73454D0",
+    "slug": "0000076b-0000-0000-0000-000000000000",
+    "alias": "Авиационная",
+    "name": "Москва 3-8",
+    "address": "ул. Авиационная, 66",
+    "menuUrl": "https://dodopizza.ru/moscow/0000076b-0000-0000-0000-000000000000",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/0000076b-0000-0000-0000-000000000000",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/0000076b-0000-0000-0000-000000000000/contacts",
+    "metroStations": [
+      "Щукинская"
+    ],
+    "coordinates": {
+      "lat": 55.809685,
+      "lon": 37.460098
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000299-0000-0000-0000-000000000000",
+    "uuid": "000D3A2231E0A95111E80CD2A6BBD055",
+    "slug": "pavlakorchagina13s1",
+    "alias": "Алексеевский, Ростокино",
+    "name": "Москва 16-1",
+    "address": "ул. Павла Корчагина, 3с1",
+    "menuUrl": "https://dodopizza.ru/moscow/pavlakorchagina13s1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/pavlakorchagina13s1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/pavlakorchagina13s1/contacts",
+    "metroStations": [
+      "Алексеевская ",
+      "​ВДНХ"
+    ],
+    "coordinates": {
+      "lat": 55.813981,
+      "lon": 37.656496
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000125-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9C3F5",
+    "slug": "altufievo",
+    "alias": "Алтуфьево и Бибирево",
+    "name": "Москва 1-2",
+    "address": "ш. Алтуфьевское, 70к1",
+    "menuUrl": "https://dodopizza.ru/moscow/altufievo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/altufievo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/altufievo/contacts",
+    "metroStations": [
+      "​Бибирево",
+      "​Алтуфьево"
+    ],
+    "coordinates": {
+      "lat": 55.888296,
+      "lon": 37.588683
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000063f-0000-0000-0000-000000000000",
+    "uuid": "6AAFE901BEA88BC611EEDB0BB762DB99",
+    "slug": "amurskaya1ak5",
+    "alias": "Амурская",
+    "name": "Москва 12-4",
+    "address": "ул. Амурская, 1Ак5",
+    "menuUrl": "https://dodopizza.ru/moscow/amurskaya1ak5",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/amurskaya1ak5",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/amurskaya1ak5/contacts",
+    "metroStations": [
+      "Локомотив",
+      "Черкизовская"
+    ],
+    "coordinates": {
+      "lat": 55.809241,
+      "lon": 37.759273
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000736-0000-0000-0000-000000000000",
+    "uuid": "11EFF5B4AF3D3759059B39BD756868F0",
+    "slug": "novyjarbat17",
+    "alias": "Арбат",
+    "name": "Москва 0-35",
+    "address": "ул. Новый Арбат, 17",
+    "menuUrl": "https://dodopizza.ru/moscow/novyjarbat17",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/novyjarbat17",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/novyjarbat17/contacts",
+    "metroStations": [
+      "Арбатская",
+      "Смоленская"
+    ],
+    "coordinates": {
+      "lat": 55.75206,
+      "lon": 37.59108
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000351-0000-0000-0000-000000000000",
+    "uuid": "000D3A38B306A94411E89049D2478C7E",
+    "slug": "afimall",
+    "alias": "Афимолл",
+    "name": "Москва 5-6",
+    "address": "наб. Пресненская, 2",
+    "menuUrl": "https://dodopizza.ru/moscow/afimall",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/afimall",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/afimall/contacts",
+    "metroStations": [
+      "​Деловой центр",
+      "​Москва-Сити"
+    ],
+    "coordinates": {
+      "lat": 55.749162,
+      "lon": 37.539742
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001ce-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380DC11E719D8D20F17C8",
+    "slug": "moskva18",
+    "alias": "Бабушкинская",
+    "name": "Москва 1-8",
+    "address": "ул. Енисейская, 22к2",
+    "menuUrl": "https://dodopizza.ru/moscow/moskva18",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/moskva18",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/moskva18/contacts",
+    "metroStations": [
+      "​Бабушкинская"
+    ],
+    "coordinates": {
+      "lat": 55.86889,
+      "lon": 37.664878
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003c0-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81111E92BBB552C763D",
+    "slug": "basmannaya14",
+    "alias": "Басманная",
+    "name": "Москва 20-4",
+    "address": "ул. Старая Басманная, 14/2с4",
+    "menuUrl": "https://dodopizza.ru/moscow/basmannaya14",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/basmannaya14",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/basmannaya14/contacts",
+    "metroStations": [
+      "Курская",
+      "Красные Ворота",
+      "Чкаловская",
+      "Бауманская"
+    ],
+    "coordinates": {
+      "lat": 55.765215,
+      "lon": 37.660099
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003f9-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E985F2E8939CCC",
+    "slug": "begovaya",
+    "alias": "Беговая",
+    "name": "Москва 1-23",
+    "address": "пр-д 2-й Хорошевский, 3А",
+    "menuUrl": "https://dodopizza.ru/moscow/begovaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/begovaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/begovaya/contacts",
+    "metroStations": [
+      "​Беговая",
+      "​Полежаевская"
+    ],
+    "coordinates": {
+      "lat": 55.774619,
+      "lon": 37.535709
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000267-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DE11E7C6133A6D1347",
+    "slug": "belyaevo",
+    "alias": "Беляево",
+    "name": "Москва 0-12",
+    "address": "ул. Миклухо-Маклая, 36А",
+    "menuUrl": "https://dodopizza.ru/moscow/belyaevo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/belyaevo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/belyaevo/contacts",
+    "metroStations": [
+      "Беляево",
+      "Коньково"
+    ],
+    "coordinates": {
+      "lat": 55.640116,
+      "lon": 37.53296
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d5-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DF11E719D9CAEF8022",
+    "slug": "dubninskaya12",
+    "alias": "Бескудниковский",
+    "name": "Москва 1-15",
+    "address": "ул. Дубнинская, 12к2",
+    "menuUrl": "https://dodopizza.ru/moscow/dubninskaya12",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/dubninskaya12",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/dubninskaya12/contacts",
+    "metroStations": [
+      "Селигерская",
+      "​Дегунино",
+      "​Верхние Лихоборы"
+    ],
+    "coordinates": {
+      "lat": 55.864475,
+      "lon": 37.569683
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000053d-0000-0000-0000-000000000000",
+    "uuid": "000D3AAC977BBB2D11EC82BBEEB26721",
+    "slug": "birylevo",
+    "alias": "Бирюлево",
+    "name": "Москва 4-8",
+    "address": "ул. Бирюлевская, 51",
+    "menuUrl": "https://dodopizza.ru/moscow/birylevo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/birylevo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/birylevo/contacts",
+    "metroStations": [
+      "Царицыно"
+    ],
+    "coordinates": {
+      "lat": 55.58255,
+      "lon": 37.671246
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000046a-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81411EA9D9F1F6DBC1C",
+    "slug": "kharkovskaya2",
+    "alias": "Бирюлево Западное",
+    "name": "Москва 23-2",
+    "address": "ул. Харьковская, 2",
+    "menuUrl": "https://dodopizza.ru/moscow/kharkovskaya2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kharkovskaya2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kharkovskaya2/contacts",
+    "metroStations": [
+      "Царицыно"
+    ],
+    "coordinates": {
+      "lat": 55.587845,
+      "lon": 37.652966
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000039b-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94B11E8FD50631FBC57",
+    "slug": "bogorodskoe",
+    "alias": "Богородское",
+    "name": "Москва 20-1",
+    "address": "ул. Краснобогатырская, 90с2",
+    "menuUrl": "https://dodopizza.ru/moscow/bogorodskoe",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bogorodskoe",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bogorodskoe/contacts",
+    "metroStations": [
+      "Преображенская площадь",
+      "Семёновская"
+    ],
+    "coordinates": {
+      "lat": 55.800428,
+      "lon": 37.710063
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000028c-0000-0000-0000-000000000000",
+    "uuid": "000D3A258645A94D11E8006460706AB4",
+    "slug": "brateevo",
+    "alias": "Братеево",
+    "name": "Москва 4-3",
+    "address": "ул. Паромная, 11/31",
+    "menuUrl": "https://dodopizza.ru/moscow/brateevo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/brateevo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/brateevo/contacts",
+    "metroStations": [
+      "Алма-Атинская",
+      "​Борисово"
+    ],
+    "coordinates": {
+      "lat": 55.635742,
+      "lon": 37.764095
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000032f-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94311E8706D6210D0D4",
+    "slug": "butyrskaya",
+    "alias": "Бутырская",
+    "name": "Москва 0-15",
+    "address": "пр-д Огородный, 10",
+    "menuUrl": "https://dodopizza.ru/moscow/butyrskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/butyrskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/butyrskaya/contacts",
+    "metroStations": [
+      "Бутырская",
+      "Останкино (D3)",
+      "​Фонвизинская"
+    ],
+    "coordinates": {
+      "lat": 55.813637,
+      "lon": 37.603604
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003c9-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211E940067ACB1091",
+    "slug": "kashirskij25k2",
+    "alias": "Варшавская",
+    "name": "Москва 4-16",
+    "address": "пр-д Каширский, 25к2",
+    "menuUrl": "https://dodopizza.ru/moscow/kashirskij25k2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kashirskij25k2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kashirskij25k2/contacts",
+    "metroStations": [
+      "Варшавская",
+      "​Каховская"
+    ],
+    "coordinates": {
+      "lat": 55.654035,
+      "lon": 37.624391
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005d1-0000-0000-0000-000000000000",
+    "uuid": "BA8F47DB8FCCA3A911EE0E88B473C881",
+    "slug": "6novovatutinskaya2",
+    "alias": "Ватутинки",
+    "name": "Троицк-2",
+    "address": "ул. 6-я Нововатутинская, 2",
+    "menuUrl": "https://dodopizza.ru/moscow/6novovatutinskaya2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/6novovatutinskaya2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/6novovatutinskaya2/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.514347,
+      "lon": 37.352085
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000035c-0000-0000-0000-000000000000",
+    "uuid": "000D3A24D2B7A94311E8A145390818C4",
+    "slug": "ostankino",
+    "alias": "ВДНХ, Останкино",
+    "name": "Москва 16-2",
+    "address": "ул. Аргуновская, 10c2",
+    "menuUrl": "https://dodopizza.ru/moscow/ostankino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ostankino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ostankino/contacts",
+    "metroStations": [
+      "ВДНХ",
+      "​Останкино"
+    ],
+    "coordinates": {
+      "lat": 55.816475,
+      "lon": 37.620645
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003f7-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E985F1DFCE8EE7",
+    "slug": "veshnyaki",
+    "alias": "Вешняки",
+    "name": "Москва 1-21",
+    "address": "ул. Вешняковская, 13А",
+    "menuUrl": "https://dodopizza.ru/moscow/veshnyaki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/veshnyaki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/veshnyaki/contacts",
+    "metroStations": [
+      "​Новогиреево"
+    ],
+    "coordinates": {
+      "lat": 55.735885,
+      "lon": 37.830033
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000528-0000-0000-0000-000000000000",
+    "uuid": "000D3ABF84C3BB2E11EC5538FF9B4406",
+    "slug": "poselenievnukovskoeomskaya7a",
+    "alias": "Внуково",
+    "name": "Внуково-1",
+    "address": "ул. Омская, поселение Внуковское, 7А",
+    "menuUrl": "https://dodopizza.ru/moscow/poselenievnukovskoeomskaya7a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/poselenievnukovskoeomskaya7a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/poselenievnukovskoeomskaya7a/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.615837,
+      "lon": 37.263439
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000640-0000-0000-0000-000000000000",
+    "uuid": "6AAFE901BEA88BD711EEDB0E3F80121C",
+    "slug": "2jvolnyjpereulok11",
+    "alias": "Вольная",
+    "name": "Москва 12-5",
+    "address": "пер. 2-й Вольный, 11",
+    "menuUrl": "https://dodopizza.ru/moscow/2jvolnyjpereulok11",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/2jvolnyjpereulok11",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/2jvolnyjpereulok11/contacts",
+    "metroStations": [
+      "​Автозаводская",
+      "Соколиная Гора"
+    ],
+    "coordinates": {
+      "lat": 55.773792,
+      "lon": 37.739239
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005a3-0000-0000-0000-000000000000",
+    "uuid": "F2F5C721DD3688A211EDA6DBEF8E081E",
+    "slug": "prospektkuprinad7k2",
+    "alias": "Воскресенское-1",
+    "name": "Воскресенское-1",
+    "address": "пр-т Куприна, 7к2",
+    "menuUrl": "https://dodopizza.ru/moscow/prospektkuprinad7k2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/prospektkuprinad7k2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/prospektkuprinad7k2/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.540997,
+      "lon": 37.477283
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000587-0000-0000-0000-000000000000",
+    "uuid": "4A1D9364BAC7848211ED6C0810A0EE78",
+    "slug": "bobrovo239",
+    "alias": "Восточное Бутово ",
+    "name": "Щербинка-4",
+    "address": "пос. Боброво, 239",
+    "menuUrl": "https://dodopizza.ru/moscow/bobrovo239",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bobrovo239",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bobrovo239/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.540195,
+      "lon": 37.611392
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002cf-0000-0000-0000-000000000000",
+    "uuid": "000D3A284715A95811E8333D3EE202D9",
+    "slug": "eizmaylovo",
+    "alias": "Восточное Измайлово",
+    "name": "Москва 4-13",
+    "address": "б-р Сиреневый, 60",
+    "menuUrl": "https://dodopizza.ru/moscow/eizmaylovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/eizmaylovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/eizmaylovo/contacts",
+    "metroStations": [
+      "Первомайская"
+    ],
+    "coordinates": {
+      "lat": 55.802381,
+      "lon": 37.825712
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000643-0000-0000-0000-000000000000",
+    "uuid": "4E24BE99212E943311EEDB9DA9761355",
+    "slug": "hklobystova3k1",
+    "alias": "Выхино",
+    "name": "Москва 12-8",
+    "address": "ул. ул. Хлобыстова, 3к2",
+    "menuUrl": "https://dodopizza.ru/moscow/hklobystova3k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/hklobystova3k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/hklobystova3k1/contacts",
+    "metroStations": [
+      "Выхино",
+      "​Вешняки"
+    ],
+    "coordinates": {
+      "lat": 55.71731,
+      "lon": 37.811662
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d7-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380DC11E719D9FFA9F546",
+    "slug": "golovinskiy",
+    "alias": "Головинский",
+    "name": "Москва 1-17",
+    "address": "ш. Головинское, 1а",
+    "menuUrl": "https://dodopizza.ru/moscow/golovinskiy",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/golovinskiy",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/golovinskiy/contacts",
+    "metroStations": [
+      "​Водный стадион",
+      "​Балтийская"
+    ],
+    "coordinates": {
+      "lat": 55.839759,
+      "lon": 37.488233
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003c8-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A81611E94006175E1ABE",
+    "slug": "uralskaya5a",
+    "alias": "Гольяново",
+    "name": "Москва 4-15",
+    "address": "ул. Уральская, 5А",
+    "menuUrl": "https://dodopizza.ru/moscow/uralskaya5a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/uralskaya5a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/uralskaya5a/contacts",
+    "metroStations": [
+      "Щёлковская"
+    ],
+    "coordinates": {
+      "lat": 55.813749,
+      "lon": 37.797613
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001b4-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DE11E702B7926EDA73",
+    "slug": "sbutovo",
+    "alias": "Горчакова",
+    "name": "Москва 4-2",
+    "address": "ул. Южнобутовская, 42",
+    "menuUrl": "https://dodopizza.ru/moscow/sbutovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sbutovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sbutovo/contacts",
+    "metroStations": [
+      "Улица Горчакова",
+      "Бульвар Адмирала Ушакова"
+    ],
+    "coordinates": {
+      "lat": 55.539895,
+      "lon": 37.536365
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d4-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380DC11E719D9C3513496",
+    "slug": "dubninskaya50",
+    "alias": "Дмитровское ш., Лианозово",
+    "name": "Москва 1-14",
+    "address": "ул. Дубнинская, 50",
+    "menuUrl": "https://dodopizza.ru/moscow/dubninskaya50",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/dubninskaya50",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/dubninskaya50/contacts",
+    "metroStations": [
+      "​Лианозово",
+      "​Бескудниково"
+    ],
+    "coordinates": {
+      "lat": 55.893672,
+      "lon": 37.558562
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002ca-0000-0000-0000-000000000000",
+    "uuid": "000D3A2231E0A95211E8333CDD920305",
+    "slug": "orekhovo",
+    "alias": "Домодедовская",
+    "name": "Москва 4-7",
+    "address": "ул. Домодедовская, 42А",
+    "menuUrl": "https://dodopizza.ru/moscow/orekhovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/orekhovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/orekhovo/contacts",
+    "metroStations": [
+      "Домодедовская",
+      "​Орехово"
+    ],
+    "coordinates": {
+      "lat": 55.602779,
+      "lon": 37.713827
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000748-0000-0000-0000-000000000000",
+    "uuid": "11F01AC3AA5D8DC01AB78309D9720AC0",
+    "slug": "dudinka3",
+    "alias": "Дудинка",
+    "name": "Москва 3-6",
+    "address": "ул. Дудинка, 3",
+    "menuUrl": "https://dodopizza.ru/moscow/dudinka3",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/dudinka3",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/dudinka3/contacts",
+    "metroStations": [
+      "Бабушкинская ",
+      "Ростокино"
+    ],
+    "coordinates": {
+      "lat": 55.861954,
+      "lon": 37.687702
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000074a-0000-0000-0000-000000000000",
+    "uuid": "11F01EA1B79FD5F7444CF7CE83D270A0",
+    "slug": "shelikhova1k2",
+    "alias": "ЖК Символ",
+    "name": "Москва 14-5",
+    "address": "пр-д Шелихова, 1к2",
+    "menuUrl": "https://dodopizza.ru/moscow/shelikhova1k2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/shelikhova1k2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/shelikhova1k2/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.749302,
+      "lon": 37.689716
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000044b-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81311EA3B6B80175D2A",
+    "slug": "zhulebinskiy15",
+    "alias": "Жулебино",
+    "name": "Москва 1-27",
+    "address": "б-р Жулебинский , 15",
+    "menuUrl": "https://dodopizza.ru/moscow/zhulebinskiy15",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/zhulebinskiy15",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/zhulebinskiy15/contacts",
+    "metroStations": [
+      "​Лермонтовский проспект",
+      "​Ухтомская",
+      "​Жулебино"
+    ],
+    "coordinates": {
+      "lat": 55.695646,
+      "lon": 37.851583
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000073f-0000-0000-0000-000000000000",
+    "uuid": "11F0065289F599CA7835D3BA91E90DA0",
+    "slug": "zelenodolskaya32k3",
+    "alias": "Зеленодольская",
+    "name": "Москва 12-10",
+    "address": "ул. Зеленодольская",
+    "menuUrl": "https://dodopizza.ru/moscow/zelenodolskaya32k3",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/zelenodolskaya32k3",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/zelenodolskaya32k3/contacts",
+    "metroStations": [
+      "Кузьминки "
+    ],
+    "coordinates": {
+      "lat": 55.710712,
+      "lon": 37.767582
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000596-0000-0000-0000-000000000000",
+    "uuid": "A68BFB757EA681D811ED9348902098F6",
+    "slug": "2kozhuhovskij6k2s6",
+    "alias": "ЗИЛ",
+    "name": "Москва 13-4",
+    "address": "пр-д 2-й Кожуховский, 29к2с6",
+    "menuUrl": "https://dodopizza.ru/moscow/2kozhuhovskij6k2s6",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/2kozhuhovskij6k2s6",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/2kozhuhovskij6k2s6/contacts",
+    "metroStations": [
+      "ЗИЛ ",
+      "Автозаводская"
+    ],
+    "coordinates": {
+      "lat": 55.69934,
+      "lon": 37.656119
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": false,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000588-0000-0000-0000-000000000000",
+    "uuid": "BA93AB081F83A90511ED6C2A81108CEC",
+    "slug": "ryazanovskoe31k1",
+    "alias": "Знамя Октября",
+    "name": "Щербинка-3",
+    "address": "ш. Рязановское, 31к1",
+    "menuUrl": "https://dodopizza.ru/moscow/ryazanovskoe31k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ryazanovskoe31k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ryazanovskoe31k1/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.476295,
+      "lon": 37.530346
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000256-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380FD11E7B01E162D4980",
+    "slug": "zyuzino",
+    "alias": "Зюзино",
+    "name": "Москва 0-4",
+    "address": "ул. Одесская, 16",
+    "menuUrl": "https://dodopizza.ru/moscow/zyuzino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/zyuzino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/zyuzino/contacts",
+    "metroStations": [
+      "Каховская",
+      "Севастопольская",
+      "Зюзино"
+    ],
+    "coordinates": {
+      "lat": 55.656321,
+      "lon": 37.590165
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002c9-0000-0000-0000-000000000000",
+    "uuid": "000D3A284715A95811E8333CCF6CF1A0",
+    "slug": "krasnogvardeyskaya",
+    "alias": "Зябликово",
+    "name": "Москва 4-6",
+    "address": "ул. Воронежская, 36к1",
+    "menuUrl": "https://dodopizza.ru/moscow/krasnogvardeyskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/krasnogvardeyskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/krasnogvardeyskaya/contacts",
+    "metroStations": [
+      "Красногвардейская",
+      "Зябликово",
+      "Домодедовская"
+    ],
+    "coordinates": {
+      "lat": 55.610372,
+      "lon": 37.740354
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003cd-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E9455DC8ED253B",
+    "slug": "molostovyh3a",
+    "alias": "Ивановское",
+    "name": "Москва 0-18",
+    "address": "ул. Молостовых, 3а",
+    "menuUrl": "https://dodopizza.ru/moscow/molostovyh3a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/molostovyh3a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/molostovyh3a/contacts",
+    "metroStations": [
+      "Новогиреево"
+    ],
+    "coordinates": {
+      "lat": 55.763133,
+      "lon": 37.833159
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003db-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A82E11E95A24386D70F4",
+    "slug": "kalitniki",
+    "alias": "Калитники",
+    "name": "Москва 14-3",
+    "address": "пр-т Волгоградский, 15",
+    "menuUrl": "https://dodopizza.ru/moscow/kalitniki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kalitniki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kalitniki/contacts",
+    "metroStations": [
+      "Волгоградский проспект"
+    ],
+    "coordinates": {
+      "lat": 55.729447,
+      "lon": 37.67758
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000257-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080EE11E7B01E24E17C51",
+    "slug": "chongarskiy19",
+    "alias": "Каховская",
+    "name": "Москва 0-5",
+    "address": "б-р Чонгарский, 19",
+    "menuUrl": "https://dodopizza.ru/moscow/chongarskiy19",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/chongarskiy19",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/chongarskiy19/contacts",
+    "metroStations": [
+      "Каховская",
+      "Севастопольская",
+      "Варшавская"
+    ],
+    "coordinates": {
+      "lat": 55.652796,
+      "lon": 37.606703
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002ce-0000-0000-0000-000000000000",
+    "uuid": "000D3A2231E0A95211E8333D2D4504DD",
+    "slug": "kashirskoe26",
+    "alias": "Каширская",
+    "name": "Москва 4-12",
+    "address": "ш. Каширское, 26к2",
+    "menuUrl": "https://dodopizza.ru/moscow/kashirskoe26",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kashirskoe26",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kashirskoe26/contacts",
+    "metroStations": [
+      "Каширская"
+    ],
+    "coordinates": {
+      "lat": 55.653517,
+      "lon": 37.648178
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002cd-0000-0000-0000-000000000000",
+    "uuid": "000D3A258645A95411E8333D19605DEF",
+    "slug": "nagatinskiyzaton",
+    "alias": "Коломенская",
+    "name": "Москва 4-11",
+    "address": "пр-т Андропова, 22",
+    "menuUrl": "https://dodopizza.ru/moscow/nagatinskiyzaton",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/nagatinskiyzaton",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/nagatinskiyzaton/contacts",
+    "metroStations": [
+      "Коломенская"
+    ],
+    "coordinates": {
+      "lat": 55.682651,
+      "lon": 37.661922
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000000e7-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F96755",
+    "slug": "monahovoy21",
+    "alias": "Коммунарка",
+    "name": "Коммунарка-1",
+    "address": "ул. Александры Монаховой, 21/1",
+    "menuUrl": "https://dodopizza.ru/moscow/monahovoy21",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/monahovoy21",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/monahovoy21/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.570579,
+      "lon": 37.476609
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000023d-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380E911E78DBCBF2ABB28",
+    "slug": "novopetrovskaya6",
+    "alias": "Коптево",
+    "name": "Москва 1-18",
+    "address": "ул. Новопетровская, 6",
+    "menuUrl": "https://dodopizza.ru/moscow/novopetrovskaya6",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/novopetrovskaya6",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/novopetrovskaya6/contacts",
+    "metroStations": [
+      "​Войковская",
+      "​Коптево"
+    ],
+    "coordinates": {
+      "lat": 55.825664,
+      "lon": 37.51653
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d3-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DC11E719D9B85843D5",
+    "slug": "korovinskoe23k1",
+    "alias": "Коровинское шоссе",
+    "name": "Москва 1-13",
+    "address": "ш. Коровинское, 23к1",
+    "menuUrl": "https://dodopizza.ru/moscow/korovinskoe23k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/korovinskoe23k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/korovinskoe23k1/contacts",
+    "metroStations": [
+      "​Грачевская",
+      "​Яхромская"
+    ],
+    "coordinates": {
+      "lat": 55.87695,
+      "lon": 37.52342
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000035d-0000-0000-0000-000000000000",
+    "uuid": "000D3A24D2B7A94311E8A3380AE3FB75",
+    "slug": "kosino-nekrasovka",
+    "alias": "Косино - Некрасовка",
+    "name": "Москва 17-1",
+    "address": "ул. Наташи Качуевской, 5",
+    "menuUrl": "https://dodopizza.ru/moscow/kosino-nekrasovka",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kosino-nekrasovka",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kosino-nekrasovka/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.713309,
+      "lon": 37.878299
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000253-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DE11E7AF64C5232229",
+    "slug": "kotlovka",
+    "alias": "Котловка",
+    "name": "Москва 0-3",
+    "address": "пр-т Севастопольский, 18 А",
+    "menuUrl": "https://dodopizza.ru/moscow/kotlovka",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kotlovka",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kotlovka/contacts",
+    "metroStations": [
+      "Крымская",
+      "Нагорная",
+      "Академическая"
+    ],
+    "coordinates": {
+      "lat": 55.68263,
+      "lon": 37.597926
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000733-0000-0000-0000-000000000000",
+    "uuid": "11EFF42FBF6CF78C8E3504355919AD70",
+    "slug": "krasnoprudnaya",
+    "alias": "Краснопрудная",
+    "name": "Москва 7-3",
+    "address": "ул. Краснопрудная, 22-24",
+    "menuUrl": "https://dodopizza.ru/moscow/krasnoprudnaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/krasnoprudnaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/krasnoprudnaya/contacts",
+    "metroStations": [
+      "Красносельская"
+    ],
+    "coordinates": {
+      "lat": 55.778683,
+      "lon": 37.665184
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000080d-0000-0000-0000-000000000000",
+    "uuid": "11F171228A9FED1B4DB0CFF9B0A44B60",
+    "slug": "0000080d-0000-0000-0000-000000000000",
+    "alias": "Крылатское",
+    "name": "Москва 13-9",
+    "address": "б-р Осенний, 12",
+    "menuUrl": "https://dodopizza.ru/moscow/0000080d-0000-0000-0000-000000000000",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/0000080d-0000-0000-0000-000000000000",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/0000080d-0000-0000-0000-000000000000/contacts",
+    "metroStations": [
+      "​Крылатское"
+    ],
+    "coordinates": {
+      "lat": 55.759239,
+      "lon": 37.409252
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000749-0000-0000-0000-000000000000",
+    "uuid": "11F01B58B6051B1D6E115445531C9720",
+    "slug": "kutuzovskij34",
+    "alias": "Кутузовский",
+    "name": "Москва 24-2",
+    "address": "пр-т Кутузовский, 34 стр 14",
+    "menuUrl": "https://dodopizza.ru/moscow/kutuzovskij34",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kutuzovskij34",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kutuzovskij34/contacts",
+    "metroStations": [
+      "Кутузовская"
+    ],
+    "coordinates": {
+      "lat": 55.739883,
+      "lon": 37.530312
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000280-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DE11E7DF40FED251D5",
+    "slug": "lefortovo",
+    "alias": "Лефортово",
+    "name": "Москва 14-1",
+    "address": "ул. Энергетическая, 14/1",
+    "menuUrl": "https://dodopizza.ru/moscow/lefortovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lefortovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lefortovo/contacts",
+    "metroStations": [
+      "Лефортово",
+      "Авиамоторная"
+    ],
+    "coordinates": {
+      "lat": 55.758833,
+      "lon": 37.708913
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000660-0000-0000-0000-000000000000",
+    "uuid": "82542D0B739AB51E11EEECD8D9F35DAE",
+    "slug": "lokomotivnyj4",
+    "alias": "Локомотивный",
+    "name": "Москва 7-2",
+    "address": "пр-д Локомотивный, 4",
+    "menuUrl": "https://dodopizza.ru/moscow/lokomotivnyj4",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lokomotivnyj4",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lokomotivnyj4/contacts",
+    "metroStations": [
+      "Петровско-Разумовская",
+      "Окружная"
+    ],
+    "coordinates": {
+      "lat": 55.838,
+      "lon": 37.576861
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000264-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C3811711E7C612DE42C599",
+    "slug": "lomonosovskiy",
+    "alias": "Ломоносовский",
+    "name": "Москва 0-8",
+    "address": "пр-т Вернадского, 29",
+    "menuUrl": "https://dodopizza.ru/moscow/lomonosovskiy",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lomonosovskiy",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lomonosovskiy/contacts",
+    "metroStations": [
+      "Проспект Вернадского"
+    ],
+    "coordinates": {
+      "lat": 55.681712,
+      "lon": 37.516449
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005eb-0000-0000-0000-000000000000",
+    "uuid": "BA84192B59CEA6B511EE66A144E0DEC8",
+    "slug": "lomonosovskiy36",
+    "alias": "Ломоносовский",
+    "name": "Москва 0-29",
+    "address": "пр-т Ломоносовский, 36",
+    "menuUrl": "https://dodopizza.ru/moscow/lomonosovskiy36",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lomonosovskiy36",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lomonosovskiy36/contacts",
+    "metroStations": [
+      "Ломоносовский проспект",
+      "Минская",
+      "Университет"
+    ],
+    "coordinates": {
+      "lat": 55.709084,
+      "lon": 37.509918
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000000ae-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F911AC",
+    "slug": "krasnaya_gorka",
+    "alias": "Люберцы",
+    "name": "Люберцы-1",
+    "address": "ул. Инициативная, 13",
+    "menuUrl": "https://dodopizza.ru/moscow/krasnaya_gorka",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/krasnaya_gorka",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/krasnaya_gorka/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.685555,
+      "lon": 37.899288
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000004af-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A83111EB5B533D001740",
+    "slug": "krasnodarskaya65",
+    "alias": "Люблино",
+    "name": "Москва 1-28",
+    "address": "ул. Краснодарская, 65/18с2",
+    "menuUrl": "https://dodopizza.ru/moscow/krasnodarskaya65",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/krasnodarskaya65",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/krasnodarskaya65/contacts",
+    "metroStations": [
+      "​Люблино"
+    ],
+    "coordinates": {
+      "lat": 55.6759,
+      "lon": 37.771984
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000540-0000-0000-0000-000000000000",
+    "uuid": "000D3ABF84C3BB2E11EC842445A67917",
+    "slug": "lyublinskaya59",
+    "alias": "Люблино",
+    "name": "Москва 23-3",
+    "address": "ул. Люблинская, 59",
+    "menuUrl": "https://dodopizza.ru/moscow/lyublinskaya59",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lyublinskaya59",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lyublinskaya59/contacts",
+    "metroStations": [
+      "Люблино"
+    ],
+    "coordinates": {
+      "lat": 55.686218,
+      "lon": 37.738081
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000144-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9F45D",
+    "slug": "bratislavskaya",
+    "alias": "Марьино-Люблино",
+    "name": "Москва 5-1",
+    "address": "ул. Братиславская, 22",
+    "menuUrl": "https://dodopizza.ru/moscow/bratislavskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bratislavskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bratislavskaya/contacts",
+    "metroStations": [
+      "​Братиславская",
+      "Марьино"
+    ],
+    "coordinates": {
+      "lat": 55.655158,
+      "lon": 37.762129
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003fa-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A82E11E985F32E9519A4",
+    "slug": "maslovka10c4",
+    "alias": "Масловка",
+    "name": "Москва 1-24",
+    "address": "ул. Верхняя Масловка, 10с4",
+    "menuUrl": "https://dodopizza.ru/moscow/maslovka10c4",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/maslovka10c4",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/maslovka10c4/contacts",
+    "metroStations": [
+      "Петровский парк",
+      "​Динамо",
+      "​Савеловская"
+    ],
+    "coordinates": {
+      "lat": 55.793298,
+      "lon": 37.565731
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001cd-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DC11E719D8C5B8A196",
+    "slug": "northmedvedkovo",
+    "alias": "Медведково Северное",
+    "name": "Москва 1-7",
+    "address": "ул. Широкая, 27",
+    "menuUrl": "https://dodopizza.ru/moscow/northmedvedkovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/northmedvedkovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/northmedvedkovo/contacts",
+    "metroStations": [
+      "Медведково"
+    ],
+    "coordinates": {
+      "lat": 55.88773,
+      "lon": 37.675675
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000000d6-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F94C2E",
+    "slug": "medvedkovo",
+    "alias": "Медведково Южное",
+    "name": "Москва 1-1",
+    "address": "пр-д Дежнева, 29к1",
+    "menuUrl": "https://dodopizza.ru/moscow/medvedkovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/medvedkovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/medvedkovo/contacts",
+    "metroStations": [
+      "​Отрадное"
+    ],
+    "coordinates": {
+      "lat": 55.869824,
+      "lon": 37.631236
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000235-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080E111E7826AD6E00AC4",
+    "slug": "tolbuhina8",
+    "alias": "Можайский",
+    "name": "Москва 13-2",
+    "address": "ул. Толбухина, 8к1",
+    "menuUrl": "https://dodopizza.ru/moscow/tolbuhina8",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/tolbuhina8",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/tolbuhina8/contacts",
+    "metroStations": [
+      "Молодёжная ",
+      "​Сетунь",
+      "​Рабочий Поселок"
+    ],
+    "coordinates": {
+      "lat": 55.719495,
+      "lon": 37.401833
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003d0-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211E94704309BED06",
+    "slug": "pyatniczkoe21",
+    "alias": "Москва 11-1 Митино",
+    "name": "Москва 11-1",
+    "address": "ш. Пятницкое, 21",
+    "menuUrl": "https://dodopizza.ru/moscow/pyatniczkoe21",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/pyatniczkoe21",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/pyatniczkoe21/contacts",
+    "metroStations": [
+      "​Митино",
+      "​Волоколамская"
+    ],
+    "coordinates": {
+      "lat": 55.84771,
+      "lon": 37.37059
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000090-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F8E27B",
+    "slug": "3_mikrorayon",
+    "alias": "Московский",
+    "name": "Московский-1",
+    "address": "мкрн. 3-й , 21",
+    "menuUrl": "https://dodopizza.ru/moscow/3_mikrorayon",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/3_mikrorayon",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/3_mikrorayon/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.597546,
+      "lon": 37.347656
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000646-0000-0000-0000-000000000000",
+    "uuid": "6AD3BC2834A2BD2B11EEE04DF79CAFC4",
+    "slug": "myasnickaya13s3",
+    "alias": "Мясницкая",
+    "name": "Москва 0-30",
+    "address": "ул. Мясницкая, 13 стр 3",
+    "menuUrl": "https://dodopizza.ru/moscow/myasnickaya13s3",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/myasnickaya13s3",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/myasnickaya13s3/contacts",
+    "metroStations": [
+      "Чистые пруды",
+      "​Тургеневская",
+      "​Сретенский бульвар"
+    ],
+    "coordinates": {
+      "lat": 55.762617,
+      "lon": 37.634398
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000709-0000-0000-0000-000000000000",
+    "uuid": "11EFB146A41F55EE92BBEB9839F158C0",
+    "slug": "kommunarka-2",
+    "alias": "Николо-Хованское",
+    "name": "Коммунарка-2",
+    "address": "пр-т Магеллана, 5",
+    "menuUrl": "https://dodopizza.ru/moscow/kommunarka-2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kommunarka-2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kommunarka-2/contacts",
+    "metroStations": [
+      "Прокшино"
+    ],
+    "coordinates": {
+      "lat": 55.590343,
+      "lon": 37.444019
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000059e-0000-0000-0000-000000000000",
+    "uuid": "6AE7164591C6A7CA11EDA2FFC77B7E29",
+    "slug": "svobodnyj35a",
+    "alias": "Новогиреево",
+    "name": "Москва 0-27",
+    "address": "пр-т пр-т Свободный, 35А",
+    "menuUrl": "https://dodopizza.ru/moscow/svobodnyj35a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/svobodnyj35a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/svobodnyj35a/contacts",
+    "metroStations": [
+      "Новогиреево"
+    ],
+    "coordinates": {
+      "lat": 55.750662,
+      "lon": 37.817528
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003f6-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E985F1D0C2D774",
+    "slug": "suzdalskaya30-2",
+    "alias": "Новокосино",
+    "name": "Москва 1-20",
+    "address": "ул. Суздальская, 30/2",
+    "menuUrl": "https://dodopizza.ru/moscow/suzdalskaya30-2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/suzdalskaya30-2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/suzdalskaya30-2/contacts",
+    "metroStations": [
+      "​Новокосино",
+      "​Реутов"
+    ],
+    "coordinates": {
+      "lat": 55.743725,
+      "lon": 37.863459
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005b9-0000-0000-0000-000000000000",
+    "uuid": "FA37B8896399AF8111EDDDD797CF42AC",
+    "slug": "borovskoe30",
+    "alias": "Новопеределкино",
+    "name": "Москва 23-4",
+    "address": "ш. Боровское, 30а",
+    "menuUrl": "https://dodopizza.ru/moscow/borovskoe30",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/borovskoe30",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/borovskoe30/contacts",
+    "metroStations": [
+      "Новопеределкино"
+    ],
+    "coordinates": {
+      "lat": 55.640548,
+      "lon": 37.355201
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000439-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211EA1A7159572530",
+    "slug": "novoslobodskaya18",
+    "alias": "Новослободская",
+    "name": "Москва 0-20",
+    "address": "ул. Новослободская, 18",
+    "menuUrl": "https://dodopizza.ru/moscow/novoslobodskaya18",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/novoslobodskaya18",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/novoslobodskaya18/contacts",
+    "metroStations": [
+      "Новослободская",
+      "Менделеевская",
+      "​Достоевская"
+    ],
+    "coordinates": {
+      "lat": 55.782334,
+      "lon": 37.59931
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000032e-0000-0000-0000-000000000000",
+    "uuid": "000D3A24D2B7A94311E8706B7529EBFD",
+    "slug": "obrucheva16",
+    "alias": "Обручева",
+    "name": "Москва 0-14",
+    "address": "ул. Обручева, 16к1",
+    "menuUrl": "https://dodopizza.ru/moscow/obrucheva16",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/obrucheva16",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/obrucheva16/contacts",
+    "metroStations": [
+      "Калужская",
+      "Воронцовская",
+      "Новаторская",
+      "Калужская"
+    ],
+    "coordinates": {
+      "lat": 55.658891,
+      "lon": 37.514239
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000018b-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DD11E6B5A4BFA5F338",
+    "slug": "oktyaborskoe_pole",
+    "alias": "Октябрьское Поле",
+    "name": "Москва 3-3",
+    "address": "ул. Народного Ополчения, 49К1",
+    "menuUrl": "https://dodopizza.ru/moscow/oktyaborskoe_pole",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/oktyaborskoe_pole",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/oktyaborskoe_pole/contacts",
+    "metroStations": [
+      "Октябрьское Поле",
+      "Панфиловская"
+    ],
+    "coordinates": {
+      "lat": 55.794624,
+      "lon": 37.494449
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002c4-0000-0000-0000-000000000000",
+    "uuid": "000D3A284715A95611E82DCF25C462C3",
+    "slug": "northorekhovo",
+    "alias": "Орехово-Борисово Северное",
+    "name": "Москва 4-4",
+    "address": "пр-д Борисовский, 18А",
+    "menuUrl": "https://dodopizza.ru/moscow/northorekhovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/northorekhovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/northorekhovo/contacts",
+    "metroStations": [
+      "Шипиловская",
+      "​Борисово"
+    ],
+    "coordinates": {
+      "lat": 55.625953,
+      "lon": 37.724122
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002c8-0000-0000-0000-000000000000",
+    "uuid": "000D3A258645A95411E8333CA08C625F",
+    "slug": "shipilovskaya62a",
+    "alias": "Орехово-Борисово Южное",
+    "name": "Москва 4-5",
+    "address": "ш. Каширское, 65к3",
+    "menuUrl": "https://dodopizza.ru/moscow/shipilovskaya62a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/shipilovskaya62a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/shipilovskaya62a/contacts",
+    "metroStations": [
+      "Домодедовская"
+    ],
+    "coordinates": {
+      "lat": 55.598863,
+      "lon": 37.72528
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000006fb-0000-0000-0000-000000000000",
+    "uuid": "11EFA277B65B79706C13F14F4123FC20",
+    "slug": "sannikova13",
+    "alias": "Отрадное",
+    "name": "Москва 1-31",
+    "address": "ул. Санникова, 13",
+    "menuUrl": "https://dodopizza.ru/moscow/sannikova13",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sannikova13",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sannikova13/contacts",
+    "metroStations": [
+      "Отрадное"
+    ],
+    "coordinates": {
+      "lat": 55.86208,
+      "lon": 37.598
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d0-0000-0000-0000-000000000000",
+    "uuid": "000D3A25D54580E111E719D93D74BF67",
+    "slug": "berezovayaalleya5",
+    "alias": "Отрадное, Березовая аллея",
+    "name": "Москва 1-10",
+    "address": "ул. Березовая Аллея, 5",
+    "menuUrl": "https://dodopizza.ru/moscow/berezovayaalleya5",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/berezovayaalleya5",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/berezovayaalleya5/contacts",
+    "metroStations": [
+      "​Отрадное",
+      "​Владыкино"
+    ],
+    "coordinates": {
+      "lat": 55.853794,
+      "lon": 37.610053
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000266-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DE11E7C612F8A1BD33",
+    "slug": "ochakovo",
+    "alias": "Очаково-Матвеевское",
+    "name": "Москва 0-10",
+    "address": "ул. Озерная, 18",
+    "menuUrl": "https://dodopizza.ru/moscow/ochakovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ochakovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ochakovo/contacts",
+    "metroStations": [
+      "Озерная",
+      "Говорово",
+      "​Очаково"
+    ],
+    "coordinates": {
+      "lat": 55.678981,
+      "lon": 37.455921
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000397-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94B11E8F8724C1192BB",
+    "slug": "1may",
+    "alias": "Первомайская",
+    "name": "Москва 4-14",
+    "address": "ул. Первомайская, 51/23",
+    "menuUrl": "https://dodopizza.ru/moscow/1may",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/1may",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/1may/contacts",
+    "metroStations": [
+      "​Первомайская",
+      "Измайловская"
+    ],
+    "coordinates": {
+      "lat": 55.79345,
+      "lon": 37.790399
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005ed-0000-0000-0000-000000000000",
+    "uuid": "2A1461087B12860111EE6758AA84A466",
+    "slug": "borisapasternaka6",
+    "alias": "Переделкино Ближнее",
+    "name": "Рассказовка-2",
+    "address": "ул. Бориса Пастернака, 6",
+    "menuUrl": "https://dodopizza.ru/moscow/borisapasternaka6",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/borisapasternaka6",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/borisapasternaka6/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.638977,
+      "lon": 37.324524
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000340-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94311E87B656F33323B",
+    "slug": "perovo",
+    "alias": "Перово",
+    "name": "Москва 0-17",
+    "address": "ул. Электродная, 2/32",
+    "menuUrl": "https://dodopizza.ru/moscow/perovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/perovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/perovo/contacts",
+    "metroStations": [
+      "Шоссе Энтузиастов"
+    ],
+    "coordinates": {
+      "lat": 55.754329,
+      "lon": 37.752454
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000382-0000-0000-0000-000000000000",
+    "uuid": "000D3A38B306A94411E8D3994ABB4D37",
+    "slug": "pechatniki",
+    "alias": "Печатники",
+    "name": "Москва 14-2",
+    "address": "ул. Шоссейная, 1/2с4",
+    "menuUrl": "https://dodopizza.ru/moscow/pechatniki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/pechatniki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/pechatniki/contacts",
+    "metroStations": [
+      "Печатники"
+    ],
+    "coordinates": {
+      "lat": 55.691739,
+      "lon": 37.728173
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000080c-0000-0000-0000-000000000000",
+    "uuid": "11F17121A79397FD65A482F8CC1A6F60",
+    "slug": "0000080c-0000-0000-0000-000000000000",
+    "alias": "Пионерская",
+    "name": "Москва 13-8",
+    "address": "ул. Малая Филевская, 14а",
+    "menuUrl": "https://dodopizza.ru/moscow/0000080c-0000-0000-0000-000000000000",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/0000080c-0000-0000-0000-000000000000",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/0000080c-0000-0000-0000-000000000000/contacts",
+    "metroStations": [
+      "​Пионерская",
+      "​Филевский парк",
+      "​Славянский бульвар"
+    ],
+    "coordinates": {
+      "lat": 55.737759,
+      "lon": 37.470787
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000416-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A82E11E9D84F7DC01968",
+    "slug": "polyanka",
+    "alias": "Полянка",
+    "name": "Москва 4-18",
+    "address": "ул. Большая Полянка, 30",
+    "menuUrl": "https://dodopizza.ru/moscow/polyanka",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/polyanka",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/polyanka/contacts",
+    "metroStations": [
+      "Полянка",
+      "​Октябрьская",
+      "Добрынинская"
+    ],
+    "coordinates": {
+      "lat": 55.734202,
+      "lon": 37.618866
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000428-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E9FA81582389F0",
+    "slug": "presnya-tverskaya",
+    "alias": "Пресня - Тверская",
+    "name": "Москва 17-2",
+    "address": "ул. Большая Грузинская, 62",
+    "menuUrl": "https://dodopizza.ru/moscow/presnya-tverskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/presnya-tverskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/presnya-tverskaya/contacts",
+    "metroStations": [
+      "Белорусская "
+    ],
+    "coordinates": {
+      "lat": 55.772664,
+      "lon": 37.585718
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000532-0000-0000-0000-000000000000",
+    "uuid": "000D3ABF84C3BB2E11EC64B65252D6D1",
+    "slug": "prospektmira45",
+    "alias": "Проспект Мира",
+    "name": "Москва 17-4",
+    "address": "пр-т Мира, 45",
+    "menuUrl": "https://dodopizza.ru/moscow/prospektmira45",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/prospektmira45",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/prospektmira45/contacts",
+    "metroStations": [
+      "Проспект Мира"
+    ],
+    "coordinates": {
+      "lat": 55.782562,
+      "lon": 37.633697
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000268-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DE11E7C83E601E087F",
+    "slug": "nakhimovskiy59",
+    "alias": "Профсоюзная",
+    "name": "Москва 0-2",
+    "address": "пр-т Нахимовский, 59А ",
+    "menuUrl": "https://dodopizza.ru/moscow/nakhimovskiy59",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/nakhimovskiy59",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/nakhimovskiy59/contacts",
+    "metroStations": [
+      "Профсоюзная",
+      "Новые Черёмушки",
+      "​Академическая"
+    ],
+    "coordinates": {
+      "lat": 55.678626,
+      "lon": 37.560511
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000419-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211E9E090D7C30F3F",
+    "slug": "putilkovo",
+    "alias": "Путилково",
+    "name": "Москва 1-25",
+    "address": "ул. Новотушинская, 3",
+    "menuUrl": "https://dodopizza.ru/moscow/putilkovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/putilkovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/putilkovo/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.869708,
+      "lon": 37.399524
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000265-0000-0000-0000-000000000000",
+    "uuid": "000D3A2155A180EA11E7C612EC7DF00A",
+    "slug": "michurinskijprospekt9k5",
+    "alias": "Раменки",
+    "name": "Москва 0-9",
+    "address": "пр-т Мичуринский, 9к5",
+    "menuUrl": "https://dodopizza.ru/moscow/michurinskijprospekt9k5",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/michurinskijprospekt9k5",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/michurinskijprospekt9k5/contacts",
+    "metroStations": [
+      "Раменки",
+      "Мичуринский проспект"
+    ],
+    "coordinates": {
+      "lat": 55.699893,
+      "lon": 37.506936
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003af-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81111E91D6342296AA8",
+    "slug": "rechnoyvokzal",
+    "alias": "Речной Вокзал",
+    "name": "Москва 1-19",
+    "address": "ул. Фестивальная, 2А",
+    "menuUrl": "https://dodopizza.ru/moscow/rechnoyvokzal",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/rechnoyvokzal",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/rechnoyvokzal/contacts",
+    "metroStations": [
+      "​Речной вокзал",
+      "​Беломорская",
+      "​Водный стадион"
+    ],
+    "coordinates": {
+      "lat": 55.854032,
+      "lon": 37.475854
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000073c-0000-0000-0000-000000000000",
+    "uuid": "11F00312B8F5878961305ACC5B43A5A0",
+    "slug": "lipovaya_roshcha_5k7",
+    "alias": "Рублево-1",
+    "name": "Рублево-1",
+    "address": "ул. Липовой Рощи, 5к7",
+    "menuUrl": "https://dodopizza.ru/moscow/lipovaya_roshcha_5k7",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lipovaya_roshcha_5k7",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lipovaya_roshcha_5k7/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.800247,
+      "lon": 37.375496
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000641-0000-0000-0000-000000000000",
+    "uuid": "6AAFE901BEA88BDA11EEDB0FC7B6A652",
+    "slug": "ryazanskiy-12",
+    "alias": "Рязанский проспект, 12",
+    "name": "Москва 12-6",
+    "address": "пр-т Рязанский проспект, 12",
+    "menuUrl": "https://dodopizza.ru/moscow/ryazanskiy-12",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ryazanskiy-12",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ryazanskiy-12/contacts",
+    "metroStations": [
+      "Стахановская",
+      "​Чухлинка",
+      "​Плющево"
+    ],
+    "coordinates": {
+      "lat": 55.725245,
+      "lon": 37.761213
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000042a-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A82E11E9FC73824DC8FD",
+    "slug": "krasnayapresnya",
+    "alias": "Садово-Кудринская д.7",
+    "name": "Москва 4-19",
+    "address": "ул. Садовая-Кудринская, 7",
+    "menuUrl": "https://dodopizza.ru/moscow/krasnayapresnya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/krasnayapresnya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/krasnayapresnya/contacts",
+    "metroStations": [
+      "Баррикадная",
+      "Краснопресненская",
+      "​Маяковская"
+    ],
+    "coordinates": {
+      "lat": 55.761355,
+      "lon": 37.585637
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000642-0000-0000-0000-000000000000",
+    "uuid": "6AAFE901BEA88BDB11EEDB100A4C2759",
+    "slug": "saratovskaya18-10",
+    "alias": "Саратовская",
+    "name": "Москва 12-7",
+    "address": "ул. Саратовская, 18/10",
+    "menuUrl": "https://dodopizza.ru/moscow/saratovskaya18-10",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/saratovskaya18-10",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/saratovskaya18-10/contacts",
+    "metroStations": [
+      "​Текстильщики"
+    ],
+    "coordinates": {
+      "lat": 55.715753,
+      "lon": 37.741297
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000194-0000-0000-0000-000000000000",
+    "uuid": "000D3A25D54580E011E6D8D6DDB182F6",
+    "slug": "sviblovo",
+    "alias": "Свиблово",
+    "name": "Москва 1-6",
+    "address": "ул. Снежная, 13к1",
+    "menuUrl": "https://dodopizza.ru/moscow/sviblovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sviblovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sviblovo/contacts",
+    "metroStations": [
+      "Свиблово",
+      "Ботанический сад"
+    ],
+    "coordinates": {
+      "lat": 55.852202,
+      "lon": 37.645618
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000055e-0000-0000-0000-000000000000",
+    "uuid": "2EFCE17D47699CFB11ECF0679180D18B",
+    "slug": "grina32",
+    "alias": "Северное Бутово",
+    "name": "Москва 4-9",
+    "address": "ул. Грина, 32",
+    "menuUrl": "https://dodopizza.ru/moscow/grina32",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/grina32",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/grina32/contacts",
+    "metroStations": [
+      "Бульвар Дмитрия Донского",
+      "Улица Старокачаловская"
+    ],
+    "coordinates": {
+      "lat": 55.568115,
+      "lon": 37.569054
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000729-0000-0000-0000-000000000000",
+    "uuid": "11EFE9669AECEDFDDC58A1921BD1B940",
+    "slug": "pervomayskoe1",
+    "alias": "Семена Гордого, 7",
+    "name": "Первомайское-1",
+    "address": "ул. Семёна Гордого, 7",
+    "menuUrl": "https://dodopizza.ru/moscow/pervomayskoe1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/pervomayskoe1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/pervomayskoe1/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.542183,
+      "lon": 37.153763
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003ca-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211E94006B9FFE7FD",
+    "slug": "serpukhovskaya",
+    "alias": "Серпуховская",
+    "name": "Москва 4-17",
+    "address": "ул. Большая Серпуховская (МОСКВА), 31к11",
+    "menuUrl": "https://dodopizza.ru/moscow/serpukhovskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/serpukhovskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/serpukhovskaya/contacts",
+    "metroStations": [
+      "Серпуховская",
+      "Добрынинская",
+      "​Павелецкая"
+    ],
+    "coordinates": {
+      "lat": 55.722685,
+      "lon": 37.627544
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000799-0000-0000-0000-000000000000",
+    "uuid": "11F0AF27AB52D591E9B6F866B9DA1D30",
+    "slug": "ushakova2",
+    "alias": "Скобелевская",
+    "name": "Москва 4-22",
+    "address": "б-р Адмирала Ушакова, 2",
+    "menuUrl": "https://dodopizza.ru/moscow/ushakova2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ushakova2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ushakova2/contacts",
+    "metroStations": [
+      "улица Скобелевская"
+    ],
+    "coordinates": {
+      "lat": 55.548573,
+      "lon": 37.553246
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000044c-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A82E11EA3C1DB612C189",
+    "slug": "zapadnaya181",
+    "alias": "Сколково",
+    "name": "Сколково-1",
+    "address": "ул. Западная, c181",
+    "menuUrl": "https://dodopizza.ru/moscow/zapadnaya181",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/zapadnaya181",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/zapadnaya181/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.699497,
+      "lon": 37.343649
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003f8-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E985F25291F3E6",
+    "slug": "sokol",
+    "alias": "Сокол",
+    "name": "Москва 1-22",
+    "address": "ш. Волоколамское (Москва), 1 стр. 1",
+    "menuUrl": "https://dodopizza.ru/moscow/sokol",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sokol",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sokol/contacts",
+    "metroStations": [
+      "Сокол",
+      "​Панфиловская",
+      "​Войковская"
+    ],
+    "coordinates": {
+      "lat": 55.80653,
+      "lon": 37.504681
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003b2-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A81611E91F3CFA10B1BB",
+    "slug": "sokolniki",
+    "alias": "Сокольники",
+    "name": "Москва 23-1",
+    "address": "пл. Сокольническая, 9",
+    "menuUrl": "https://dodopizza.ru/moscow/sokolniki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sokolniki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sokolniki/contacts",
+    "metroStations": [
+      "Сокольники"
+    ],
+    "coordinates": {
+      "lat": 55.790448,
+      "lon": 37.680517
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000045d-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81511EA62A63B7463AC",
+    "slug": "shchorsa",
+    "alias": "Солнцево",
+    "name": "Москва 24-1",
+    "address": "ул. Щорса, 5",
+    "menuUrl": "https://dodopizza.ru/moscow/shchorsa",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/shchorsa",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/shchorsa/contacts",
+    "metroStations": [
+      "​Солнцево"
+    ],
+    "coordinates": {
+      "lat": 55.646492,
+      "lon": 37.40769
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001e7-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DF11E72458D093CC0E",
+    "slug": "solntsevo-park",
+    "alias": "Солнцево-Парк",
+    "name": "Рассказовка-1",
+    "address": "ул. Летчика Ульянина, 5",
+    "menuUrl": "https://dodopizza.ru/moscow/solntsevo-park",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/solntsevo-park",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/solntsevo-park/contacts",
+    "metroStations": [
+      "Рассказовка"
+    ],
+    "coordinates": {
+      "lat": 55.625736,
+      "lon": 37.307205
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003c5-0000-0000-0000-000000000000",
+    "uuid": "000D3A22FA54A81411E93B67429B1449",
+    "slug": "dzhankoyskaya1s4",
+    "alias": "станция Бутово",
+    "name": "Щербинка-2",
+    "address": "ул. Джанкойская, 1с4",
+    "menuUrl": "https://dodopizza.ru/moscow/dzhankoyskaya1s4",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/dzhankoyskaya1s4",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/dzhankoyskaya1s4/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.540419,
+      "lon": 37.572827
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000031e-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94211E859ACD67DAC13",
+    "slug": "staroemarino",
+    "alias": "Старое Марьино",
+    "name": "Москва 5-2",
+    "address": "б-р Новочеркасский, 13",
+    "menuUrl": "https://dodopizza.ru/moscow/staroemarino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/staroemarino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/staroemarino/contacts",
+    "metroStations": [
+      "Марьино",
+      "Курьяново",
+      "Перерва"
+    ],
+    "coordinates": {
+      "lat": 55.647458,
+      "lon": 37.723313
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000127-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9CA5D",
+    "slug": "strogino",
+    "alias": "Строгино",
+    "name": "Москва 1-4",
+    "address": "ул. Кулакова, 9к1",
+    "menuUrl": "https://dodopizza.ru/moscow/strogino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/strogino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/strogino/contacts",
+    "metroStations": [
+      "​Строгино"
+    ],
+    "coordinates": {
+      "lat": 55.811427,
+      "lon": 37.398958
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003ce-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81211E9455DF8E74CB2",
+    "slug": "taganskaya",
+    "alias": "Таганская",
+    "name": "Москва 0-19",
+    "address": "ул. Народная, 4ст2",
+    "menuUrl": "https://dodopizza.ru/moscow/taganskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/taganskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/taganskaya/contacts",
+    "metroStations": [
+      "Таганская",
+      " ​Марксистская"
+    ],
+    "coordinates": {
+      "lat": 55.739787,
+      "lon": 37.652014
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000052c-0000-0000-0000-000000000000",
+    "uuid": "000D3AAC9DCABB2E11EC5D0F3A8193EB",
+    "slug": "tagilskaya4a",
+    "alias": "Тагильская",
+    "name": "Москва 12-3",
+    "address": "ул. Тагильская, 4А",
+    "menuUrl": "https://dodopizza.ru/moscow/tagilskaya4a",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/tagilskaya4a",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/tagilskaya4a/contacts",
+    "metroStations": [
+      "​Бульвар Рокоссовского"
+    ],
+    "coordinates": {
+      "lat": 55.818103,
+      "lon": 37.752868
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000663-0000-0000-0000-000000000000",
+    "uuid": "AAADA271FD00A88311EEF190D68CA86C",
+    "slug": "lublinskaya",
+    "alias": "Текстильщики",
+    "name": "Москва 12-9",
+    "address": "ул. Люблинская, 4с1",
+    "menuUrl": "https://dodopizza.ru/moscow/lublinskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/lublinskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/lublinskaya/contacts",
+    "metroStations": [
+      "​Текстильщики"
+    ],
+    "coordinates": {
+      "lat": 55.70667,
+      "lon": 37.730464
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000069a-0000-0000-0000-000000000000",
+    "uuid": "EABE29C2A647BEDB11EF22470103483B",
+    "slug": "profsojuznaja152k1",
+    "alias": "Теплый стан",
+    "name": "Москва 0-33",
+    "address": "ул. Профсоюзная, 152к1",
+    "menuUrl": "https://dodopizza.ru/moscow/profsojuznaja152k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/profsojuznaja152k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/profsojuznaja152k1/contacts",
+    "metroStations": [
+      "Теплый Стан",
+      "​Коньково",
+      "​Генерала Тюленева"
+    ],
+    "coordinates": {
+      "lat": 55.622314,
+      "lon": 37.505894
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000376-0000-0000-0000-000000000000",
+    "uuid": "000D3A24D2B7A94311E8C7A6952D6536",
+    "slug": "timiryazevskiy",
+    "alias": "Тимирязевский",
+    "name": "Москва 7-1",
+    "address": "ул. Тимирязевская, 11",
+    "menuUrl": "https://dodopizza.ru/moscow/timiryazevskiy",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/timiryazevskiy",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/timiryazevskiy/contacts",
+    "metroStations": [
+      "Дмитровская",
+      "Гражданская"
+    ],
+    "coordinates": {
+      "lat": 55.809494,
+      "lon": 37.569009
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000005da-0000-0000-0000-000000000000",
+    "uuid": "5E928E9D6E51929F11EE2F76C6618CA5",
+    "slug": "klimentovskij12-1",
+    "alias": "Третьяковка",
+    "name": "Москва 0-28",
+    "address": "пер. Климентовский, 12/1",
+    "menuUrl": "https://dodopizza.ru/moscow/klimentovskij12-1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/klimentovskij12-1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/klimentovskij12-1/contacts",
+    "metroStations": [
+      "Третьяковская",
+      "Новокузнецкая"
+    ],
+    "coordinates": {
+      "lat": 55.741034,
+      "lon": 37.62713
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000012e-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9D4EC",
+    "slug": "sireneviy1b",
+    "alias": "Троицк",
+    "name": "Троицк-1",
+    "address": "б-р Сиреневый, 1Б",
+    "menuUrl": "https://dodopizza.ru/moscow/sireneviy1b",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/sireneviy1b",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/sireneviy1b/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.467576,
+      "lon": 37.296254
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000259-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080EE11E7B01EC97E910B",
+    "slug": "troparevo",
+    "alias": "Тропарево",
+    "name": "Москва 0-7",
+    "address": "ул. Академика Анохина, 56",
+    "menuUrl": "https://dodopizza.ru/moscow/troparevo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/troparevo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/troparevo/contacts",
+    "metroStations": [
+      "Тропарево",
+      "Юго-Западная",
+      "Румянцево"
+    ],
+    "coordinates": {
+      "lat": 55.651049,
+      "lon": 37.469431
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000185-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80D911E6B24F4A188A9F",
+    "slug": "nbutovo",
+    "alias": "ТРЦ \"Вива!\"",
+    "name": "Москва 4-1",
+    "address": "ул. Поляны, 8",
+    "menuUrl": "https://dodopizza.ru/moscow/nbutovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/nbutovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/nbutovo/contacts",
+    "metroStations": [
+      "Бульвар Дмитрия Донского",
+      "Улица Старокачаловская"
+    ],
+    "coordinates": {
+      "lat": 55.565605,
+      "lon": 37.556128
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000066a-0000-0000-0000-000000000000",
+    "uuid": "BAAE0EB80244844011EEF569D40693DB",
+    "slug": "bolshayatulskaya19",
+    "alias": "Тульская",
+    "name": "Москва 0-31",
+    "address": "ул. Большая Тульская, 19",
+    "menuUrl": "https://dodopizza.ru/moscow/bolshayatulskaya19",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bolshayatulskaya19",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bolshayatulskaya19/contacts",
+    "metroStations": [
+      "Тульская"
+    ],
+    "coordinates": {
+      "lat": 55.706792,
+      "lon": 37.62183
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000128-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9CB9A",
+    "slug": "ntushino",
+    "alias": "Тушино Северное",
+    "name": "Москва 1-5",
+    "address": "ул. Туристская, 23",
+    "menuUrl": "https://dodopizza.ru/moscow/ntushino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/ntushino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/ntushino/contacts",
+    "metroStations": [
+      "​Сходненская",
+      "​Планерная"
+    ],
+    "coordinates": {
+      "lat": 55.854052,
+      "lon": 37.4205
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000126-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13F9C5C0",
+    "slug": "yuzhnoetushino",
+    "alias": "Тушино Южное",
+    "name": "Москва 1-3",
+    "address": "ул. Фабрициуса, 22к1",
+    "menuUrl": "https://dodopizza.ru/moscow/yuzhnoetushino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/yuzhnoetushino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/yuzhnoetushino/contacts",
+    "metroStations": [
+      "​Сходненская"
+    ],
+    "coordinates": {
+      "lat": 55.843636,
+      "lon": 37.444027
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d2-0000-0000-0000-000000000000",
+    "uuid": "000D3A25D54580E111E719D950FDEF81",
+    "slug": "stratonavtov9",
+    "alias": "Тушинская",
+    "name": "Москва 1-12",
+    "address": "пр-д Стратонавтов, 9",
+    "menuUrl": "https://dodopizza.ru/moscow/stratonavtov9",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/stratonavtov9",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/stratonavtov9/contacts",
+    "metroStations": [
+      "​Тушинская",
+      "​Спартак"
+    ],
+    "coordinates": {
+      "lat": 55.826382,
+      "lon": 37.436194
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000077e-0000-0000-0000-000000000000",
+    "uuid": "11F0922F9CFD8F8DB15EC9F02D2541E0",
+    "slug": "mozhayskoe31k1",
+    "alias": "ТЦ \"Молодежный\"",
+    "name": "Москва 13-6",
+    "address": "ш. Можайское, 31к1",
+    "menuUrl": "https://dodopizza.ru/moscow/mozhayskoe31k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/mozhayskoe31k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/mozhayskoe31k1/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.718586,
+      "lon": 37.420403
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000050e-0000-0000-0000-000000000000",
+    "uuid": "000D3AAC9DCABB2E11EC1605D6CEA2C0",
+    "slug": "kaxovka",
+    "alias": "ТЦ Prime Plaza",
+    "name": "Москва 0-25",
+    "address": "ул. Каховка, 29А",
+    "menuUrl": "https://dodopizza.ru/moscow/kaxovka",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/kaxovka",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/kaxovka/contacts",
+    "metroStations": [
+      "Зюзино",
+      " ​Каховская"
+    ],
+    "coordinates": {
+      "lat": 55.656357,
+      "lon": 37.56936
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000080b-0000-0000-0000-000000000000",
+    "uuid": "11F17120A36EE7ED5827FADEAECC9010",
+    "slug": "0000080b-0000-0000-0000-000000000000",
+    "alias": "Фили",
+    "name": "Москва 13-7",
+    "address": "пр-д Береговой, 5 корп 1",
+    "menuUrl": "https://dodopizza.ru/moscow/0000080b-0000-0000-0000-000000000000",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/0000080b-0000-0000-0000-000000000000",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/0000080b-0000-0000-0000-000000000000/contacts",
+    "metroStations": [
+      "Фили"
+    ],
+    "coordinates": {
+      "lat": 55.756142,
+      "lon": 37.506954
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000034d-0000-0000-0000-000000000000",
+    "uuid": "000D3A29FF6BA94311E889FBDFE4952D",
+    "slug": "slavyanskiybulvar",
+    "alias": "Фили-Давыдково",
+    "name": "Москва 13-3",
+    "address": "ул. Давыдковская, 8к1",
+    "menuUrl": "https://dodopizza.ru/moscow/slavyanskiybulvar",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/slavyanskiybulvar",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/slavyanskiybulvar/contacts",
+    "metroStations": [
+      "Славянский бульвар "
+    ],
+    "coordinates": {
+      "lat": 55.722325,
+      "lon": 37.474534
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000007db-0000-0000-0000-000000000000",
+    "uuid": "11F124278B7AAFF6D6D16DD543D82800",
+    "slug": "khabarovskaia",
+    "alias": "Хабаровская ",
+    "name": "Москва 4-24",
+    "address": "ул. Хабаровская, 10/30",
+    "menuUrl": "https://dodopizza.ru/moscow/khabarovskaia",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/khabarovskaia",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/khabarovskaia/contacts",
+    "metroStations": [
+      "Щелковская "
+    ],
+    "coordinates": {
+      "lat": 55.819916,
+      "lon": 37.828003
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000737-0000-0000-0000-000000000000",
+    "uuid": "11EFF5B4B8BF8B9B0F3178E0A62D9BE0",
+    "slug": "komsomolsky15s2",
+    "alias": "Хамовники",
+    "name": "Москва 0-36",
+    "address": "пр-т Комсомольский, 15с2",
+    "menuUrl": "https://dodopizza.ru/moscow/komsomolsky15s2",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/komsomolsky15s2",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/komsomolsky15s2/contacts",
+    "metroStations": [
+      "Фрунзенская",
+      "Парк культуры"
+    ],
+    "coordinates": {
+      "lat": 55.729431,
+      "lon": 37.588062
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001d6-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DC11E719D9D4761DC1",
+    "slug": "hovrino",
+    "alias": "Ховрино",
+    "name": "Москва 1-16",
+    "address": "ул. Петрозаводская, 19с3",
+    "menuUrl": "https://dodopizza.ru/moscow/hovrino",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/hovrino",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/hovrino/contacts",
+    "metroStations": [
+      "​Беломорская",
+      "​Ховрино",
+      "​Грачевская"
+    ],
+    "coordinates": {
+      "lat": 55.866748,
+      "lon": 37.489185
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000018a-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DD11E6B5A4AB6B6DBD",
+    "slug": "horoshevo-mnevniki",
+    "alias": "Хорошево-Мневники",
+    "name": "Москва 3-2",
+    "address": "пр-т Маршала Жукова, 17К1",
+    "menuUrl": "https://dodopizza.ru/moscow/horoshevo-mnevniki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/horoshevo-mnevniki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/horoshevo-mnevniki/contacts",
+    "metroStations": [
+      "Народное Ополчение",
+      "Хорошёво"
+    ],
+    "coordinates": {
+      "lat": 55.775459,
+      "lon": 37.491682
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000246-0000-0000-0000-000000000000",
+    "uuid": "000D3A2155A180E411E79A1A1E9C37AC",
+    "slug": "tsaritsyno",
+    "alias": "Царицыно",
+    "name": "Москва 4-10",
+    "address": "пр-т Пролетарский, вл.30",
+    "menuUrl": "https://dodopizza.ru/moscow/tsaritsyno",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/tsaritsyno",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/tsaritsyno/contacts",
+    "metroStations": [
+      "Кантемировская",
+      "​Царицыно"
+    ],
+    "coordinates": {
+      "lat": 55.630446,
+      "lon": 37.658661
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000454-0000-0000-0000-000000000000",
+    "uuid": "000D3AAF2133A81111EA4CB14763C340",
+    "slug": "teatralnyy5",
+    "alias": "Центральный Детский Магазин",
+    "name": "Москва 0-23",
+    "address": "пр-д Театральный,  д.5, стр.1",
+    "menuUrl": "https://dodopizza.ru/moscow/teatralnyy5",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/teatralnyy5",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/teatralnyy5/contacts",
+    "metroStations": [
+      "Лубянка",
+      "Театральная",
+      "​Кузнецкий Мост"
+    ],
+    "coordinates": {
+      "lat": 55.760135,
+      "lon": 37.624957
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001a0-0000-0000-0000-000000000000",
+    "uuid": "000D3A26B5B080DD11E6EED25CE51C88",
+    "slug": "cheremushki",
+    "alias": "Черемушки",
+    "name": "Москва 0-1",
+    "address": "ул. Наметкина, 13Б",
+    "menuUrl": "https://dodopizza.ru/moscow/cheremushki",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/cheremushki",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/cheremushki/contacts",
+    "metroStations": [
+      "Новые Черемушки",
+      "Воронцовская",
+      "Калужская"
+    ],
+    "coordinates": {
+      "lat": 55.662613,
+      "lon": 37.554834
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001fb-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380E411E73AF1F71C8041",
+    "slug": "bcherkizovskaya30b",
+    "alias": "Черкизовская",
+    "name": "Москва 12-1",
+    "address": "ул. Большая Черкизовская, 30б",
+    "menuUrl": "https://dodopizza.ru/moscow/bcherkizovskaya30b",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bcherkizovskaya30b",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bcherkizovskaya30b/contacts",
+    "metroStations": [
+      "Черкизовская",
+      "Локомотив"
+    ],
+    "coordinates": {
+      "lat": 55.800008,
+      "lon": 37.741064
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002bf-0000-0000-0000-000000000000",
+    "uuid": "000D3A284715A95611E82C3B30821F8C",
+    "slug": "chertanovskaya12k1",
+    "alias": "Чертаново Северное",
+    "name": "Москва 6-2",
+    "address": "ул. Чертановская, 12 корп 1",
+    "menuUrl": "https://dodopizza.ru/moscow/chertanovskaya12k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/chertanovskaya12k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/chertanovskaya12k1/contacts",
+    "metroStations": [
+      "Чертановская",
+      "​Южная"
+    ],
+    "coordinates": {
+      "lat": 55.629974,
+      "lon": 37.599094
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000015c-0000-0000-0000-000000000000",
+    "uuid": "000D3A240C719A8711E68ABA13FA18E4",
+    "slug": "schertanovo",
+    "alias": "Чертаново Южное",
+    "name": "Москва 6-1",
+    "address": "ш. Варшавское, 152А",
+    "menuUrl": "https://dodopizza.ru/moscow/schertanovo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/schertanovo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/schertanovo/contacts",
+    "metroStations": [
+      "Улица Академика Янгеля",
+      "Аннино",
+      "Красный Строитель"
+    ],
+    "coordinates": {
+      "lat": 55.594514,
+      "lon": 37.599166
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000057c-0000-0000-0000-000000000000",
+    "uuid": "BE0FDD2894A5B87911ED5E993E8B33C4",
+    "slug": "shelepihinskaya34",
+    "alias": "Шелепиха",
+    "name": "Москва 3-4",
+    "address": "наб. Шелепихинская, 34к3зд6",
+    "menuUrl": "https://dodopizza.ru/moscow/shelepihinskaya34",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/shelepihinskaya34",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/shelepihinskaya34/contacts",
+    "metroStations": [
+      "Шелепиха",
+      "Москва-Сити"
+    ],
+    "coordinates": {
+      "lat": 55.76249,
+      "lon": 37.51626
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000001da-0000-0000-0000-000000000000",
+    "uuid": "000D3A23B0DC80DC11E71C3878C43E4D",
+    "slug": "zheleznodorozhnaya51",
+    "alias": "Щербинка",
+    "name": "Щербинка-1",
+    "address": "ул. Железнодорожная, 51",
+    "menuUrl": "https://dodopizza.ru/moscow/zheleznodorozhnaya51",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/zheleznodorozhnaya51",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/zheleznodorozhnaya51/contacts",
+    "metroStations": [],
+    "coordinates": {
+      "lat": 55.499673,
+      "lon": 37.570159
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000049a-0000-0000-0000-000000000000",
+    "uuid": "000D3A21DA51A81411EB258B333B3EF3",
+    "slug": "semenovskaya32",
+    "alias": "Электрозаводская",
+    "name": "Москва 12-2",
+    "address": "ул. Большая Семеновская, 32с13",
+    "menuUrl": "https://dodopizza.ru/moscow/semenovskaya32",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/semenovskaya32",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/semenovskaya32/contacts",
+    "metroStations": [
+      "Электрозаводская"
+    ],
+    "coordinates": {
+      "lat": 55.781863,
+      "lon": 37.707826
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000003bf-0000-0000-0000-000000000000",
+    "uuid": "000D3A39D824A81611E92BBB3AB2A10A",
+    "slug": "bolshayapochtovaya28k6",
+    "alias": "Электрозаводская ",
+    "name": "Москва 20-3",
+    "address": "ул. Большая Почтовая, 28",
+    "menuUrl": "https://dodopizza.ru/moscow/bolshayapochtovaya28k6",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/bolshayapochtovaya28k6",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/bolshayapochtovaya28k6/contacts",
+    "metroStations": [
+      "Электрозаводская",
+      "Красносельская",
+      "Бауманская"
+    ],
+    "coordinates": {
+      "lat": 55.77919,
+      "lon": 37.698998
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "00000735-0000-0000-0000-000000000000",
+    "uuid": "11EFF5B486E7EF4ACBEFF8D71F62C5E0",
+    "slug": "pokryshkina2k1",
+    "alias": "Юго-западная",
+    "name": "Москва 0-34",
+    "address": "ул. Покрышкина, 2к1",
+    "menuUrl": "https://dodopizza.ru/moscow/pokryshkina2k1",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/pokryshkina2k1",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/pokryshkina2k1/contacts",
+    "metroStations": [
+      "Юго-западная"
+    ],
+    "coordinates": {
+      "lat": 55.664116,
+      "lon": 37.482277
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "000002c6-0000-0000-0000-000000000000",
+    "uuid": "000D3A258645A95411E82F5A3C5E115A",
+    "slug": "avtozavodskaya",
+    "alias": "Южнопортовый/Автозаводская",
+    "name": "Москва 13-1",
+    "address": "ул. 1-я Машиностроения, 10",
+    "menuUrl": "https://dodopizza.ru/moscow/avtozavodskaya",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/avtozavodskaya",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/avtozavodskaya/contacts",
+    "metroStations": [
+      "Дубровка",
+      "Автозаводская "
+    ],
+    "coordinates": {
+      "lat": 55.714044,
+      "lon": 37.670142
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  },
+  {
+    "id": "0000020e-0000-0000-0000-000000000000",
+    "uuid": "000D3A2480C380E711E74C307A5824FB",
+    "slug": "yasenevo",
+    "alias": "Ясенево",
+    "name": "Москва 0-11",
+    "address": "пр-т Новоясеневский, 7",
+    "menuUrl": "https://dodopizza.ru/moscow/yasenevo",
+    "contactsUrl": "https://dodopizza.ru/moscow/contacts/yasenevo",
+    "rawContactsUrl": "https://dodopizza.ru/moscow/yasenevo/contacts",
+    "metroStations": [
+      "Ясенево",
+      "​Битцевский парк",
+      "​Новоясеневская"
+    ],
+    "coordinates": {
+      "lat": 55.607489,
+      "lon": 37.532367
+    },
+    "isClosed": false,
+    "takesCarryoutOrders": true,
+    "timeZoneUtcOffset": "03:00:00"
+  }
+]

@@ -7,6 +7,9 @@
     "collect": "node scripts/collect-pizzas.js",
     "collect:papa": "node scripts/collect-pizzas.js --source=papa",
     "collect:dodo": "node scripts/collect-pizzas.js --source=dodo",
+    "collect:dodo:restaurants": "node scripts/collect-pizzas.js --dodo-restaurants-only=true",
+    "collect:dodo:moscow": "node scripts/collect-pizzas.js --source=dodo --dodo-all-restaurants=true",
+    "collect:dodo:moscow:test": "node scripts/collect-pizzas.js --source=dodo --dodo-all-restaurants=true --dodo-restaurant-limit=1 --dodo-limit=2",
     "collect:dodo:veshnyaki": "node scripts/collect-pizzas.js --source=dodo --dodo-url=https://dodopizza.ru/moscow/veshnyaki",
     "serve": "python -m http.server 8765 --bind 127.0.0.1"
   },

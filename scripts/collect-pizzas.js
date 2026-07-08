@@ -7,9 +7,13 @@ const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "data");
 const OUT_FILE = path.join(OUT_DIR, "pizza-snapshot.json");
 const OUT_JS_FILE = path.join(OUT_DIR, "pizza-snapshot.js");
+const OUT_DODO_RESTAURANTS_FILE = path.join(OUT_DIR, "dodo-restaurants-moscow.json");
+const OUT_DODO_RESTAURANTS_JS_FILE = path.join(OUT_DIR, "dodo-restaurants-moscow.js");
 
 const PAPA_DEFAULT_URL = "https://papajohns.ru/moscow";
 const DODO_DEFAULT_URL = "https://dodopizza.ru/moscow/veshnyaki";
+const DODO_CONTACTS_DEFAULT_URL = "https://dodopizza.ru/moscow/contacts";
+const DODO_COUNTRY_ID = 643;
 
 const args = new Map(
   process.argv.slice(2).map((arg) => {
@@ -21,6 +25,10 @@ const args = new Map(
 
 const source = args.get("source") || "all";
 const dodoLimit = Number(args.get("dodo-limit") || 0);
+const dodoRestaurantLimit = Number(args.get("dodo-restaurant-limit") || 0);
+const dodoRestaurantStart = Number(args.get("dodo-restaurant-start") || 0);
+const dodoAllRestaurants = args.get("dodo-all-restaurants") === "true" || process.env.DODO_ALL_RESTAURANTS === "true";
+const dodoRestaurantsOnly = args.get("dodo-restaurants-only") === "true";
 const dodoHeaded = args.get("headed") === "true";
 const PAPA_URL = args.get("papa-url") || process.env.PAPA_URL || PAPA_DEFAULT_URL;
 
@@ -36,6 +44,7 @@ function normalizeDodoMenuUrl(value) {
 }
 
 const DODO_URL = normalizeDodoMenuUrl(args.get("dodo-url") || process.env.DODO_URL || DODO_DEFAULT_URL);
+const DODO_CONTACTS_URL = args.get("dodo-contacts-url") || process.env.DODO_CONTACTS_URL || DODO_CONTACTS_DEFAULT_URL;
 
 function parseRub(text) {
   const match = String(text || "")
@@ -70,12 +79,40 @@ function parseVariantLine(line) {
   };
 }
 
+function normalizeDodoDisplayName(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
 function isStandardPapaCrust(variation) {
   return (variation.stuffed_crust || variation.crust || "none") === "none";
 }
 
 function isHalfPizzaProduct(name) {
   return /половин/i.test(normalizeName(name));
+}
+
+function isCustomPizzaProduct(name) {
+  const normalized = normalizeName(name);
+  return normalized === "создай свою пиццу" || normalized === "соберите свою пиццу";
+}
+
+function shouldSkipPizzaProduct(name) {
+  return isHalfPizzaProduct(name) || isCustomPizzaProduct(name);
+}
+
+function filterIncludedPizzaProducts(products) {
+  return (products || []).filter((product) => !shouldSkipPizzaProduct(product.name));
+}
+
+function filterDodoResult(result = {}) {
+  return {
+    products: filterIncludedPizzaProducts(result.products),
+    restaurants: result.restaurants || [],
+    restaurantProducts: (result.restaurantProducts || []).map((entry) => ({
+      ...entry,
+      products: filterIncludedPizzaProducts(entry.products),
+    })),
+  };
 }
 
 function pickPapaVariant(variations, sizeCm, dough, crust = "none") {
@@ -114,7 +151,7 @@ async function collectPapa() {
   vm.runInNewContext(script, sandbox, { timeout: 5000 });
   const state = sandbox.window.__PRELOADED_STATE__;
   const products = state.catalog.products.list.filter(
-    (item) => item.category === "pizza" && !isHalfPizzaProduct(item.name),
+    (item) => item.category === "pizza" && !shouldSkipPizzaProduct(item.name),
   );
 
   return products.map((product) => {
@@ -195,6 +232,74 @@ async function waitForDodoPizzaSection(page, timeout = 45000) {
   );
 }
 
+function formatDodoAddress(address) {
+  if (!address?.street) return "";
+  const street = address.street.shortStreetTypeName
+    ? `${address.street.shortStreetTypeName} ${address.street.name}`
+    : address.street.name;
+  return [street, address.houseNumber].filter(Boolean).join(", ");
+}
+
+function dodoAbsoluteUrl(value) {
+  return new URL(value, "https://dodopizza.ru").toString().replace(/\/$/, "");
+}
+
+function normalizeDodoRestaurant(raw) {
+  const slug = raw.translitAlias || raw.menuRoute?.url?.split("/").filter(Boolean).pop() || raw.id;
+  return {
+    id: raw.id,
+    uuid: raw.uuid || null,
+    slug,
+    alias: raw.alias || raw.name || slug,
+    name: raw.name || raw.alias || slug,
+    address: formatDodoAddress(raw.address),
+    menuUrl: dodoAbsoluteUrl(raw.menuRoute?.url || `/moscow/${slug}`),
+    contactsUrl: dodoAbsoluteUrl(`/moscow/contacts/${slug}`),
+    rawContactsUrl: dodoAbsoluteUrl(raw.contactsRoute?.url || `/moscow/${slug}/contacts`),
+    metroStations: raw.metroStations || [],
+    coordinates: raw.coordinates || null,
+    isClosed: Boolean(raw.isClosed),
+    takesCarryoutOrders: Boolean(raw.takesCarryoutOrders),
+    timeZoneUtcOffset: raw.timeZoneUtcOffset || null,
+  };
+}
+
+function buildDodoRestaurantFromUrl(menuUrl) {
+  const slug = menuUrl.split("/").filter(Boolean).pop();
+  return {
+    id: null,
+    uuid: null,
+    slug,
+    alias: slug,
+    name: slug,
+    address: "",
+    menuUrl,
+    contactsUrl: "",
+    rawContactsUrl: "",
+    metroStations: [],
+    coordinates: null,
+    isClosed: false,
+    takesCarryoutOrders: true,
+    timeZoneUtcOffset: null,
+  };
+}
+
+async function collectDodoRestaurants(page) {
+  await page.goto(DODO_CONTACTS_URL, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await page.waitForFunction(() => Array.isArray(window.initialState?.pizzerias), null, { timeout: 60000 });
+  const restaurants = await page.evaluate(() => window.initialState.pizzerias);
+  return restaurants.map(normalizeDodoRestaurant).sort((a, b) => a.alias.localeCompare(b.alias, "ru"));
+}
+
+async function writeDodoRestaurants(restaurants) {
+  await fs.writeFile(OUT_DODO_RESTAURANTS_FILE, `${JSON.stringify(restaurants, null, 2)}\n`, "utf8");
+  await fs.writeFile(
+    OUT_DODO_RESTAURANTS_JS_FILE,
+    `window.DODO_MOSCOW_RESTAURANTS = ${JSON.stringify(restaurants, null, 2)};\n`,
+    "utf8",
+  );
+}
+
 async function waitForDodoMenuInteractive(page) {
   await waitForDodoPizzaSection(page);
   await page.waitForFunction(
@@ -229,28 +334,31 @@ async function waitForDodoProductModal(page, productName, timeout = 25000) {
     .catch(() => {});
 }
 
-async function openDodoProduct(page, card) {
+async function openDodoProductFromCurrentMenu(page, card) {
+  const article = card.menuProductId
+    ? page.locator(`article[data-menu-product-id="${card.menuProductId}"]`).first()
+    : page.locator("section").filter({ has: page.locator("h2", { hasText: "Пиццы" }) })
+      .locator(`article[aria-label="${card.name.replaceAll('"', '\\"')}"]`)
+      .first();
+
+  await article.waitFor({ state: "attached", timeout: 20000 });
+  await article.scrollIntoViewIfNeeded({ timeout: 20000 });
+  const button = article.locator('[data-testid="product__button"]').first();
+  if ((await button.count()) > 0) {
+    await button.click({ timeout: 20000 });
+  } else {
+    await article.click({ timeout: 20000 });
+  }
+  await waitForDodoProductModal(page, card.name);
+}
+
+async function openDodoProduct(page, card, menuUrl = DODO_URL) {
   let lastError = null;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      await page.goto(DODO_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
+      await page.goto(menuUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
       await waitForDodoMenuInteractive(page);
-
-      const article = card.menuProductId
-        ? page.locator(`article[data-menu-product-id="${card.menuProductId}"]`).first()
-        : page.locator("section").filter({ has: page.locator("h2", { hasText: "Пиццы" }) })
-          .locator(`article[aria-label="${card.name.replaceAll('"', '\\"')}"]`)
-          .first();
-
-      await article.waitFor({ state: "attached", timeout: 20000 });
-      await article.scrollIntoViewIfNeeded({ timeout: 20000 });
-      const button = article.locator('[data-testid="product__button"]').first();
-      if ((await button.count()) > 0) {
-        await button.click({ timeout: 20000 });
-      } else {
-        await article.click({ timeout: 20000 });
-      }
-      await waitForDodoProductModal(page, card.name);
+      await openDodoProductFromCurrentMenu(page, card);
       return;
     } catch (error) {
       lastError = error;
@@ -362,12 +470,12 @@ async function readDodoPageState(page) {
   }));
 }
 
-async function loadDodoPizzaCards(page) {
+async function loadDodoPizzaCards(page, menuUrl = DODO_URL) {
   let lastState = null;
 
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
-      await page.goto(DODO_URL, { waitUntil: "domcontentloaded", timeout: 45000 });
+      await page.goto(menuUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
       await waitForDodoMenuInteractive(page);
       const cards = await getDodoPizzaCards(page);
       if (cards.length) return cards;
@@ -383,27 +491,161 @@ async function loadDodoPizzaCards(page) {
   throw new Error(`Dodo pizza cards not found after retries: ${JSON.stringify(lastState, null, 2)}`);
 }
 
-async function collectDodo() {
-  const browser = await chromium.launch({ headless: !dodoHeaded });
-  const context = await browser.newContext({
-    locale: "ru-RU",
-    viewport: { width: 1440, height: 1100 },
-    userAgent:
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
-  });
-  const page = await context.newPage();
+function dodoMenuApiUrlFromRestaurant(restaurant) {
+  const uuid = String(restaurant.uuid || "").replace(/-/g, "").toLowerCase();
+  return uuid
+    ? `https://dodopizza.ru/api/v5/menu/delivery/countries/${DODO_COUNTRY_ID}/pizzerias/${uuid}?cultures=ru-RU&subcategoriesInMenu=false`
+    : null;
+}
 
-  const cards = (await loadDodoPizzaCards(page)).filter((card) => !isHalfPizzaProduct(card.name));
-  const selectedCards = dodoLimit > 0 ? cards.slice(0, dodoLimit) : cards;
+function resolveDodoApiRef(apiData, ref) {
+  const match = String(ref?.$ref || "").match(/#\/items\/(\d+)/);
+  return match ? apiData.items[Number(match[1])] || null : null;
+}
+
+function getDodoApiPizzaItems(apiData) {
+  const pizzaCategory = (apiData.structure || []).find((category) => normalizeName(category.title) === "пиццы");
+  if (!pizzaCategory) return [];
+  return (pizzaCategory.items || [])
+    .map((row) => resolveDodoApiRef(apiData, row.menuItem))
+    .filter(Boolean);
+}
+
+function parseDodoApiDough(product) {
+  const basis = (product.ingredientGroups || []).find((group) => group.isBasis);
+  const text = basis?.name || "";
+  if (/тонк/i.test(text)) return "Тонкое";
+  if (/традиц/i.test(text)) return "Традиционное";
+  return text || null;
+}
+
+function parseDodoApiSize(value) {
+  const match = String(value || "").match(/(\d+)\s*см/i);
+  return match ? Number(match[1]) : null;
+}
+
+function parseDodoApiProduct(apiProduct, restaurant) {
+  const name = normalizeDodoDisplayName(apiProduct.name);
+  const variations = (apiProduct.variations || [])
+    .map((variation) => variation.product)
+    .filter((product) => product && Number.isFinite(product.price) && product.price > 50)
+    .map((product) => {
+      const sizeCm = parseDodoApiSize(product.size);
+      const dough = parseDodoApiDough(product);
+      const weightG = Number(product.foodValue?.weight) || null;
+      return {
+        id: product.id || `${name}:${sizeCm || "default"}:${dough || "default"}`,
+        sizeCm,
+        dough,
+        price: product.price,
+        weightG,
+        variantLine: [sizeCm ? `${sizeCm} см` : null, dough ? `${dough.toLowerCase()} тесто` : null, weightG ? `${weightG} г` : null]
+          .filter(Boolean)
+          .join(", ") || null,
+      };
+    });
+
+  const unique = new Map();
+  for (const variation of variations) {
+    const key = `${variation.sizeCm || ""}|${variation.dough || ""}|${variation.price || ""}|${variation.weightG || ""}`;
+    if (!unique.has(key)) unique.set(key, variation);
+  }
+
+  const normalized = [...unique.values()].sort(
+    (a, b) => (a.sizeCm || 0) - (b.sizeCm || 0) || String(a.dough || "").localeCompare(String(b.dough || ""), "ru"),
+  );
+  const minPrice = normalized.reduce((best, item) => (!best || item.price < best.price ? item : best), null)?.price || null;
+
+  return {
+    source: "dodo",
+    chain: "Dodo Pizza",
+    name,
+    normalizedName: normalizeName(name),
+    url: restaurant.menuUrl,
+    restaurant: {
+      id: restaurant.id,
+      slug: restaurant.slug,
+      alias: restaurant.alias,
+      address: restaurant.address,
+      menuUrl: restaurant.menuUrl,
+    },
+    flags: [],
+    minPriceCard: minPrice,
+    minPrice,
+    variations: normalized,
+  };
+}
+
+async function collectDodoRestaurantFromApi(page, restaurant, productLimit = dodoLimit) {
+  const apiUrl = dodoMenuApiUrlFromRestaurant(restaurant);
+  if (!apiUrl) throw new Error(`Dodo API URL cannot be built without restaurant uuid: ${restaurant.slug}`);
+
+  const apiData = await loadDodoApiData(page, restaurant, apiUrl);
+  const apiProducts = getDodoApiPizzaItems(apiData).filter((product) => !shouldSkipPizzaProduct(product.name));
+  const selectedProducts = productLimit > 0 ? apiProducts.slice(0, productLimit) : apiProducts;
+  const products = selectedProducts.map((product) => parseDodoApiProduct(product, restaurant));
+  console.log(`[dodo:${restaurant.slug}] api products=${products.length}, variations=${products.reduce((sum, product) => sum + product.variations.length, 0)}`);
+  return products;
+}
+
+async function fetchDodoApiFromPage(page, apiUrl) {
+  return page.evaluate(async (url) => {
+    const response = await fetch(url, {
+      headers: { accept: "application/json" },
+      credentials: "include",
+    });
+    const text = await response.text();
+    if (!response.ok) {
+      throw new Error(`Dodo API HTTP ${response.status}: ${text.slice(0, 200)}`);
+    }
+    return JSON.parse(text);
+  }, apiUrl);
+}
+
+async function loadDodoApiData(page, restaurant, apiUrl) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      return await fetchDodoApiFromPage(page, apiUrl);
+    } catch (error) {
+      lastError = error;
+      console.warn(`[dodo:${restaurant.slug}] api fetch attempt ${attempt} failed: ${error.message}`);
+      await page.waitForTimeout(1200 * attempt);
+    }
+  }
+
+  try {
+    const responseBase = apiUrl.split("?")[0];
+    const [response] = await Promise.all([
+      page.waitForResponse(
+        (item) => item.url().startsWith(responseBase) && item.status() === 200,
+        { timeout: 60000 },
+      ),
+      page.goto(restaurant.menuUrl, { waitUntil: "domcontentloaded", timeout: 60000 }),
+    ]);
+    return await response.json();
+  } catch (error) {
+    throw lastError || error;
+  }
+}
+
+async function collectDodoRestaurantFromUi(page, restaurant, productLimit = dodoLimit) {
+  const cards = (await loadDodoPizzaCards(page, restaurant.menuUrl)).filter((card) => !shouldSkipPizzaProduct(card.name));
+  const selectedCards = productLimit > 0 ? cards.slice(0, productLimit) : cards;
   const products = [];
 
   for (const [index, card] of selectedCards.entries()) {
     const variations = [];
-    console.log(`[dodo] ${index + 1}/${selectedCards.length}: ${card.name}`);
+    console.log(`[dodo:${restaurant.slug}] ${index + 1}/${selectedCards.length}: ${card.name}`);
 
     try {
       await closeDodoModal(page);
-      await openDodoProduct(page, card);
+      try {
+        await openDodoProductFromCurrentMenu(page, card);
+      } catch (error) {
+        console.warn(`[dodo:${restaurant.slug}] current menu open failed for ${card.name}: ${error.message}`);
+        await openDodoProduct(page, card, restaurant.menuUrl);
+      }
 
       const firstOptions = await readDodoModalOptions(page);
       const sizes = firstOptions.sizes.filter((item) => !item.disabled && item.text);
@@ -449,7 +691,7 @@ async function collectDodo() {
         }
       }
     } catch (error) {
-      console.warn(`[dodo] failed ${card.name}: ${error.message}`);
+      console.warn(`[dodo:${restaurant.slug}] failed ${card.name}: ${error.message}`);
     } finally {
       await closeDodoModal(page);
     }
@@ -470,6 +712,13 @@ async function collectDodo() {
       name: card.name,
       normalizedName: normalizeName(card.name),
       url: card.href,
+      restaurant: {
+        id: restaurant.id,
+        slug: restaurant.slug,
+        alias: restaurant.alias,
+        address: restaurant.address,
+        menuUrl: restaurant.menuUrl,
+      },
       flags: card.flags,
       minPriceCard: card.minPriceCard,
       minPrice: normalized.reduce((best, item) => (!best || item.price < best.price ? item : best), null)?.price || card.minPriceCard,
@@ -477,8 +726,147 @@ async function collectDodo() {
     });
   }
 
-  await browser.close();
   return products;
+}
+
+async function collectDodoRestaurant(page, restaurant, productLimit = dodoLimit) {
+  try {
+    return await collectDodoRestaurantFromApi(page, restaurant, productLimit);
+  } catch (error) {
+    console.warn(`[dodo:${restaurant.slug}] api collection failed, falling back to UI: ${error.message}`);
+    return collectDodoRestaurantFromUi(page, restaurant, productLimit);
+  }
+}
+
+function averageNumber(values) {
+  const usable = values.filter((value) => Number.isFinite(value));
+  return usable.length ? usable.reduce((sum, value) => sum + value, 0) / usable.length : null;
+}
+
+function priceStats(values) {
+  const usable = values.filter((value) => Number.isFinite(value));
+  if (!usable.length) return { avg: null, min: null, max: null, count: 0 };
+  return {
+    avg: Math.round(averageNumber(usable)),
+    min: Math.min(...usable),
+    max: Math.max(...usable),
+    count: usable.length,
+  };
+}
+
+function aggregateDodoCityProducts(restaurantProducts) {
+  const byProduct = new Map();
+  for (const entry of restaurantProducts) {
+    for (const product of entry.products) {
+      const key = product.normalizedName;
+      if (!byProduct.has(key)) byProduct.set(key, []);
+      byProduct.get(key).push({ restaurant: entry.restaurant, product });
+    }
+  }
+
+  return [...byProduct.values()]
+    .map((items) => {
+      const first = items[0].product;
+      const variationGroups = new Map();
+
+      for (const item of items) {
+        for (const variation of item.product.variations || []) {
+          const key = `${variation.sizeCm || ""}|${variation.dough || ""}`;
+          if (!variationGroups.has(key)) variationGroups.set(key, []);
+          variationGroups.get(key).push({ restaurant: item.restaurant, variation });
+        }
+      }
+
+      const variations = [...variationGroups.entries()]
+        .map(([key, rows]) => {
+          const [sizeRaw, dough] = key.split("|");
+          const prices = rows.map((row) => row.variation.price);
+          const weights = rows.map((row) => row.variation.weightG);
+          const stats = priceStats(prices);
+          return {
+            id: `${first.name}:${sizeRaw || "default"}:${dough || "default"}:moscow-average`,
+            sizeCm: sizeRaw ? Number(sizeRaw) : null,
+            dough: dough || null,
+            price: stats.avg,
+            avgPrice: stats.avg,
+            minPrice: stats.min,
+            maxPrice: stats.max,
+            restaurantCount: new Set(rows.map((row) => row.restaurant.slug)).size,
+            sampleCount: stats.count,
+            weightG: Math.round(averageNumber(weights) || 0) || null,
+            variantLine: rows[0]?.variation.variantLine || null,
+          };
+        })
+        .sort((a, b) => (a.sizeCm || 0) - (b.sizeCm || 0) || String(a.dough || "").localeCompare(String(b.dough || ""), "ru"));
+
+      const minStats = priceStats(items.map((item) => item.product.minPrice));
+      const cardMinStats = priceStats(items.map((item) => item.product.minPriceCard));
+
+      return {
+        source: "dodo",
+        chain: "Dodo Pizza",
+        cityAverage: true,
+        name: first.name,
+        normalizedName: first.normalizedName,
+        url: first.url,
+        flags: [...new Set(items.flatMap((item) => item.product.flags || []))],
+        minPriceCard: cardMinStats.avg,
+        minPrice: minStats.avg,
+        priceStats: {
+          minPrice: minStats,
+          minPriceCard: cardMinStats,
+        },
+        restaurantCount: new Set(items.map((item) => item.restaurant.slug)).size,
+        restaurantsWithProduct: [...new Set(items.map((item) => item.restaurant.slug))].sort(),
+        variations,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name, "ru"));
+}
+
+async function collectDodo() {
+  const browser = await chromium.launch({ headless: !dodoHeaded });
+  const context = await browser.newContext({
+    locale: "ru-RU",
+    viewport: { width: 1440, height: 1100 },
+    userAgent:
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+  });
+  const page = await context.newPage();
+
+  let restaurants = [];
+  let restaurantProducts = [];
+  let products = [];
+
+  if (dodoAllRestaurants) {
+    restaurants = await collectDodoRestaurants(page);
+    await writeDodoRestaurants(restaurants);
+    const selectedRestaurants = restaurants.slice(dodoRestaurantStart, dodoRestaurantLimit > 0 ? dodoRestaurantStart + dodoRestaurantLimit : undefined);
+    console.log(`[dodo] restaurants=${restaurants.length}, selected=${selectedRestaurants.length}, start=${dodoRestaurantStart}`);
+
+    for (const [index, restaurant] of selectedRestaurants.entries()) {
+      console.log(`[dodo] restaurant ${index + 1}/${selectedRestaurants.length}: ${restaurant.alias} (${restaurant.slug})`);
+      const entry = {
+        restaurant,
+        products: await collectDodoRestaurant(page, restaurant),
+      };
+      restaurantProducts.push(entry);
+    }
+
+    products = aggregateDodoCityProducts(restaurantProducts);
+  } else {
+    let restaurant = buildDodoRestaurantFromUrl(DODO_URL);
+    try {
+      const knownRestaurants = await collectDodoRestaurants(page);
+      restaurant = knownRestaurants.find((item) => item.menuUrl === DODO_URL || item.slug === restaurant.slug) || restaurant;
+    } catch (error) {
+      console.warn(`[dodo] restaurant lookup failed, falling back to URL-only mode: ${error.message}`);
+    }
+    products = await collectDodoRestaurant(page, restaurant);
+  }
+
+  await browser.close();
+  return { products, restaurants, restaurantProducts };
 }
 
 const manualMatches = [
@@ -518,6 +906,24 @@ function buildMatches(papa, dodo) {
 async function main() {
   await fs.mkdir(OUT_DIR, { recursive: true });
 
+  if (dodoRestaurantsOnly) {
+    const browser = await chromium.launch({ headless: !dodoHeaded });
+    const context = await browser.newContext({
+      locale: "ru-RU",
+      viewport: { width: 1440, height: 1100 },
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    });
+    const page = await context.newPage();
+    const restaurants = await collectDodoRestaurants(page);
+    await writeDodoRestaurants(restaurants);
+    await browser.close();
+    console.log(`[done] wrote ${path.relative(ROOT, OUT_DODO_RESTAURANTS_FILE)}`);
+    console.log(`[done] wrote ${path.relative(ROOT, OUT_DODO_RESTAURANTS_JS_FILE)}`);
+    console.log(`[done] dodo restaurants=${restaurants.length}`);
+    return;
+  }
+
   let existing = null;
   try {
     existing = JSON.parse(await fs.readFile(OUT_FILE, "utf8"));
@@ -525,8 +931,15 @@ async function main() {
     existing = null;
   }
 
-  const papa = source === "dodo" ? existing?.papa?.products || [] : await collectPapa();
-  const dodo = source === "papa" ? existing?.dodo?.products || [] : await collectDodo();
+  const papa = source === "dodo" ? filterIncludedPizzaProducts(existing?.papa?.products) : await collectPapa();
+  const dodoResult = source === "papa"
+    ? filterDodoResult({
+      products: existing?.dodo?.products || [],
+      restaurants: existing?.dodo?.restaurants || [],
+      restaurantProducts: existing?.dodo?.restaurantProducts || [],
+    })
+    : filterDodoResult(await collectDodo());
+  const dodo = dodoResult.products;
   const matches = buildMatches(papa, dodo);
 
   const snapshot = {
@@ -536,13 +949,17 @@ async function main() {
       urls: {
         papa: PAPA_URL,
         dodo: DODO_URL,
+        dodoContacts: DODO_CONTACTS_URL,
       },
       source,
+      dodoAllRestaurants,
       notes: [
         "Papa Johns is collected from window.__PRELOADED_STATE__.",
-        "Dodo Pizza is collected with Playwright browser rendering and product configurator clicks.",
+        "Dodo Pizza is collected with Playwright browser rendering and api/v5 menu JSON; configurator clicks are kept as fallback.",
         "Only standard-crust/base pizza variations are included.",
         "Half-and-half pizzas are excluded from the current analytics scope.",
+        "Custom constructor pizzas are excluded from price analytics.",
+        "When dodoAllRestaurants=true, Dodo products are city-average aggregates and restaurantProducts keeps per-restaurant prices.",
       ],
     },
     papa: {
@@ -550,6 +967,8 @@ async function main() {
     },
     dodo: {
       products: dodo,
+      restaurants: dodoResult.restaurants || [],
+      restaurantProducts: dodoResult.restaurantProducts || [],
     },
     matches,
   };
@@ -562,6 +981,10 @@ async function main() {
   );
   console.log(`[done] wrote ${path.relative(ROOT, OUT_FILE)}`);
   console.log(`[done] wrote ${path.relative(ROOT, OUT_JS_FILE)}`);
+  if (dodoResult.restaurants?.length) {
+    console.log(`[done] wrote ${path.relative(ROOT, OUT_DODO_RESTAURANTS_FILE)}`);
+    console.log(`[done] dodo restaurants=${dodoResult.restaurants.length}, restaurant snapshots=${dodoResult.restaurantProducts.length}`);
+  }
   console.log(`[done] papa=${papa.length}, dodo=${dodo.length}, matches=${matches.length}`);
 }
 

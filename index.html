@@ -285,6 +285,41 @@
       min-width: 0;
     }
 
+    .field select:disabled,
+    .field input:disabled {
+      cursor: not-allowed;
+      opacity: .58;
+    }
+
+    .toggle-field {
+      align-self: stretch;
+    }
+
+    .check-line {
+      display: flex;
+      align-items: center;
+      min-height: 42px;
+      gap: 10px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      font: 700 13px/1.25 Arial, sans-serif;
+    }
+
+    .check-line input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--green);
+    }
+
+    .check-line span {
+      color: var(--ink);
+      font: inherit;
+      text-transform: none;
+    }
+
     .manual-result {
       display: grid;
       gap: 10px;
@@ -775,7 +810,7 @@
       <div class="panel-head">
         <div>
           <h2>Новый сбор данных</h2>
-          <p class="panel-copy">Выберите город Papa Johns и ресторан Dodo. Сбор запускается через GitHub Action: Playwright обновит snapshot, а эта страница подтянет новые данные после публикации Pages.</p>
+          <p class="panel-copy">Выберите город Papa Johns и ресторан Dodo или включите среднюю Dodo-цену по всем московским ресторанам. Сбор запускается через GitHub Action: Playwright обновит snapshot, а эта страница подтянет новые данные после публикации Pages.</p>
         </div>
       </div>
       <div class="collector-grid" aria-label="Параметры нового сбора">
@@ -791,6 +826,13 @@
           <span>Dodo ресторан</span>
           <select id="collectorDodoRestaurant" aria-label="Ресторан Dodo Pizza"></select>
         </label>
+        <div class="field toggle-field">
+          <span>Режим Dodo</span>
+          <label class="check-line">
+            <input id="collectorDodoAllRestaurants" type="checkbox">
+            <span>Средняя по всем ресторанам Москвы</span>
+          </label>
+        </div>
         <label class="field wide-field">
           <span>Dodo URL, если ресторана нет в списке</span>
           <input id="collectorDodoCustomUrl" type="url" placeholder="https://dodopizza.ru/moscow/veshnyaki">
@@ -800,6 +842,7 @@
         <span class="rule-pill">Только пиццы</span>
         <span class="rule-pill">Стандартный борт</span>
         <span class="rule-pill">Без половинок</span>
+        <span class="rule-pill">Без конструкторов</span>
         <span class="rule-pill">Базовые цены</span>
       </div>
       <div class="run-surface">
@@ -871,6 +914,7 @@
   </main>
 
   <script src="data/papa-segments.js"></script>
+  <script src="data/dodo-restaurants-moscow.js"></script>
   <script src="data/pizza-snapshot.js"></script>
   <script>
     let snapshot = window.PIZZA_SNAPSHOT;
@@ -882,10 +926,15 @@
     const papaCityOptions = [
       { label: "Москва", url: "https://papajohns.ru/moscow" }
     ];
+    const dodoMoscowRestaurants = Array.isArray(window.DODO_MOSCOW_RESTAURANTS) ? window.DODO_MOSCOW_RESTAURANTS : [];
     const dodoCityOptions = [
       {
         label: "Москва",
-        restaurants: [
+        contactsUrl: "https://dodopizza.ru/moscow/contacts",
+        restaurants: dodoMoscowRestaurants.length ? dodoMoscowRestaurants.map(restaurant => ({
+          label: `${restaurant.alias || restaurant.name} · ${restaurant.address || restaurant.slug}`,
+          url: restaurant.menuUrl
+        })) : [
           { label: "Вешняки · ул. Вешняковская, 13А", url: "https://dodopizza.ru/moscow/veshnyaki" }
         ]
       }
@@ -895,6 +944,29 @@
     const pct = (delta, base) => base ? (delta / base) * 100 : null;
     const norm = value => String(value || "").toLowerCase().replaceAll("ё", "е").replace(/[^a-zа-я0-9]+/g, " ").trim();
     const html = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+    const pluralRu = (count, one, few, many) => {
+      const mod10 = count % 10;
+      const mod100 = count % 100;
+      if (mod10 === 1 && mod100 !== 11) return one;
+      if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+      return many;
+    };
+
+    function isExcludedAnalyticsPizza(name) {
+      const normalized = norm(name);
+      return normalized === "создай свою пиццу" || normalized === "соберите свою пиццу";
+    }
+
+    function removeExcludedAnalyticsProducts() {
+      snapshot.papa.products = snapshot.papa.products.filter(product => !isExcludedAnalyticsPizza(product.name));
+      snapshot.dodo.products = snapshot.dodo.products.filter(product => !isExcludedAnalyticsPizza(product.name));
+      if (Array.isArray(snapshot.dodo.restaurantProducts)) {
+        snapshot.dodo.restaurantProducts = snapshot.dodo.restaurantProducts.map(entry => ({
+          ...entry,
+          products: (entry.products || []).filter(product => !isExcludedAnalyticsPizza(product.name))
+        }));
+      }
+    }
 
     function variantKey(item, mode = "strict") {
       if (mode === "size") return `${item.sizeCm || "?"}`;
@@ -1074,6 +1146,7 @@
       const dodoCitySelect = document.getElementById("collectorDodoCity");
       const dodoRestaurantSelect = document.getElementById("collectorDodoRestaurant");
       const dodoCustomUrl = document.getElementById("collectorDodoCustomUrl");
+      const dodoAllRestaurants = document.getElementById("collectorDodoAllRestaurants");
 
       fillSelect(papaSelect, papaCityOptions);
       fillSelect(dodoCitySelect, dodoCityOptions, item => item.label, item => item.label);
@@ -1082,6 +1155,7 @@
       const currentDodoUrl = snapshot.meta.urls?.dodo;
       const papaMatch = papaCityOptions.find(item => item.url === currentPapaUrl);
       if (papaMatch) papaSelect.value = papaMatch.url;
+      dodoAllRestaurants.checked = Boolean(snapshot.meta.dodoAllRestaurants);
 
       function refreshRestaurants() {
         const city = dodoCityOptions.find(item => item.label === dodoCitySelect.value) || dodoCityOptions[0];
@@ -1103,18 +1177,31 @@
         updateWorkflowCommand();
       });
       dodoCustomUrl.addEventListener("input", updateWorkflowCommand);
+      dodoAllRestaurants.addEventListener("change", updateWorkflowCommand);
       document.getElementById("copyWorkflowCommand").addEventListener("click", copyWorkflowCommand);
     }
 
     function currentWorkflowInputs() {
       const papaUrl = document.getElementById("collectorPapaCity").value;
+      const dodoCityLabel = document.getElementById("collectorDodoCity").value;
+      const dodoCity = dodoCityOptions.find(item => item.label === dodoCityLabel) || dodoCityOptions[0];
       const dodoCustomUrl = document.getElementById("collectorDodoCustomUrl").value.trim();
       const dodoUrl = dodoCustomUrl || document.getElementById("collectorDodoRestaurant").value;
-      return { papaUrl, dodoUrl };
+      const dodoAllRestaurants = document.getElementById("collectorDodoAllRestaurants").checked;
+      return {
+        papaUrl,
+        dodoUrl,
+        dodoContactsUrl: dodoCity.contactsUrl,
+        dodoAllRestaurants
+      };
     }
 
     function updateWorkflowCommand() {
-      const { papaUrl, dodoUrl } = currentWorkflowInputs();
+      const { papaUrl, dodoUrl, dodoContactsUrl, dodoAllRestaurants } = currentWorkflowInputs();
+      const dodoRestaurantSelect = document.getElementById("collectorDodoRestaurant");
+      const dodoCustomUrl = document.getElementById("collectorDodoCustomUrl");
+      dodoRestaurantSelect.disabled = dodoAllRestaurants;
+      dodoCustomUrl.disabled = dodoAllRestaurants;
       const command = [
         "gh workflow run",
         workflowPath,
@@ -1123,11 +1210,17 @@
         "-f",
         `papa_url=${shellQuote(papaUrl)}`,
         "-f",
-        `dodo_url=${shellQuote(dodoUrl)}`
+        `dodo_url=${shellQuote(dodoUrl)}`,
+        "-f",
+        `dodo_contacts_url=${shellQuote(dodoContactsUrl)}`,
+        "-f",
+        `dodo_all_restaurants=${shellQuote(String(dodoAllRestaurants))}`
       ].join(" ");
       document.getElementById("workflowCommand").textContent = command;
       document.getElementById("workflowRunLink").href = `https://github.com/${repoName}/actions/workflows/${workflowPath}`;
-      document.getElementById("copyWorkflowState").textContent = "Команду можно выполнить в терминале, где авторизован GitHub CLI.";
+      document.getElementById("copyWorkflowState").textContent = dodoAllRestaurants
+        ? "Команда запустит обход всех ресторанов Dodo в Москве. Это будет заметно дольше обычного ресторанного сбора."
+        : "Команду можно выполнить в терминале, где авторизован GitHub CLI.";
     }
 
     async function copyWorkflowCommand() {
@@ -1287,7 +1380,10 @@
       ];
       document.getElementById("kpis").innerHTML = cards.join("");
       const dodoSource = snapshot.meta.urls?.dodo || "";
-      const dodoContext = dodoSource.replace("https://dodopizza.ru/", "");
+      const restaurantCount = snapshot.dodo.restaurants?.length || 0;
+      const dodoContext = snapshot.meta.dodoAllRestaurants
+        ? `средняя по Москве · ${restaurantCount} ${pluralRu(restaurantCount, "ресторан", "ресторана", "ресторанов")}`
+        : dodoSource.replace("https://dodopizza.ru/", "");
       document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Dodo ${dodoContext}`;
       document.getElementById("papaSourceLink").href = snapshot.meta.urls?.papa || "https://papajohns.ru/moscow";
       document.getElementById("dodoSourceLink").href = dodoSource || "https://dodopizza.ru/moscow/veshnyaki";
@@ -1555,6 +1651,8 @@
         document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/pizza-snapshot.js. Запустите npm run collect.</div></main>';
         return;
       }
+
+      removeExcludedAnalyticsProducts();
 
       if (!segmentConfig?.segments?.length) {
         document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/papa-segments.js. Добавьте справочник сегментов Papa Johns.</div></main>';

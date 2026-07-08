@@ -11,6 +11,14 @@ on:
         description: "Dodo Pizza restaurant/menu URL"
         required: true
         default: "https://dodopizza.ru/moscow/veshnyaki"
+      dodo_contacts_url:
+        description: "Dodo Pizza contacts URL for restaurant list"
+        required: true
+        default: "https://dodopizza.ru/moscow/contacts"
+      dodo_all_restaurants:
+        description: "Collect Dodo Pizza across all Moscow restaurants"
+        required: true
+        default: "false"
 
 permissions:
   contents: write
@@ -43,7 +51,9 @@ jobs:
         env:
           PAPA_URL: ${{ inputs.papa_url }}
           DODO_URL: ${{ inputs.dodo_url }}
-        run: npm run collect -- --papa-url="$PAPA_URL" --dodo-url="$DODO_URL"
+          DODO_CONTACTS_URL: ${{ inputs.dodo_contacts_url }}
+          DODO_ALL_RESTAURANTS: ${{ inputs.dodo_all_restaurants }}
+        run: npm run collect -- --papa-url="$PAPA_URL" --dodo-url="$DODO_URL" --dodo-contacts-url="$DODO_CONTACTS_URL"
 
       - name: Validate snapshot
         run: |
@@ -53,9 +63,14 @@ jobs:
           const papaVariations = data.papa.products.reduce((sum, item) => sum + item.variations.length, 0);
           const dodoVariations = data.dodo.products.reduce((sum, item) => sum + item.variations.length, 0);
           const halves = [...data.papa.products, ...data.dodo.products].filter((item) => /половин/i.test(item.name));
+          const normalize = (value) => String(value || '').toLowerCase().replaceAll('ё', 'е').replace(/[^a-zа-я0-9]+/g, ' ').trim();
+          const customConstructors = [...data.papa.products, ...data.dodo.products]
+            .filter((item) => ['создай свою пиццу', 'соберите свою пиццу'].includes(normalize(item.name)));
           const papaCrusts = new Set(data.papa.products.flatMap((item) => item.variations.map((variation) => variation.crust || 'none')));
           const dodoEmpty = data.dodo.products.filter((item) => !item.variations.length);
-          const dodoMinMismatch = data.dodo.products.filter((item) => item.variations.length && item.minPrice !== item.minPriceCard);
+          const dodoMinMismatch = data.dodo.products.filter((item) => !item.cityAverage && item.variations.length && item.minPrice !== item.minPriceCard);
+          const dodoRestaurantProducts = data.dodo.restaurantProducts || [];
+          const dodoRestaurantEntriesWithoutProducts = dodoRestaurantProducts.filter((entry) => !entry.products?.length);
 
           console.log(JSON.stringify({
             papaProducts: data.papa.products.length,
@@ -63,21 +78,30 @@ jobs:
             dodoProducts: data.dodo.products.length,
             dodoVariations,
             dodoUrl: data.meta.urls.dodo,
+            dodoAllRestaurants: data.meta.dodoAllRestaurants,
+            dodoRestaurants: data.dodo.restaurants?.length || 0,
+            dodoRestaurantSnapshots: dodoRestaurantProducts.length,
           }, null, 2));
 
           if (!data.papa.products.length || !papaVariations) throw new Error('Papa Johns snapshot is empty.');
           if (!data.dodo.products.length || !dodoVariations) throw new Error('Dodo Pizza snapshot is empty.');
           if (halves.length) throw new Error(`Half pizzas found: ${halves.map((item) => item.name).join(', ')}`);
+          if (customConstructors.length) throw new Error(`Custom constructor pizzas found: ${customConstructors.map((item) => item.name).join(', ')}`);
           if (papaCrusts.size !== 1 || !papaCrusts.has('none')) throw new Error(`Non-standard Papa crusts found: ${[...papaCrusts].join(', ')}`);
           if (dodoEmpty.length) throw new Error(`Dodo products without variations: ${dodoEmpty.map((item) => item.name).join(', ')}`);
           if (dodoMinMismatch.length) throw new Error(`Dodo min price mismatch: ${dodoMinMismatch.map((item) => item.name).join(', ')}`);
+          if (data.meta.dodoAllRestaurants && !data.dodo.restaurants?.length) throw new Error('Dodo Moscow restaurant list is empty.');
+          if (data.meta.dodoAllRestaurants && !dodoRestaurantProducts.length) throw new Error('Dodo per-restaurant snapshots are empty.');
+          if (data.meta.dodoAllRestaurants && dodoRestaurantEntriesWithoutProducts.length) {
+            throw new Error(`Dodo restaurants without products: ${dodoRestaurantEntriesWithoutProducts.map((entry) => entry.restaurant?.alias || entry.restaurant?.slug).join(', ')}`);
+          }
           NODE
 
       - name: Commit snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pizza-snapshot.json data/pizza-snapshot.js
+          git add data/pizza-snapshot.json data/pizza-snapshot.js data/dodo-restaurants-moscow.json data/dodo-restaurants-moscow.js
           if git diff --cached --quiet; then
             echo "No snapshot changes."
           else

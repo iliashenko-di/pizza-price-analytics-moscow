@@ -494,6 +494,7 @@
     .dodo-price-step strong small {
       color: var(--muted);
       font: 700 10px/1.2 Consolas, "Courier New", monospace;
+      margin-right: 4px;
       text-transform: uppercase;
     }
 
@@ -1877,7 +1878,7 @@
           ${stats.map(stat => `
             <div class="dodo-price-step">
               <span>${stat.size} см</span>
-              <strong>${rub(stat.avg)} <small>средняя</small></strong>
+              <strong><small>средняя</small> ${rub(stat.avg)}</strong>
               <em>диапазон ${priceRangeLabel(stat.min, stat.max)}</em>
             </div>
           `).join("")}

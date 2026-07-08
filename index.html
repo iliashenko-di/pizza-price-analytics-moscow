@@ -264,6 +264,10 @@
       margin-bottom: 14px;
     }
 
+    .manual-grid.segment-check {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .field {
       display: grid;
       min-width: 0;
@@ -530,6 +534,67 @@
       color: var(--dodo);
     }
 
+    .delta-higher {
+      color: var(--papa);
+    }
+
+    .delta-lower {
+      color: var(--dodo);
+    }
+
+    .delta-flat {
+      color: var(--muted);
+    }
+
+    .segment-price-row {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr) minmax(0, 1.12fr) 130px;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .segment-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      width: fit-content;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font: 700 12px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .segment-products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .product-pill {
+      display: inline-flex;
+      max-width: 100%;
+      min-height: 28px;
+      align-items: center;
+      gap: 6px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .product-pill em {
+      color: var(--muted);
+      font-style: normal;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
     .match-body {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -683,7 +748,8 @@
         flex-direction: column;
       }
 
-      .variant-row {
+      .variant-row,
+      .segment-price-row {
         grid-template-columns: 1fr;
       }
     }
@@ -694,12 +760,12 @@
     <header class="top">
       <div>
         <p class="eyebrow" id="eyebrow">Москва · сбор данных</p>
-        <h1>Полная карта вариаций пицц: размеры, тесто и ценовой разрыв</h1>
+        <h1>Сегментное сравнение пицц: Papa как база, Dodo как отклонение</h1>
       </div>
       <nav class="actions" aria-label="Действия">
         <a class="link-button" id="papaSourceLink" href="https://papajohns.ru/moscow" target="_blank" rel="noreferrer">Papa Johns</a>
         <a class="link-button" id="dodoSourceLink" href="https://dodopizza.ru/moscow/veshnyaki" target="_blank" rel="noreferrer">Dodo Pizza</a>
-        <button type="button" id="csvButton">CSV совпадений</button>
+        <button type="button" id="csvButton">CSV сегментов</button>
       </nav>
     </header>
 
@@ -751,48 +817,44 @@
     <section class="card panel">
       <div class="panel-head">
         <div>
-          <h2>Сравнение пицц</h2>
-          <p class="panel-copy">Выберите пиццу Papa Johns и пиццу Dodo Pizza, чтобы увидеть совпавшие варианты по размеру и тесту, а также варианты без пары.</p>
+          <h2>Проверка Dodo по сегменту</h2>
+          <p class="panel-copy">Выберите пиццу Dodo Pizza, чтобы увидеть, в какой Papa-сегмент она попадает по ценам и где Dodo выше или ниже базовой цены Papa.</p>
         </div>
       </div>
-      <div class="manual-grid" aria-label="Настройки ручного сравнения">
-        <label class="field">
-          <span>Papa Johns</span>
-          <select id="manualPapaSelect" aria-label="Пицца Papa Johns"></select>
-        </label>
+      <div class="manual-grid segment-check" aria-label="Проверка сегмента Dodo">
         <label class="field">
           <span>Dodo Pizza</span>
           <select id="manualDodoSelect" aria-label="Пицца Dodo Pizza"></select>
         </label>
       </div>
       <div id="manualCompare" class="manual-result"></div>
-      <p class="footnote">Совпадением считается одинаковый размер и одинаковый вид теста. Варианты без точной пары выводятся отдельно.</p>
+      <p class="footnote">Сегмент Dodo определяется по ближайшей ценовой лестнице Papa: 25 см Dodo сравнивается с 23 см Papa, 30 см с 30 см, 35 см с 35 см. Размер 20 см показывается отдельно и не влияет на сегмент.</p>
     </section>
 
     <section class="card panel">
       <div class="panel-head">
-        <h2>Совпавшие пиццы: вариант к варианту</h2>
+        <h2>Сравнение по сегментам</h2>
         <div class="controls">
           <div class="tabs" aria-label="Фильтр">
             <button type="button" class="active" data-filter="all">Все</button>
-            <button type="button" data-filter="exact">Точные</button>
-            <button type="button" data-filter="review">Проверить</button>
+            <button type="button" data-filter="higher">Dodo выше</button>
+            <button type="button" data-filter="lower">Dodo ниже</button>
           </div>
           <select id="sortSelect" aria-label="Сортировка">
             <option value="gap">Макс. разрыв</option>
-            <option value="name">Название</option>
-            <option value="coverage">Больше совпавших вариантов</option>
+            <option value="segment">Сегмент</option>
+            <option value="dodoCount">Больше Dodo пицц</option>
           </select>
         </div>
       </div>
       <div id="matches" class="match-list"></div>
-      <p class="footnote">Совпадением варианта считается одинаковый размер и одинаковый вид теста. В текущем срезе учитываются только базовые варианты со стандартным бортом.</p>
+      <p class="footnote">Процент считается от цены Papa: `(Dodo - Papa) / Papa`. Если Dodo выше Papa, процент зеленый; если Dodo ниже Papa, процент красный.</p>
     </section>
 
     <section class="catalogs">
       <article class="card panel">
         <div class="panel-head">
-          <h2>Без совпадения: Papa Johns</h2>
+          <h2>Papa вне справочника</h2>
           <input id="papaSearch" type="search" placeholder="Поиск" aria-label="Поиск Papa Johns">
         </div>
         <div id="papaUnmatched" class="catalog-list"></div>
@@ -800,7 +862,7 @@
 
       <article class="card panel">
         <div class="panel-head">
-          <h2>Без совпадения: Dodo Pizza</h2>
+          <h2>Dodo требует проверки сегмента</h2>
           <input id="dodoSearch" type="search" placeholder="Поиск" aria-label="Поиск Dodo Pizza">
         </div>
         <div id="dodoUnmatched" class="catalog-list"></div>
@@ -808,9 +870,13 @@
     </section>
   </main>
 
+  <script src="data/papa-segments.js"></script>
   <script src="data/pizza-snapshot.js"></script>
   <script>
     let snapshot = window.PIZZA_SNAPSHOT;
+    let segmentConfig = window.PAPA_SEGMENTS;
+    let segmentAnalytics = [];
+    let dodoAssignments = [];
     const repoName = "iliashenko-di/pizza-price-analytics-moscow";
     const workflowPath = "collect.yml";
     const papaCityOptions = [
@@ -860,44 +926,132 @@
       return snapshot[source].products.find(item => item.normalizedName === id);
     }
 
-    function mapByComparisonKey(items, mode) {
-      const byKey = new Map();
-      for (const item of items) {
-        const key = variantKey(item, mode);
-        if (!byKey.has(key) || item.price < byKey.get(key).price) byKey.set(key, item);
+    function segmentById(id) {
+      return (segmentConfig?.segments || []).find(segment => segment.id === id) || null;
+    }
+
+    function segmentProductNames(segment) {
+      return new Set((segment.products || []).map(norm));
+    }
+
+    function papaSegmentId(product) {
+      const normalized = norm(product.name);
+      if (segmentConfig.aliases?.[normalized]) return segmentConfig.aliases[normalized];
+      return (segmentConfig.segments || []).find(segment => segmentProductNames(segment).has(normalized))?.id || null;
+    }
+
+    function papaProductsForSegment(segment) {
+      return snapshot.papa.products.filter(product => papaSegmentId(product) === segment.id);
+    }
+
+    function dodoReferenceSize(sizeCm) {
+      const map = segmentConfig.dodoComparableSizes || {};
+      return map[String(sizeCm)] || map[sizeCm] || null;
+    }
+
+    function summarizeByReferenceSize(product) {
+      const buckets = new Map();
+      for (const item of groupProduct(product)) {
+        const referenceSize = dodoReferenceSize(item.sizeCm);
+        if (!referenceSize) continue;
+        const key = `${referenceSize}|${item.sizeCm}`;
+        if (!buckets.has(key)) buckets.set(key, { referenceSize, dodoSize: item.sizeCm, prices: [], items: [] });
+        buckets.get(key).prices.push(item.price);
+        buckets.get(key).items.push(item);
       }
-      return byKey;
+      return [...buckets.values()].map(bucket => ({
+        ...bucket,
+        price: Math.min(...bucket.prices),
+        avgPrice: avg(bucket.prices)
+      }));
     }
 
-    function enrichMatch(match, mode = "strict") {
-      const papa = productById("papa", match.papaProductId);
-      const dodo = productById("dodo", match.dodoProductId);
-      const papaVars = groupProduct(papa);
-      const dodoVars = groupProduct(dodo);
-      const papaMap = mapByComparisonKey(papaVars, mode);
-      const dodoMap = mapByComparisonKey(dodoVars, mode);
-      const commonKeys = [...papaMap.keys()].filter(key => dodoMap.has(key));
-      const common = commonKeys.map(key => {
-        const p = papaMap.get(key);
-        const d = dodoMap.get(key);
-        const delta = d.price - p.price;
+    function confidenceLabel(score) {
+      if (score == null) return "нет данных";
+      if (score <= 0.07) return "высокая уверенность";
+      if (score <= 0.16) return "средняя уверенность";
+      return "требует проверки";
+    }
+
+    function assignDodoSegment(product) {
+      const comparable = summarizeByReferenceSize(product);
+      if (!comparable.length) {
+        return { product, segment: null, segmentId: null, score: null, confidence: "none", comparable, variants: groupProduct(product) };
+      }
+
+      const scored = segmentConfig.segments.map(segment => {
+        const diffs = comparable
+          .map(row => {
+            const papaPrice = segment.prices[row.referenceSize];
+            return papaPrice ? Math.abs(row.price - papaPrice) / papaPrice : null;
+          })
+          .filter(value => value != null);
+        return { segment, score: avg(diffs) };
+      }).filter(item => item.score != null);
+
+      scored.sort((a, b) => a.score - b.score);
+      const best = scored[0];
+      const confidence = best.score <= 0.07 ? "high" : best.score <= 0.16 ? "medium" : "low";
+      return {
+        product,
+        segment: best.segment,
+        segmentId: best.segment.id,
+        score: best.score,
+        confidence,
+        comparable,
+        variants: groupProduct(product)
+      };
+    }
+
+    function assignmentPricesForReferenceSize(assignment, referenceSize) {
+      const byDodoSize = new Map();
+      for (const item of assignment.variants) {
+        if (dodoReferenceSize(item.sizeCm) !== referenceSize) continue;
+        const key = item.sizeCm;
+        if (!byDodoSize.has(key) || item.price < byDodoSize.get(key).price) byDodoSize.set(key, item);
+      }
+      return [...byDodoSize.values()];
+    }
+
+    function buildSegmentAnalytics() {
+      dodoAssignments = snapshot.dodo.products.map(assignDodoSegment);
+      return segmentConfig.segments.map(segment => {
+        const papaCurrent = papaProductsForSegment(segment);
+        const dodo = dodoAssignments.filter(item => item.segmentId === segment.id);
+        const rows = segmentConfig.sizes.map(referenceSize => {
+          const dodoItems = dodo.flatMap(assignment => assignmentPricesForReferenceSize(assignment, referenceSize)
+            .map(item => ({ ...item, product: assignment.product })));
+          const prices = dodoItems.map(item => item.price);
+          const dodoAvg = avg(prices);
+          const papaPrice = segment.prices[referenceSize];
+          const delta = dodoAvg == null ? null : dodoAvg - papaPrice;
+          return {
+            referenceSize,
+            papaPrice,
+            dodoItems,
+            dodoAvg,
+            dodoMin: prices.length ? Math.min(...prices) : null,
+            dodoMax: prices.length ? Math.max(...prices) : null,
+            dodoCount: prices.length,
+            dodoSizes: [...new Set(dodoItems.map(item => item.sizeCm))].sort((a, b) => a - b),
+            delta,
+            deltaPct: delta == null ? null : pct(delta, papaPrice)
+          };
+        });
+        const comparableRows = rows.filter(row => row.deltaPct != null);
+        const largest = comparableRows.reduce((best, row) => !best || Math.abs(row.deltaPct) > Math.abs(best.deltaPct) ? row : best, null);
         return {
-          key,
-          papa: p,
-          dodo: d,
-          delta,
-          deltaPct: pct(delta, p.price),
-          comparisonLabel: mode === "size" ? `${p.sizeCm || "?"} см` : displayKey(p)
+          ...segment,
+          papaCurrent,
+          dodo,
+          rows,
+          largest,
+          dodoAboveRows: comparableRows.filter(row => row.delta > 0).length,
+          dodoBelowRows: comparableRows.filter(row => row.delta < 0).length,
+          index: avg(comparableRows.map(row => 100 + row.deltaPct))
         };
-      }).sort((a, b) => (a.papa.sizeCm || 0) - (b.papa.sizeCm || 0) || String(a.papa.dough || "").localeCompare(String(b.papa.dough || ""), "ru"));
-
-      const papaOnly = papaVars.filter(item => !dodoMap.has(variantKey(item, mode)));
-      const dodoOnly = dodoVars.filter(item => !papaMap.has(variantKey(item, mode)));
-      const largest = common.reduce((best, item) => !best || Math.abs(item.deltaPct) > Math.abs(best.deltaPct) ? item : best, null);
-      return { ...match, comparisonMode: mode, papa, dodo, papaVars, dodoVars, common, papaOnly, dodoOnly, largest };
+      });
     }
-
-    let enriched = [];
 
     async function loadLatestSnapshot() {
       if (window.location.protocol === "file:") return;
@@ -991,6 +1145,23 @@
       return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
     }
 
+    function signedPct(value) {
+      if (value == null) return "—";
+      return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+    }
+
+    function deltaClass(delta) {
+      if (delta > 0) return "delta-higher";
+      if (delta < 0) return "delta-lower";
+      return "delta-flat";
+    }
+
+    function deltaDirection(delta) {
+      if (delta > 0) return "Dodo выше Papa";
+      if (delta < 0) return "Dodo ниже Papa";
+      return "Dodo равен Papa";
+    }
+
     function renderMiniList(rows) {
       return `<div class="mini-list">${rows.join("")}</div>`;
     }
@@ -1006,115 +1177,111 @@
         `);
     }
 
-    function renderMatchRows() {
-      return enriched.map(item => `
+    function renderSegmentRows() {
+      return segmentAnalytics.map(segment => `
         <div class="mini-row">
           <span>
-            <strong>${html(item.label)}</strong>
-            <span class="metric-detail">Papa: ${html(item.papa.name)} · Dodo: ${html(item.dodo.name)}</span>
+            <strong>${html(segment.label)}</strong>
+            <span class="metric-detail">Papa ${segment.products.length} в справочнике · Dodo ${segment.dodo.length} присвоено</span>
           </span>
-          <em>${item.common.length} вар.</em>
+          <em>${segment.index == null ? "—" : Math.round(segment.index) + "%"}</em>
         </div>
       `);
     }
 
-    function renderVariantMatchRows() {
-      return enriched.map(item => {
-        const variants = item.common.map(row => displayKey(row.papa)).join("; ") || "точных вариаций нет";
-        return `
+    function renderAssignmentRows(assignments) {
+      return assignments
+        .sort((a, b) => a.product.name.localeCompare(b.product.name, "ru"))
+        .map(item => `
           <div class="mini-row">
             <span>
-              <strong>${html(item.label)}</strong>
-              <span class="metric-detail">${html(variants)}</span>
+              <strong>${html(item.product.name)}</strong>
+              <span class="metric-detail">${item.segment ? html(item.segment.label) : "без сегмента"} · ${confidenceLabel(item.score)}</span>
             </span>
-            <em>${item.common.length} совп.</em>
+            <em>${item.score == null ? "—" : Math.round(item.score * 100) + "%"}</em>
           </div>
-        `;
-      });
+        `);
     }
 
     function renderKpis() {
-      const dodoNoVariants = snapshot.dodo.products.filter(item => !item.variations.length);
-      const dodoNoVariantNames = dodoNoVariants.map(item => item.name);
-      const commonCount = enriched.reduce((sum, item) => sum + item.common.length, 0);
       const papaVarCount = snapshot.papa.products.reduce((sum, item) => sum + item.variations.length, 0);
       const dodoVarCount = snapshot.dodo.products.reduce((sum, item) => sum + item.variations.length, 0);
-      const exact = snapshot.matches.filter(item => item.status === "exact").length;
-      const pizzaIndexes = enriched
-        .map(item => avg(item.common.map(row => 100 + row.deltaPct)))
-        .filter(value => value != null);
-      const pizzaIndex = avg(pizzaIndexes);
-      const comparedPizzaCount = enriched.filter(item => item.common.length).length;
-      const indexNote = pizzaIndex == null
-        ? "Нет вариаций для расчета"
-        : `Среднее по ${comparedPizzaCount} сопоставленным пиццам, каждая пицца имеет одинаковый вес в индексе.`;
+      const papaSegmented = snapshot.papa.products.filter(item => papaSegmentId(item));
+      const papaUnsegmented = snapshot.papa.products.filter(item => !papaSegmentId(item));
+      const dodoSegmented = dodoAssignments.filter(item => item.segment);
+      const dodoReview = dodoAssignments.filter(item => !item.segment || item.confidence === "low");
+      const rowsWithDelta = segmentAnalytics.flatMap(segment => segment.rows.filter(row => row.deltaPct != null));
+      const higherRows = rowsWithDelta.filter(row => row.delta > 0);
+      const lowerRows = rowsWithDelta.filter(row => row.delta < 0);
+      const segmentIndex = avg(rowsWithDelta.map(row => 100 + row.deltaPct));
 
       const cards = [
         `
           <article class="card metric">
             <div class="metric-head">
               <div class="metric-title">
-                <div class="metric-label">Papa пицц</div>
-                <div class="metric-note">${papaVarCount} вариаций со стандартным бортом</div>
+                <div class="metric-label">Papa сегментов</div>
+                <div class="metric-note">${segmentConfig.segments.reduce((sum, segment) => sum + segment.products.length, 0)} позиций из Excel, цены сайта Papa по размерам 23/30/35/40.</div>
               </div>
-              <div class="metric-value">${snapshot.papa.products.length}</div>
+              <div class="metric-value">${segmentConfig.segments.length}</div>
             </div>
-            ${renderMiniList(renderProductRows(snapshot.papa.products))}
+            ${renderMiniList(renderSegmentRows())}
           </article>
         `,
         `
           <article class="card metric">
             <div class="metric-head">
               <div class="metric-title">
-                <div class="metric-label">Dodo пицц</div>
-                <div class="metric-note">${dodoVarCount} вариаций собрано по выбранной пиццерии</div>
+                <div class="metric-label">Papa в snapshot</div>
+                <div class="metric-note">${papaVarCount} вариаций собрано; ${papaUnsegmented.length} позиций пока вне справочника.</div>
               </div>
-              <div class="metric-value">${snapshot.dodo.products.length}</div>
+              <div class="metric-value">${papaSegmented.length}/${snapshot.papa.products.length}</div>
             </div>
-            ${renderMiniList(renderProductRows(snapshot.dodo.products))}
+            ${renderMiniList(renderProductRows(papaUnsegmented.length ? papaUnsegmented : papaSegmented.slice(0, 12)))}
           </article>
         `,
         `
           <article class="card metric">
             <div class="metric-head">
               <div class="metric-title">
-                <div class="metric-label">Матчей</div>
-                <div class="metric-note">Сопоставленные пары пицц: ${exact} точных, ${snapshot.matches.length - exact} требуют проверки названия или состава.</div>
+                <div class="metric-label">Dodo распределено</div>
+                <div class="metric-note">${dodoVarCount} вариаций собрано; сегмент выбирается по ближайшей Papa-лестнице.</div>
               </div>
-              <div class="metric-value">${snapshot.matches.length}</div>
+              <div class="metric-value">${dodoSegmented.length}/${snapshot.dodo.products.length}</div>
             </div>
-            ${renderMiniList(renderMatchRows())}
-          </article>
-        `,
-        `
-          <article class="card metric">
-            <div class="metric-head">
-              <div class="metric-title">
-                <div class="metric-label">Совпадения по вариациям</div>
-                <div class="metric-note">Только варианты, где совпали и размер, и вид теста. Эти строки участвуют в ценовом сравнении.</div>
-              </div>
-              <div class="metric-value">${commonCount}</div>
-            </div>
-            ${renderMiniList(renderVariantMatchRows())}
+            ${renderMiniList(renderAssignmentRows(dodoSegmented.slice(0, 16)))}
           </article>
         `,
         `
           <article class="card metric compact">
             <div class="metric-head">
               <div class="metric-title">
-                <div class="metric-label">Индекс найденных совпадений</div>
-                <div class="metric-note">${indexNote}</div>
+                <div class="metric-label">Dodo выше Papa</div>
+                <div class="metric-note">Строки сегмент-размер, где средняя Dodo-цена выше базовой Papa.</div>
               </div>
-              <div class="metric-value">${pizzaIndex == null ? "—" : Math.round(pizzaIndex) + "%"}</div>
+              <div class="metric-value">${higherRows.length}</div>
             </div>
-            <div class="metric-detail">100% означает равенство цен Papa и Dodo внутри найденных пар. Ниже 100% — Dodo дешевле, выше 100% — Dodo дороже.</div>
+            <div class="metric-detail delta-higher">${higherRows.length ? "Зеленый процент означает, что Dodo дороже Papa." : "Нет строк, где Dodo выше Papa."}</div>
           </article>
         `,
         `
           <article class="card metric compact">
-            <div class="metric-label">Доснять Dodo</div>
-            <div class="metric-value">${dodoNoVariants.length}</div>
-            <div class="metric-note">${html(dodoNoVariantNames.join(", ") || "нет пропусков")}</div>
+            <div class="metric-head">
+              <div class="metric-title">
+                <div class="metric-label">Dodo ниже Papa</div>
+                <div class="metric-note">Строки сегмент-размер, где средняя Dodo-цена ниже базовой Papa.</div>
+              </div>
+              <div class="metric-value">${lowerRows.length}</div>
+            </div>
+            <div class="metric-detail delta-lower">${lowerRows.length ? "Красный процент означает, что Dodo дешевле Papa." : "Нет строк, где Dodo ниже Papa."}</div>
+          </article>
+        `,
+        `
+          <article class="card metric compact">
+            <div class="metric-label">Индекс к Papa</div>
+            <div class="metric-value">${segmentIndex == null ? "—" : Math.round(segmentIndex) + "%"}</div>
+            <div class="metric-note">100% — Dodo равен Papa по сегментным строкам. Выше 100% — Dodo дороже, ниже 100% — Dodo дешевле.</div>
+            <div class="metric-detail">${dodoReview.length ? `Проверить сегмент: ${html(dodoReview.map(item => item.product.name).join(", "))}` : "Нет Dodo-позиций без сегмента или с низкой уверенностью."}</div>
           </article>
         `
       ];
@@ -1124,28 +1291,6 @@
       document.getElementById("eyebrow").textContent = `${snapshot.meta.city} · ${new Date(snapshot.meta.collectedAt).toLocaleString("ru-RU")} · Dodo ${dodoContext}`;
       document.getElementById("papaSourceLink").href = snapshot.meta.urls?.papa || "https://papajohns.ru/moscow";
       document.getElementById("dodoSourceLink").href = dodoSource || "https://dodopizza.ru/moscow/veshnyaki";
-    }
-
-    function renderVariantRow(row) {
-      const signClass = row.delta <= 0 ? "delta-negative" : "delta-positive";
-      const signText = row.delta <= 0 ? "Dodo ниже" : "Dodo выше";
-      return `
-        <div class="variant-row">
-          <div class="variant-key">${row.comparisonLabel || displayKey(row.papa)}</div>
-          <div class="variant-cell papa">
-            <span class="small">Papa Johns${row.papa.weightG ? ` · ${row.papa.weightG} г` : ""}</span>
-            <span class="price">${rub(row.papa.price)}</span>
-          </div>
-          <div class="variant-cell dodo">
-            <span class="small">Dodo Pizza${row.dodo.weightG ? ` · ${row.dodo.weightG} г` : ""}</span>
-            <span class="price">${rub(row.dodo.price)}</span>
-          </div>
-          <div class="variant-delta">
-            <span class="price ${signClass}">${row.deltaPct.toFixed(1)}%</span>
-            <span class="small">${signText} на ${rub(Math.abs(row.delta))}</span>
-          </div>
-        </div>
-      `;
     }
 
     function renderChip(item, extraClass = "") {
@@ -1158,52 +1303,6 @@
       `;
     }
 
-    function renderMatchCard(item) {
-      const largest = item.largest;
-      const statusText = item.status === "exact"
-        ? "Названия совпали, пара считается точной."
-        : item.status === "manual"
-          ? "Пара выбрана вручную для проверки гипотезы."
-          : "Пара подобрана вручную, лучше проверить состав перед управленческим выводом.";
-      const papaEmpty = item.papaVars.length ? "Все базовые варианты Papa имеют пару у Dodo." : "У выбранной Papa-пиццы вариации не собраны.";
-      const dodoEmpty = item.dodoVars.length ? "Все варианты Dodo имеют пару у Papa." : "У выбранной Dodo-пиццы вариации не собраны.";
-      return `
-        <article class="match-card" data-status="${item.status}">
-          <div class="match-top">
-            <div class="pair-title">
-              <h3>${html(item.label)}</h3>
-              <div class="pair-summary">
-                <strong>${statusText}</strong>
-                <div class="pair-summary-list">
-                  <span>Papa: ${html(item.papa.name)} · Dodo: ${html(item.dodo.name)}</span>
-                  <span>Совпало ${item.common.length} вариантов по размеру и тесту.</span>
-                  <span>Всего базовых вариантов: Papa ${item.papaVars.length}, Dodo ${item.dodoVars.length}. Без точной пары: Papa ${item.papaOnly.length}, Dodo ${item.dodoOnly.length}.</span>
-                </div>
-              </div>
-            </div>
-            <div class="variant-compare">
-              ${item.common.length ? item.common.map(renderVariantRow).join("") : `<div class="empty">Нет точных совпадений по размеру и тесту. Смотрите отдельные варианты ниже.</div>`}
-            </div>
-            <div class="delta-box">
-              <span class="small">Самый заметный разрыв</span>
-              <span class="delta-main ${largest && largest.delta <= 0 ? "delta-negative" : "delta-positive"}">${largest ? Math.abs(largest.deltaPct).toFixed(1) + "%" : "—"}</span>
-              <span class="small">${largest ? `${displayKey(largest.papa)} · ${rub(Math.abs(largest.delta))}` : "Нет совпавших вариантов"}</span>
-            </div>
-          </div>
-          <div class="match-body">
-            <div class="side-board">
-              <div class="side-title"><span>Papa размеры и тесто без пары</span><span>${item.papaOnly.length}</span></div>
-              <div class="variant-grid">${item.papaOnly.length ? item.papaOnly.map(v => renderChip(v, "only")).join("") : `<div class="empty">${papaEmpty}</div>`}</div>
-            </div>
-            <div class="side-board">
-              <div class="side-title"><span>Dodo размеры и тесто без пары</span><span>${item.dodoOnly.length}</span></div>
-              <div class="variant-grid">${item.dodoOnly.length ? item.dodoOnly.map(v => renderChip(v, "only")).join("") : `<div class="empty">${dodoEmpty}</div>`}</div>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
     function fillManualSelect(select, products) {
       const options = [...products]
         .sort((a, b) => a.name.localeCompare(b.name, "ru"))
@@ -1211,64 +1310,198 @@
       select.replaceChildren(...options);
     }
 
+    function renderSegmentPriceRow(row) {
+      const cls = deltaClass(row.delta);
+      const dodoText = row.dodoAvg == null
+        ? "Нет Dodo-цен для сопоставимого размера"
+        : `${rub(Math.round(row.dodoAvg))}${row.dodoMin !== row.dodoMax ? ` · диапазон ${rub(row.dodoMin)}–${rub(row.dodoMax)}` : ""}`;
+      const dodoMeta = row.dodoAvg == null
+        ? "Размер Dodo не найден"
+        : `${row.dodoCount} цен · Dodo ${row.dodoSizes.map(size => `${size} см`).join(", ")}`;
+      return `
+        <div class="segment-price-row">
+          <div class="variant-key">Papa ${row.referenceSize} см</div>
+          <div class="variant-cell papa">
+            <span class="small">Базовая цена сегмента Papa Johns</span>
+            <span class="price">${rub(row.papaPrice)}</span>
+          </div>
+          <div class="variant-cell dodo">
+            <span class="small">${dodoMeta}</span>
+            <span class="price">${dodoText}</span>
+          </div>
+          <div class="variant-delta">
+            <span class="price ${cls}">${signedPct(row.deltaPct)}</span>
+            <span class="small">${row.delta == null ? "Нет сравнения" : `${deltaDirection(row.delta)} на ${rub(Math.abs(Math.round(row.delta)))}`}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function productPills(products, getMeta = null) {
+      return products.length
+        ? `<div class="segment-products">${products.map(product => `<span class="product-pill">${html(product.name)}${getMeta ? `<em>${html(getMeta(product))}</em>` : ""}</span>`).join("")}</div>`
+        : `<div class="empty">Нет позиций.</div>`;
+    }
+
+    function segmentProductPills(names, currentProducts) {
+      const current = new Set(currentProducts.map(product => norm(product.name)));
+      return `<div class="segment-products">${names.map(name => {
+        const normalized = norm(name);
+        const aliasId = segmentConfig.aliases?.[normalized];
+        const isCurrent = current.has(normalized) || (aliasId && currentProducts.some(product => papaSegmentId(product) === aliasId));
+        return `<span class="product-pill">${html(name)}<em>${isCurrent ? "в меню" : "нет в snapshot"}</em></span>`;
+      }).join("")}</div>`;
+    }
+
+    function renderSegmentCard(segment) {
+      const largest = segment.largest;
+      const hasHigher = segment.rows.some(row => row.delta > 0);
+      const hasLower = segment.rows.some(row => row.delta < 0);
+      const statusText = [
+        hasHigher ? "есть размеры, где Dodo выше Papa" : null,
+        hasLower ? "есть размеры, где Dodo ниже Papa" : null,
+        !hasHigher && !hasLower ? "нет строк с ценовым разрывом" : null
+      ].filter(Boolean).join("; ");
+
+      return `
+        <article class="match-card" data-higher="${hasHigher}" data-lower="${hasLower}">
+          <div class="match-top">
+            <div class="pair-title">
+              <span class="segment-badge">${html(segment.label)}</span>
+              <h3>${html(segment.label)} · ${rub(segment.prices[23])} / ${rub(segment.prices[30])} / ${rub(segment.prices[35])} / ${rub(segment.prices[40])}</h3>
+              <div class="pair-summary">
+                <strong>${statusText}</strong>
+                <div class="pair-summary-list">
+                  <span>Papa в справочнике: ${segment.products.length}; найдено в текущем snapshot: ${segment.papaCurrent.length}.</span>
+                  <span>Dodo присвоено сегменту: ${segment.dodo.length}. Расчет идет по средним Dodo-ценам внутри сегмента.</span>
+                  <span>Сегментный индекс: ${segment.index == null ? "—" : Math.round(segment.index) + "%"} к Papa.</span>
+                </div>
+              </div>
+            </div>
+            <div class="variant-compare">
+              ${segment.rows.map(renderSegmentPriceRow).join("")}
+            </div>
+            <div class="delta-box">
+              <span class="small">Самый заметный разрыв</span>
+              <span class="delta-main ${largest ? deltaClass(largest.delta) : "delta-flat"}">${largest ? signedPct(largest.deltaPct) : "—"}</span>
+              <span class="small">${largest ? `Papa ${largest.referenceSize} см · ${deltaDirection(largest.delta)} на ${rub(Math.abs(Math.round(largest.delta)))}` : "Нет сопоставимых размеров"}</span>
+            </div>
+          </div>
+          <div class="match-body">
+            <div class="side-board">
+              <div class="side-title"><span>Papa пиццы в сегменте</span><span>${segment.products.length}</span></div>
+              ${segmentProductPills(segment.products, segment.papaCurrent)}
+            </div>
+            <div class="side-board">
+              <div class="side-title"><span>Dodo пиццы в сегменте</span><span>${segment.dodo.length}</span></div>
+              ${productPills(segment.dodo.map(item => item.product), product => rub(product.minPrice || product.minPriceCard))}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
     function initManualCompare() {
-      const papaSelect = document.getElementById("manualPapaSelect");
       const dodoSelect = document.getElementById("manualDodoSelect");
-      fillManualSelect(papaSelect, snapshot.papa.products);
       fillManualSelect(dodoSelect, snapshot.dodo.products);
 
-      const defaultMatch = snapshot.matches.find(item => item.label === "Пепперони") || snapshot.matches[0];
-      if (defaultMatch) {
-        papaSelect.value = defaultMatch.papaProductId;
-        dodoSelect.value = defaultMatch.dodoProductId;
-      }
+      const defaultDodo = snapshot.dodo.products.find(item => norm(item.name) === "пепперони") || snapshot.dodo.products[0];
+      if (defaultDodo) dodoSelect.value = defaultDodo.normalizedName;
       renderManualCompare();
     }
 
     function renderManualCompare() {
-      const papaId = document.getElementById("manualPapaSelect").value;
       const dodoId = document.getElementById("manualDodoSelect").value;
-      const papa = productById("papa", papaId);
       const dodo = productById("dodo", dodoId);
       const target = document.getElementById("manualCompare");
 
-      if (!papa || !dodo) {
-        target.innerHTML = `<div class="empty">Выберите по одной пицце из каждого списка.</div>`;
+      if (!dodo) {
+        target.innerHTML = `<div class="empty">Выберите Dodo-пиццу из списка.</div>`;
         return;
       }
 
-      const item = enrichMatch({
-        label: `${papa.name} / ${dodo.name}`,
-        status: "manual",
-        papaProductId: papa.normalizedName,
-        dodoProductId: dodo.normalizedName
+      const assignment = dodoAssignments.find(item => item.product.normalizedName === dodo.normalizedName) || assignDodoSegment(dodo);
+      if (!assignment.segment) {
+        target.innerHTML = `<div class="empty">Для этой Dodo-пиццы не нашлось сопоставимых размеров 25/30/35 см.</div>`;
+        return;
+      }
+
+      const rows = assignment.comparable.map(row => {
+        const papaPrice = assignment.segment.prices[row.referenceSize];
+        const delta = row.price - papaPrice;
+        return {
+          referenceSize: row.referenceSize,
+          papaPrice,
+          dodoItems: row.items,
+          dodoAvg: row.price,
+          dodoMin: row.price,
+          dodoMax: row.price,
+          dodoCount: row.items.length,
+          dodoSizes: [row.dodoSize],
+          delta,
+          deltaPct: pct(delta, papaPrice)
+        };
       });
-      target.innerHTML = renderMatchCard(item);
+      const extra = assignment.variants.filter(item => !dodoReferenceSize(item.sizeCm));
+      target.innerHTML = `
+        <article class="match-card">
+          <div class="match-top">
+            <div class="pair-title">
+              <span class="segment-badge">${html(assignment.segment.label)}</span>
+              <h3>${html(dodo.name)} → ${html(assignment.segment.label)}</h3>
+              <div class="pair-summary">
+                <strong>${confidenceLabel(assignment.score)}</strong>
+                <div class="pair-summary-list">
+                  <span>Отклонение от ценовой лестницы Papa: ${assignment.score == null ? "—" : (assignment.score * 100).toFixed(1) + "%"}.</span>
+                  <span>Сегмент выбран по размерам Dodo 25/30/35 см относительно Papa 23/30/35 см.</span>
+                </div>
+              </div>
+            </div>
+            <div class="variant-compare">${rows.map(renderSegmentPriceRow).join("")}</div>
+            <div class="delta-box">
+              <span class="small">Минимальная цена Dodo</span>
+              <span class="delta-main">${rub(dodo.minPrice || dodo.minPriceCard)}</span>
+              <span class="small">${assignment.variants.length} базовых вариантов собрано</span>
+            </div>
+          </div>
+          <div class="match-body">
+            <div class="side-board">
+              <div class="side-title"><span>Все размеры Dodo</span><span>${assignment.variants.length}</span></div>
+              <div class="variant-grid">${assignment.variants.map(v => renderChip(v)).join("")}</div>
+            </div>
+            <div class="side-board">
+              <div class="side-title"><span>Размеры вне расчета сегмента</span><span>${extra.length}</span></div>
+              <div class="variant-grid">${extra.length ? extra.map(v => renderChip(v, "only")).join("") : `<div class="empty">Все размеры участвуют в сегментной проверке.</div>`}</div>
+            </div>
+          </div>
+        </article>
+      `;
     }
 
     function renderMatches() {
       const filter = document.querySelector("[data-filter].active").dataset.filter;
       const sort = document.getElementById("sortSelect").value;
-      let rows = [...enriched];
-      if (filter !== "all") rows = rows.filter(item => item.status === filter);
+      let rows = [...segmentAnalytics];
+      if (filter === "higher") rows = rows.filter(item => item.dodoAboveRows > 0);
+      if (filter === "lower") rows = rows.filter(item => item.dodoBelowRows > 0);
       rows.sort((a, b) => {
-        if (sort === "name") return a.label.localeCompare(b.label, "ru");
-        if (sort === "coverage") return b.common.length - a.common.length;
+        if (sort === "segment") return segmentConfig.segments.findIndex(item => item.id === a.id) - segmentConfig.segments.findIndex(item => item.id === b.id);
+        if (sort === "dodoCount") return b.dodo.length - a.dodo.length;
         const ag = a.largest ? Math.abs(a.largest.deltaPct) : -1;
         const bg = b.largest ? Math.abs(b.largest.deltaPct) : -1;
         return bg - ag;
       });
-      document.getElementById("matches").innerHTML = rows.map(renderMatchCard).join("");
+      document.getElementById("matches").innerHTML = rows.map(renderSegmentCard).join("");
     }
 
-    function renderCatalogCard(product) {
+    function renderCatalogCard(product, note = "") {
       const variants = groupProduct(product);
       return `
         <article class="catalog-card">
           <div class="catalog-head">
             <div>
               <strong>${product.name}</strong>
-              <div class="small">${variants.length ? `${variants.length} вариантов` : "вариации не собраны"}${product.flags?.length ? ` · ${product.flags.join(", ")}` : ""}</div>
+              <div class="small">${note || (variants.length ? `${variants.length} вариантов` : "вариации не собраны")}${product.flags?.length ? ` · ${product.flags.join(", ")}` : ""}</div>
             </div>
             <span class="price">${rub(product.minPrice || product.minPriceCard)}</span>
           </div>
@@ -1278,36 +1511,35 @@
     }
 
     function renderUnmatched() {
-      const papaMatched = new Set(snapshot.matches.map(item => item.papaProductId));
-      const dodoMatched = new Set(snapshot.matches.map(item => item.dodoProductId));
       const papaQuery = norm(document.getElementById("papaSearch").value);
       const dodoQuery = norm(document.getElementById("dodoSearch").value);
-      const papa = snapshot.papa.products.filter(item => !papaMatched.has(item.normalizedName) && (!papaQuery || item.normalizedName.includes(papaQuery)));
-      const dodo = snapshot.dodo.products.filter(item => !dodoMatched.has(item.normalizedName) && (!dodoQuery || item.normalizedName.includes(dodoQuery)));
-      document.getElementById("papaUnmatched").innerHTML = papa.length ? papa.map(renderCatalogCard).join("") : `<div class="empty">Нет позиций по текущему поиску.</div>`;
-      document.getElementById("dodoUnmatched").innerHTML = dodo.length ? dodo.map(renderCatalogCard).join("") : `<div class="empty">Нет позиций по текущему поиску.</div>`;
+      const papa = snapshot.papa.products.filter(item => !papaSegmentId(item) && (!papaQuery || item.normalizedName.includes(papaQuery)));
+      const dodo = dodoAssignments.filter(item => (!item.segment || item.confidence === "low") && (!dodoQuery || item.product.normalizedName.includes(dodoQuery)));
+      document.getElementById("papaUnmatched").innerHTML = papa.length ? papa.map(product => renderCatalogCard(product, "нет в Papa-сегментах Excel")).join("") : `<div class="empty">Все найденные Papa-пиццы покрыты сегментным справочником или алиасами.</div>`;
+      document.getElementById("dodoUnmatched").innerHTML = dodo.length ? dodo.map(item => renderCatalogCard(item.product, item.segment ? `${item.segment.label} · ${confidenceLabel(item.score)}` : "без сегмента")).join("") : `<div class="empty">Нет Dodo-позиций с низкой уверенностью по текущему поиску.</div>`;
     }
 
     function downloadCsv() {
-      const header = ["pizza", "size_cm", "dough", "papa_price", "papa_weight_g", "dodo_price", "dodo_weight_g", "delta_rub", "delta_pct", "status"];
-      const lines = enriched.flatMap(match => match.common.map(row => [
-        match.label,
-        row.papa.sizeCm,
-        row.papa.dough,
-        row.papa.price,
-        row.papa.weightG || "",
-        row.dodo.price,
-        row.dodo.weightG || "",
-        row.delta,
-        row.deltaPct.toFixed(2),
-        match.status,
+      const header = ["segment", "papa_size_cm", "papa_price", "dodo_sizes_cm", "dodo_avg_price", "dodo_min_price", "dodo_max_price", "dodo_price_count", "delta_rub", "delta_pct", "dodo_products"];
+      const lines = segmentAnalytics.flatMap(segment => segment.rows.map(row => [
+        segment.label,
+        row.referenceSize,
+        row.papaPrice,
+        row.dodoSizes.join("; "),
+        row.dodoAvg == null ? "" : Math.round(row.dodoAvg),
+        row.dodoMin || "",
+        row.dodoMax || "",
+        row.dodoCount,
+        row.delta == null ? "" : Math.round(row.delta),
+        row.deltaPct == null ? "" : row.deltaPct.toFixed(2),
+        [...new Set(row.dodoItems.map(item => item.product.name))].join("; "),
       ]));
       const csv = [header, ...lines].map(row => row.map(cell => `"${String(cell).replaceAll('"', '""')}"`).join(",")).join("\n");
       const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "pizza-variant-matches-moscow.csv";
+      a.download = "pizza-segment-comparison-moscow.csv";
       a.click();
       URL.revokeObjectURL(url);
     }
@@ -1324,7 +1556,12 @@
         return;
       }
 
-      enriched = snapshot.matches.map(match => enrichMatch(match));
+      if (!segmentConfig?.segments?.length) {
+        document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/papa-segments.js. Добавьте справочник сегментов Papa Johns.</div></main>';
+        return;
+      }
+
+      segmentAnalytics = buildSegmentAnalytics();
 
       document.querySelectorAll("[data-filter]").forEach(button => {
         button.addEventListener("click", () => {
@@ -1334,7 +1571,6 @@
         });
       });
       document.getElementById("sortSelect").addEventListener("change", renderMatches);
-      document.getElementById("manualPapaSelect").addEventListener("change", renderManualCompare);
       document.getElementById("manualDodoSelect").addEventListener("change", renderManualCompare);
       document.getElementById("papaSearch").addEventListener("input", renderUnmatched);
       document.getElementById("dodoSearch").addEventListener("input", renderUnmatched);

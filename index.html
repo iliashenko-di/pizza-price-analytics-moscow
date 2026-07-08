@@ -162,6 +162,11 @@
       min-height: 210px;
     }
 
+    .segment-summary-card {
+      grid-column: span 12;
+      min-height: 0;
+    }
+
     .metric-label {
       color: var(--muted);
       font: 700 11px/1.25 Consolas, "Courier New", monospace;
@@ -260,6 +265,59 @@
       background: var(--panel);
       color: var(--muted);
       font: 700 12px/1.45 Consolas, "Courier New", monospace;
+    }
+
+    .segment-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .summary-group {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding-left: 14px;
+      border-left: 3px solid var(--line);
+    }
+
+    .summary-group.good {
+      border-color: var(--papa);
+    }
+
+    .summary-group.risk {
+      border-color: var(--dodo);
+    }
+
+    .summary-group.flat {
+      border-color: var(--blue);
+    }
+
+    .summary-group-head {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .summary-group-head h3 {
+      font: 700 16px/1.15 Georgia, "Times New Roman", serif;
+    }
+
+    .summary-group-head strong {
+      color: var(--muted);
+      font: 700 12px/1.2 Consolas, "Courier New", monospace;
+      white-space: nowrap;
+    }
+
+    .summary-row {
+      grid-template-columns: minmax(0, 0.8fr) minmax(178px, auto);
+    }
+
+    .summary-row strong {
+      text-align: right;
+      white-space: nowrap;
     }
 
     .panel {
@@ -1078,6 +1136,14 @@
         grid-column: span 6;
       }
 
+      .segment-summary-card {
+        grid-column: span 6;
+      }
+
+      .segment-summary-grid {
+        grid-template-columns: 1fr;
+      }
+
       .actions {
         justify-content: flex-start;
       }
@@ -1127,6 +1193,15 @@
 
       .metric.wide {
         grid-column: span 1;
+      }
+
+      .summary-row {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-row strong {
+        text-align: left;
+        white-space: normal;
       }
 
       .price-ladder {
@@ -1653,6 +1728,58 @@
       return `${priceText}${variantText}`;
     }
 
+    const segmentParityThresholdPct = 2;
+
+    function segmentPriceSummary(segment) {
+      const rows = segment.rows.filter(row => row.deltaPct != null);
+      if (!rows.length) {
+        return {
+          segment,
+          status: "no-data",
+          delta: null,
+          deltaPct: null
+        };
+      }
+      const delta = avg(rows.map(row => row.delta));
+      const deltaPct = avg(rows.map(row => row.deltaPct));
+      let status = "flat";
+      if (Math.abs(deltaPct) > segmentParityThresholdPct) status = delta > 0 ? "papa-cheaper" : "papa-higher";
+      return {
+        segment,
+        status,
+        delta,
+        deltaPct
+      };
+    }
+
+    function segmentSummaryLabel(summary) {
+      if (summary.delta == null) return "нет данных";
+      const absDelta = rub(Math.abs(Math.round(summary.delta)));
+      const absPct = `${Math.abs(summary.deltaPct).toFixed(1)}%`;
+      if (summary.status === "papa-cheaper") return `Papa дешевле на ${absDelta} · ${absPct}`;
+      if (summary.status === "papa-higher") return `Papa дороже на ${absDelta} · ${absPct}`;
+      return `разница ${absDelta} · ${absPct}`;
+    }
+
+    function segmentSummaryClass(summary) {
+      if (summary.status === "papa-cheaper") return "delta-higher";
+      if (summary.status === "papa-higher") return "delta-lower";
+      return "delta-flat";
+    }
+
+    function renderSegmentSummaryRows(items, emptyText) {
+      return items.length ? `
+        <div class="mini-list">
+          ${items.map(summary => `
+            <div class="mini-row summary-row">
+              <span>${html(summary.segment.label)}</span>
+              <strong class="${segmentSummaryClass(summary)}">${html(segmentSummaryLabel(summary))}</strong>
+            </div>
+          `).join("")}
+        </div>
+      ` : `<div class="empty">${html(emptyText)}</div>`;
+    }
+
     function renderPriceLadder(prices, sizes = segmentConfig.sizes, extraClass = "") {
       return `
         <div class="price-ladder ${extraClass}">
@@ -1739,45 +1866,49 @@
     }
 
     function renderKpis() {
-      const rowsWithDelta = segmentAnalytics.flatMap(segment => segment.rows.filter(row => row.deltaPct != null));
-      const higherRows = rowsWithDelta.filter(row => row.delta > 0);
-      const lowerRows = rowsWithDelta.filter(row => row.delta < 0);
-      const segmentIndex = avg(rowsWithDelta.map(row => 100 + row.deltaPct));
-      const dodoUnsegmented = dodoAssignments.filter(item => !item.segment);
-      const manualCount = manualOverrideCount();
+      const summaries = segmentAnalytics
+        .map(segmentPriceSummary)
+        .filter(summary => summary.status !== "no-data")
+        .sort((a, b) => Math.abs(b.deltaPct) - Math.abs(a.deltaPct));
+      const papaCheaper = summaries.filter(summary => summary.status === "papa-cheaper");
+      const papaHigher = summaries.filter(summary => summary.status === "papa-higher");
+      const flat = summaries.filter(summary => summary.status === "flat");
 
       const cards = [
         `
-          <article class="card metric wide">
+          <article class="card metric segment-summary-card">
             <div class="metric-head">
               <div class="metric-title">
-                <div class="metric-label">Ценовая сводка</div>
-                <div class="metric-note">Считаются строки "сегмент + размер", где есть цена Papa и средняя цена Dodo для сопоставимого размера.</div>
+                <div class="metric-label">Ценовая сводка по сегментам</div>
+                <div class="metric-note">Один вывод = один сегмент. Внутри сегмента усредняем разницу между Papa и Dodo; разницу до ${segmentParityThresholdPct}% считаем примерным паритетом.</div>
               </div>
-              <div class="metric-value">${rowsWithDelta.length}</div>
+              <div class="metric-value">${summaries.length} сегм.</div>
             </div>
-            <div class="stat-lines">
-              <div class="stat-line"><span>Dodo выше Papa</span><strong class="delta-higher">${higherRows.length}</strong></div>
-              <div class="stat-line"><span>Dodo ниже Papa</span><strong class="delta-lower">${lowerRows.length}</strong></div>
-              <div class="stat-line"><span>Dodo-пицц распределено</span><strong>${dodoAssignments.filter(item => item.segment).length}/${snapshot.dodo.products.length}</strong></div>
-              <div class="stat-line"><span>Ручных правок сегмента</span><strong>${manualCount}</strong></div>
-            </div>
-          </article>
-        `,
-        `
-          <article class="card metric wide">
-            <div class="metric-head">
-              <div class="metric-title">
-                <div class="metric-label">Индекс к Papa</div>
-                <div class="metric-note">100% означает паритет: средняя Dodo-цена равна базовой Papa-цене в сопоставимых строках.</div>
-              </div>
-              <div class="metric-value">${segmentIndex == null ? "—" : Math.round(segmentIndex) + "%"}</div>
-            </div>
-            <div class="formula">Индекс = среднее по строкам: (средняя цена Dodo / цена Papa) × 100</div>
-            <div class="stat-lines">
-              <div class="stat-line"><span>Строк в расчете</span><strong>${rowsWithDelta.length}</strong></div>
-              <div class="stat-line"><span>Интерпретация</span><strong>${segmentIndex == null ? "—" : segmentIndex > 100 ? "Dodo дороже" : segmentIndex < 100 ? "Dodo дешевле" : "паритет"}</strong></div>
-              <div class="stat-line"><span>Без сегмента</span><strong>${dodoUnsegmented.length}</strong></div>
+            <div class="segment-summary-grid">
+              <section class="summary-group good">
+                <div class="summary-group-head">
+                  <h3>Papa дешевле</h3>
+                  <strong>${papaCheaper.length} ${pluralRu(papaCheaper.length, "сегмент", "сегмента", "сегментов")}</strong>
+                </div>
+                <div class="metric-detail">Средняя Dodo-цена выше Papa в сегменте.</div>
+                ${renderSegmentSummaryRows(papaCheaper, "Таких сегментов нет.")}
+              </section>
+              <section class="summary-group risk">
+                <div class="summary-group-head">
+                  <h3>Papa дороже</h3>
+                  <strong>${papaHigher.length} ${pluralRu(papaHigher.length, "сегмент", "сегмента", "сегментов")}</strong>
+                </div>
+                <div class="metric-detail">Средняя Dodo-цена ниже Papa в сегменте.</div>
+                ${renderSegmentSummaryRows(papaHigher, "Таких сегментов нет.")}
+              </section>
+              <section class="summary-group flat">
+                <div class="summary-group-head">
+                  <h3>Примерно равны</h3>
+                  <strong>${flat.length} ${pluralRu(flat.length, "сегмент", "сегмента", "сегментов")}</strong>
+                </div>
+                <div class="metric-detail">Разница находится в пределах ${segmentParityThresholdPct}%.</div>
+                ${renderSegmentSummaryRows(flat, "Таких сегментов нет.")}
+              </section>
             </div>
           </article>
         `

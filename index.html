@@ -363,13 +363,14 @@
 
     .segment-comparison-list {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      align-items: stretch;
+      gap: 12px;
     }
 
     .segment-pair {
-      display: contents;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 10px;
+      align-items: stretch;
     }
 
     .directory-item.dodo {
@@ -490,6 +491,12 @@
       font: 700 14px/1.12 Consolas, "Courier New", monospace;
     }
 
+    .dodo-price-step strong small {
+      color: var(--muted);
+      font: 700 10px/1.2 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
     .product-list {
       display: grid;
       gap: 6px;
@@ -498,6 +505,11 @@
       padding: 0;
       margin: 0;
       list-style: none;
+    }
+
+    .directory-item.papa .product-list {
+      max-height: none;
+      overflow: visible;
     }
 
     .product-line {
@@ -1177,14 +1189,11 @@
       .run-surface,
       .segment-directory,
       .segment-directory.editable,
+      .segment-pair,
       .segment-context,
       .price-structure,
       .segment-table-wrap {
         grid-template-columns: 1fr;
-      }
-
-      .segment-comparison-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .field.wide-field,
@@ -1217,10 +1226,6 @@
     @media (max-width: 820px) {
       .shell {
         width: min(1540px, calc(100% - 20px));
-      }
-
-      .segment-comparison-list {
-        grid-template-columns: 1fr;
       }
 
       .match-body {
@@ -1871,8 +1876,8 @@
         <div class="dodo-size-grid">
           ${stats.map(stat => `
             <div class="dodo-price-step">
-              <span>${stat.size} см · средняя</span>
-              <strong>${rub(stat.avg)}</strong>
+              <span>${stat.size} см</span>
+              <strong>${rub(stat.avg)} <small>средняя</small></strong>
               <em>диапазон ${priceRangeLabel(stat.min, stat.max)}</em>
             </div>
           `).join("")}

@@ -401,6 +401,7 @@
     .product-line em {
       color: var(--muted);
       font: normal 12px/1.2 Consolas, "Courier New", monospace;
+      text-align: right;
       white-space: nowrap;
     }
 
@@ -1115,6 +1116,15 @@
         grid-template-columns: 1fr;
       }
 
+      .product-line {
+        grid-template-columns: 1fr;
+      }
+
+      .product-line em {
+        text-align: left;
+        white-space: normal;
+      }
+
       .metric.wide {
         grid-column: span 1;
       }
@@ -1622,6 +1632,27 @@
       return product.minPrice ?? product.minPriceCard ?? groupProduct(product)[0]?.price ?? null;
     }
 
+    function productPriceRange(product) {
+      const prices = groupProduct(product)
+        .map(item => item.price)
+        .filter(value => Number.isFinite(value));
+      const fallback = productMinPrice(product);
+      if (!prices.length) return { min: fallback, max: fallback, count: 0 };
+      return {
+        min: Math.min(...prices),
+        max: Math.max(...prices),
+        count: prices.length
+      };
+    }
+
+    function productPriceRangeText(product) {
+      const range = productPriceRange(product);
+      if (range.min == null) return "цена не собрана";
+      const priceText = range.min === range.max ? rub(range.min) : `${rub(range.min)}–${rub(range.max)}`;
+      const variantText = range.count ? ` · ${range.count} вар.` : "";
+      return `${priceText}${variantText}`;
+    }
+
     function renderPriceLadder(prices, sizes = segmentConfig.sizes, extraClass = "") {
       return `
         <div class="price-ladder ${extraClass}">
@@ -1693,7 +1724,7 @@
                   <div class="editable-product">
                     <div>
                       <strong>${html(assignment.product.name)}</strong>
-                      <span class="metric-detail">от ${rub(productMinPrice(assignment.product))} · ${groupProduct(assignment.product).length} вар. · ${assignmentMeta(assignment)}</span>
+                      <span class="metric-detail">${productPriceRangeText(assignment.product)} · ${assignmentMeta(assignment)}</span>
                     </div>
                     <select class="segment-select" data-dodo-product="${html(assignment.product.normalizedName)}" aria-label="Сегмент для ${html(assignment.product.name)}">
                       ${dodoSegmentOptions(assignment.segmentId)}
@@ -1900,7 +1931,7 @@
       const dodoItems = segment.dodo
         .map(assignment => ({
           name: assignment.product.name,
-          meta: `от ${rub(productMinPrice(assignment.product))}${assignment.manual ? " · ручной сегмент" : ""}`
+          meta: `${productPriceRangeText(assignment.product)}${assignment.manual ? " · ручной сегмент" : ""}`
         }))
         .sort((a, b) => a.name.localeCompare(b.name, "ru"));
       const hasHigher = segment.rows.some(row => row.delta > 0);
@@ -1930,7 +1961,7 @@
               </div>
               <div class="context-panel">
                 <h4>Dodo Pizza в сегменте</h4>
-                <span class="metric-detail">Цена рядом с пиццей — минимальная средняя цена по Москве среди базовых вариаций.</span>
+                <span class="metric-detail">Цена рядом с пиццей — минимум и максимум средних московских цен среди базовых вариаций.</span>
                 ${renderProductList(dodoItems, "Dodo-пицц в сегменте нет.")}
               </div>
             </div>

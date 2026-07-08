@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Пиццы: вариации и цены</title>
+  <title>Анализ цен сетей пиццерий</title>
   <style>
     :root {
       --ink: #13211f;
@@ -1215,7 +1215,7 @@
     <header class="top">
       <div>
         <p class="eyebrow" id="eyebrow">Москва · сбор данных</p>
-        <h1>Сегментное сравнение пицц: Papa как база, Dodo как отклонение</h1>
+        <h1>Анализ цен сетей пиццерий</h1>
       </div>
       <nav class="actions" aria-label="Действия">
         <a class="link-button" id="papaSourceLink" href="https://papajohns.ru/moscow" target="_blank" rel="noreferrer">Papa Johns</a>
@@ -1708,24 +1708,24 @@
     }
 
     function productPriceRange(product) {
-      const prices = groupProduct(product)
-        .map(item => item.price)
-        .filter(value => Number.isFinite(value));
+      const bySize = new Map();
+      for (const item of groupProduct(product)) {
+        if (!item.sizeCm || !Number.isFinite(item.price)) continue;
+        if (!bySize.has(item.sizeCm) || item.price < bySize.get(item.sizeCm)) bySize.set(item.sizeCm, item.price);
+      }
+      const prices = [...bySize.values()];
       const fallback = productMinPrice(product);
-      if (!prices.length) return { min: fallback, max: fallback, count: 0 };
+      if (!prices.length) return { min: fallback, max: fallback };
       return {
         min: Math.min(...prices),
-        max: Math.max(...prices),
-        count: prices.length
+        max: Math.max(...prices)
       };
     }
 
     function productPriceRangeText(product) {
       const range = productPriceRange(product);
       if (range.min == null) return "цена не собрана";
-      const priceText = range.min === range.max ? rub(range.min) : `${rub(range.min)}–${rub(range.max)}`;
-      const variantText = range.count ? ` · ${range.count} вар.` : "";
-      return `${priceText}${variantText}`;
+      return range.min === range.max ? rub(range.min) : `${rub(range.min)}–${rub(range.max)}`;
     }
 
     const segmentParityThresholdPct = 2;
@@ -2092,7 +2092,7 @@
               </div>
               <div class="context-panel">
                 <h4>Dodo Pizza в сегменте</h4>
-                <span class="metric-detail">Цена рядом с пиццей — минимум и максимум средних московских цен среди базовых вариаций.</span>
+                <span class="metric-detail">Цена рядом с пиццей — минимум и максимум средних московских цен по базовым размерам.</span>
                 ${renderProductList(dodoItems, "Dodo-пицц в сегменте нет.")}
               </div>
             </div>

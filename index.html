@@ -1788,14 +1788,14 @@
       const dodoPerSqCm = avg(assignments
         .map(assignment => dodoProductPricePerSqCm(assignment.product))
         .filter(value => value != null));
-      const index = papaPerSqCm && dodoPerSqCm ? (dodoPerSqCm / papaPerSqCm) * 100 : null;
+      const index = papaPerSqCm && dodoPerSqCm ? (papaPerSqCm / dodoPerSqCm) * 100 : null;
       return { papaPerSqCm, dodoPerSqCm, index };
     }
 
     function priceIndexClass(index) {
       if (index == null) return "delta-flat";
-      if (index > 100) return "delta-higher";
-      if (index < 100) return "delta-lower";
+      if (index > 100) return "delta-lower";
+      if (index < 100) return "delta-higher";
       return "delta-flat";
     }
 

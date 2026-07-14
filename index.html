@@ -1371,7 +1371,7 @@
       <div class="run-surface">
         <div class="run-text">
           <strong>После запуска</strong>
-          <span>GitHub Action установит Chromium, запустит Playwright-сборщик, проверит качество данных, закоммитит `data/pizza-snapshot.*` и обновит GitHub Pages.</span>
+          <span>GitHub Action установит Chromium, запустит Playwright-сборщик, проверит качество данных, закоммитит полный snapshot и компактный snapshot для страницы, затем обновит GitHub Pages.</span>
         </div>
         <a class="link-button" id="workflowRunLink" href="https://github.com/iliashenko-di/pizza-price-analytics-moscow/actions/workflows/collect.yml" target="_blank" rel="noreferrer">Открыть GitHub Action</a>
         <button type="button" id="copyWorkflowCommand">Скопировать команду</button>
@@ -1383,9 +1383,8 @@
 
   <script src="data/papa-segments.js"></script>
   <script src="data/dodo-restaurants-moscow.js"></script>
-  <script src="data/pizza-snapshot.js"></script>
   <script>
-    let snapshot = window.PIZZA_SNAPSHOT;
+    let snapshot = window.PIZZA_DASHBOARD_SNAPSHOT || window.PIZZA_SNAPSHOT || null;
     let segmentConfig = window.PAPA_SEGMENTS;
     let segmentAnalytics = [];
     let dodoAssignments = [];
@@ -1606,12 +1605,50 @@
       });
     }
 
-    async function loadLatestSnapshot() {
-      if (window.location.protocol === "file:") return;
-      const response = await fetch(`data/pizza-snapshot.json?v=${Date.now()}`, { cache: "no-store" });
+    function applyLoadedSnapshot(data) {
+      snapshot = data;
+      window.PIZZA_DASHBOARD_SNAPSHOT = data;
+    }
+
+    function loadSnapshotScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = () => reject(new Error(`Snapshot script failed: ${src}`));
+        document.head.append(script);
+      });
+    }
+
+    async function loadSnapshotFromScript() {
+      if (snapshot) return;
+      try {
+        await loadSnapshotScript("data/pizza-dashboard-snapshot.js");
+      } catch {
+        await loadSnapshotScript("data/pizza-snapshot.js");
+      }
+      snapshot = window.PIZZA_DASHBOARD_SNAPSHOT || window.PIZZA_SNAPSHOT || null;
+    }
+
+    async function fetchSnapshot(url) {
+      const response = await fetch(url, { cache: "no-cache" });
       if (!response.ok) throw new Error(`Snapshot request failed: ${response.status}`);
-      snapshot = await response.json();
-      window.PIZZA_SNAPSHOT = snapshot;
+      return response.json();
+    }
+
+    async function loadLatestSnapshot() {
+      if (snapshot) return;
+      if (window.location.protocol === "file:") {
+        await loadSnapshotFromScript();
+        return;
+      }
+      try {
+        applyLoadedSnapshot(await fetchSnapshot("data/pizza-dashboard-snapshot.json"));
+      } catch (error) {
+        console.warn("Не удалось загрузить компактный snapshot, используется полный snapshot.", error);
+        applyLoadedSnapshot(await fetchSnapshot("data/pizza-snapshot.json"));
+      }
     }
 
     function shellQuote(value) {
@@ -1882,6 +1919,11 @@
     function dodoProductSizeStats(product) {
       const productKey = product.normalizedName || norm(product.name);
       if (dodoSizeStatsCache.has(productKey)) return dodoSizeStatsCache.get(productKey);
+      const preparedStats = snapshot.dodo.productSizeStats?.[productKey];
+      if (preparedStats?.length) {
+        dodoSizeStatsCache.set(productKey, preparedStats);
+        return preparedStats;
+      }
 
       const bySize = new Map();
       for (const restaurantBlock of snapshot.dodo.restaurantProducts || []) {
@@ -2051,11 +2093,11 @@
       try {
         await loadLatestSnapshot();
       } catch (error) {
-        console.warn("Не удалось загрузить свежий data/pizza-snapshot.json, используется локальный fallback.", error);
+        console.warn("Не удалось загрузить snapshot.", error);
       }
 
       if (!snapshot) {
-        document.body.innerHTML = '<main class="shell"><div class="empty">Не найден data/pizza-snapshot.js. Запустите npm run collect.</div></main>';
+        document.body.innerHTML = '<main class="shell"><div class="empty">Не найден snapshot с данными. Запустите npm run collect.</div></main>';
         return;
       }
 

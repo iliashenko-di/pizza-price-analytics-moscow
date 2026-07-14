@@ -7,6 +7,8 @@ const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "data");
 const OUT_FILE = path.join(OUT_DIR, "pizza-snapshot.json");
 const OUT_JS_FILE = path.join(OUT_DIR, "pizza-snapshot.js");
+const OUT_DASHBOARD_FILE = path.join(OUT_DIR, "pizza-dashboard-snapshot.json");
+const OUT_DASHBOARD_JS_FILE = path.join(OUT_DIR, "pizza-dashboard-snapshot.js");
 const OUT_DODO_RESTAURANTS_FILE = path.join(OUT_DIR, "dodo-restaurants-moscow.json");
 const OUT_DODO_RESTAURANTS_JS_FILE = path.join(OUT_DIR, "dodo-restaurants-moscow.js");
 
@@ -112,6 +114,115 @@ function filterDodoResult(result = {}) {
       ...entry,
       products: filterIncludedPizzaProducts(entry.products),
     })),
+  };
+}
+
+function compactVariation(variation = {}) {
+  return {
+    sizeCm: variation.sizeCm,
+    dough: variation.dough,
+    crust: variation.crust,
+    price: variation.price,
+  };
+}
+
+function compactProduct(product = {}) {
+  return {
+    source: product.source,
+    name: product.name,
+    normalizedName: product.normalizedName,
+    variations: (product.variations || [])
+      .map(compactVariation)
+      .filter((variation) => variation.sizeCm && Number.isFinite(variation.price)),
+  };
+}
+
+function compactRestaurant(restaurant = {}) {
+  return {
+    id: restaurant.id,
+    uuid: restaurant.uuid,
+    slug: restaurant.slug,
+    alias: restaurant.alias,
+    name: restaurant.name,
+    address: restaurant.address,
+    menuUrl: restaurant.menuUrl,
+  };
+}
+
+function buildDodoProductSizeStats(restaurantProducts = [], aggregateProducts = []) {
+  const byProduct = new Map();
+
+  for (const entry of restaurantProducts) {
+    const productsByKey = new Map();
+    for (const product of entry.products || []) {
+      const key = product.normalizedName || normalizeName(product.name);
+      if (key && !productsByKey.has(key)) productsByKey.set(key, product);
+    }
+
+    for (const [productKey, product] of productsByKey) {
+      if (!byProduct.has(productKey)) byProduct.set(productKey, new Map());
+      const bySize = byProduct.get(productKey);
+      const restaurantPrices = new Map();
+
+      for (const variation of product.variations || []) {
+        if (!variation.sizeCm || !Number.isFinite(variation.price)) continue;
+        if (!restaurantPrices.has(variation.sizeCm) || variation.price < restaurantPrices.get(variation.sizeCm)) {
+          restaurantPrices.set(variation.sizeCm, variation.price);
+        }
+      }
+
+      for (const [size, price] of restaurantPrices) {
+        if (!bySize.has(size)) bySize.set(size, []);
+        bySize.get(size).push(price);
+      }
+    }
+  }
+
+  if (!byProduct.size) {
+    for (const product of aggregateProducts) {
+      const productKey = product.normalizedName || normalizeName(product.name);
+      if (!productKey) continue;
+      if (!byProduct.has(productKey)) byProduct.set(productKey, new Map());
+      const bySize = byProduct.get(productKey);
+      for (const variation of product.variations || []) {
+        if (!variation.sizeCm || !Number.isFinite(variation.price)) continue;
+        if (!bySize.has(variation.sizeCm)) bySize.set(variation.sizeCm, []);
+        bySize.get(variation.sizeCm).push(variation.price);
+      }
+    }
+  }
+
+  return Object.fromEntries([...byProduct.entries()].map(([productKey, bySize]) => [
+    productKey,
+    [...bySize.entries()]
+      .map(([size, prices]) => {
+        const average = prices.reduce((sum, price) => sum + price, 0) / prices.length;
+        return {
+          size,
+          avg: Math.round(average),
+          avgPrice: average,
+          min: Math.min(...prices),
+          max: Math.max(...prices),
+        };
+      })
+      .sort((a, b) => a.size - b.size),
+  ]));
+}
+
+function buildDashboardSnapshot(snapshot) {
+  return {
+    meta: snapshot.meta,
+    papa: {
+      products: (snapshot.papa?.products || []).map(compactProduct),
+    },
+    dodo: {
+      products: (snapshot.dodo?.products || []).map(compactProduct),
+      restaurants: (snapshot.dodo?.restaurants || []).map(compactRestaurant),
+      productSizeStats: buildDodoProductSizeStats(
+        snapshot.dodo?.restaurantProducts || [],
+        snapshot.dodo?.products || [],
+      ),
+    },
   };
 }
 
@@ -973,14 +1084,24 @@ async function main() {
     matches,
   };
 
+  const dashboardSnapshot = buildDashboardSnapshot(snapshot);
+
   await fs.writeFile(OUT_FILE, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
   await fs.writeFile(
     OUT_JS_FILE,
     `window.PIZZA_SNAPSHOT = ${JSON.stringify(snapshot, null, 2)};\n`,
     "utf8",
   );
+  await fs.writeFile(OUT_DASHBOARD_FILE, `${JSON.stringify(dashboardSnapshot)}\n`, "utf8");
+  await fs.writeFile(
+    OUT_DASHBOARD_JS_FILE,
+    `window.PIZZA_DASHBOARD_SNAPSHOT=${JSON.stringify(dashboardSnapshot)};\n`,
+    "utf8",
+  );
   console.log(`[done] wrote ${path.relative(ROOT, OUT_FILE)}`);
   console.log(`[done] wrote ${path.relative(ROOT, OUT_JS_FILE)}`);
+  console.log(`[done] wrote ${path.relative(ROOT, OUT_DASHBOARD_FILE)}`);
+  console.log(`[done] wrote ${path.relative(ROOT, OUT_DASHBOARD_JS_FILE)}`);
   if (dodoResult.restaurants?.length) {
     console.log(`[done] wrote ${path.relative(ROOT, OUT_DODO_RESTAURANTS_FILE)}`);
     console.log(`[done] dodo restaurants=${dodoResult.restaurants.length}, restaurant snapshots=${dodoResult.restaurantProducts.length}`);

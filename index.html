@@ -405,6 +405,28 @@
       white-space: nowrap;
     }
 
+    .price-index-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: baseline;
+      margin-top: 6px;
+      color: var(--muted);
+      font: 700 11px/1.3 Consolas, "Courier New", monospace;
+      text-transform: uppercase;
+    }
+
+    .price-index-line strong {
+      font-size: 13px;
+    }
+
+    .price-index-line em {
+      flex-basis: 100%;
+      color: var(--muted);
+      font: normal 11px/1.35 Consolas, "Courier New", monospace;
+      text-transform: none;
+    }
+
     .price-ladder {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1388,6 +1410,10 @@
     ];
 
     const rub = value => value == null ? "—" : new Intl.NumberFormat("ru-RU").format(value) + "\u00a0₽";
+    const rubPerSqCm = value => value == null ? "—" : new Intl.NumberFormat("ru-RU", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(value) + "\u00a0₽/см²";
     const pct = (delta, base) => base ? (delta / base) * 100 : null;
     const norm = value => String(value || "").toLowerCase().replaceAll("ё", "е").replace(/[^a-zа-я0-9]+/g, " ").trim();
     const html = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
@@ -1735,6 +1761,55 @@
       return range.min === range.max ? rub(range.min) : `${rub(range.min)}–${rub(range.max)}`;
     }
 
+    function pizzaArea(sizeCm) {
+      return Math.PI * (sizeCm / 2) ** 2;
+    }
+
+    function pricePerSqCm(price, sizeCm) {
+      return Number.isFinite(price) && Number.isFinite(sizeCm) && sizeCm > 0 ? price / pizzaArea(sizeCm) : null;
+    }
+
+    function papaSegmentPricePerSqCm(segment) {
+      const values = Object.entries(segment.prices || {})
+        .map(([size, price]) => pricePerSqCm(price, Number(size)))
+        .filter(value => value != null);
+      return avg(values);
+    }
+
+    function dodoProductPricePerSqCm(product) {
+      const values = dodoProductSizeStats(product)
+        .map(stat => pricePerSqCm(stat.avgPrice ?? stat.avg, stat.size))
+        .filter(value => value != null);
+      return avg(values);
+    }
+
+    function segmentPriceIndex(segment, assignments) {
+      const papaPerSqCm = papaSegmentPricePerSqCm(segment);
+      const dodoPerSqCm = avg(assignments
+        .map(assignment => dodoProductPricePerSqCm(assignment.product))
+        .filter(value => value != null));
+      const index = papaPerSqCm && dodoPerSqCm ? (dodoPerSqCm / papaPerSqCm) * 100 : null;
+      return { papaPerSqCm, dodoPerSqCm, index };
+    }
+
+    function priceIndexClass(index) {
+      if (index == null) return "delta-flat";
+      if (index > 100) return "delta-higher";
+      if (index < 100) return "delta-lower";
+      return "delta-flat";
+    }
+
+    function renderPriceIndexLine(segment, assignments) {
+      const { papaPerSqCm, dodoPerSqCm, index } = segmentPriceIndex(segment, assignments);
+      return `
+        <span class="price-index-line">
+          <span>Индекс цен</span>
+          <strong class="${priceIndexClass(index)}">${index == null ? "—" : Math.round(index) + "%"}</strong>
+          <em>Papa ${rubPerSqCm(papaPerSqCm)} · Dodo ${rubPerSqCm(dodoPerSqCm)}</em>
+        </span>
+      `;
+    }
+
     const segmentParityThresholdPct = 2;
 
     function segmentPriceSummary(segment) {
@@ -1837,25 +1912,30 @@
       }
 
       const stats = [...bySize.entries()]
-        .map(([size, prices]) => ({
-          size,
-          avg: Math.round(avg(prices)),
-          min: Math.min(...prices),
-          max: Math.max(...prices)
-        }))
+        .map(([size, prices]) => {
+          const average = avg(prices);
+          return {
+            size,
+            avg: Math.round(average),
+            avgPrice: average,
+            min: Math.min(...prices),
+            max: Math.max(...prices)
+          };
+        })
         .sort((a, b) => a.size - b.size);
 
       dodoSizeStatsCache.set(productKey, stats);
       return stats;
     }
 
-    function renderPapaSegmentCard(segment) {
+    function renderPapaSegmentCard(segment, assignments = []) {
       return `
         <article class="directory-item papa">
           <div class="directory-head">
             <div>
               <span class="segment-badge">${html(segment.label)}</span>
               <h3>Papa Johns</h3>
+              ${renderPriceIndexLine(segment, assignments)}
             </div>
             <span class="count-mark">${segment.products.length} пицц</span>
           </div>
@@ -1921,7 +2001,7 @@
         const analytics = analyticsById.get(segment.id);
         return `
           <section class="segment-pair">
-            ${renderPapaSegmentCard(segment)}
+            ${renderPapaSegmentCard(segment, analytics?.dodo || [])}
             ${renderDodoSegmentCard(segment, analytics?.dodo || [])}
           </section>
         `;
